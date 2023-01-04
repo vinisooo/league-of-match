@@ -50,5 +50,7 @@ export const GlobalStyles = createGlobalStyle`
         --color-brand-2: #058c42;
         --color-brand-3: #04471c;
         --color-brand-4: #0D2818;
+
+        --color-error: #ed4337
     }
 `

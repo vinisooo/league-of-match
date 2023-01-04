@@ -16,8 +16,13 @@ export const StyledForm = styled.form`
     
     
     @media (min-width: 700px) {
-        width: 30%;
+        width: 50%;
     }
+    @media (min-width: 1000px) {
+        width: 35%;
+    }
+
+
 
 
     >img{
@@ -38,7 +43,7 @@ export const StyledForm = styled.form`
         flex-direction: column;
         align-items: center;
 
-        gap: 30px;
+        gap: 27px;
     }
 
     header{

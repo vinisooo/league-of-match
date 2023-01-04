@@ -6,8 +6,6 @@ export const StyledInputBox = styled.fieldset`
     
     position: relative;
 
-    height: 0px;
-
     input{
         width: 100%;
         height: 49px;
@@ -28,6 +26,7 @@ export const StyledInputBox = styled.fieldset`
 
     input:focus{
         border-color: var(--color-brand-1);
+        animation: inputAnimation 2s infinite;
     }
 
     label{
@@ -55,6 +54,18 @@ export const StyledInputBox = styled.fieldset`
         font-size: 12px;
         width: 100%;
         top: 10px;
+
+        color: var(--color-error);
+    }
+
+    @keyframes inputAnimation {
+        0%{
+            box-shadow: 0 0 5px 0 var(--color-brand-1);
+        }50%{
+            box-shadow: 0 0 10px 0 var(--color-brand-1);
+        }100%{
+            box-shadow: 0 0 5px 0 var(--color-brand-1);
+        }
     }
 
 `

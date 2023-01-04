@@ -9,6 +9,9 @@ export function Login () {
             <FormBG imageBG="login"/>
             <Form formTitle="Login">
                 <InputBox label="name"/>
+                <InputBox label="name"/>
+                <InputBox label="name"/>
+                
 
             </Form>
         </LoginPage>
