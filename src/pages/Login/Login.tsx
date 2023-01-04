@@ -1,5 +1,10 @@
+import { Form } from "components/Form/Form"
+
 export function Login () {
     return (
-        <div>Login</div>
+        <div>
+            <Form formTitle="Login">
+            </Form>
+        </div>
     )
 }
