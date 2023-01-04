@@ -14,9 +14,11 @@ export const StyledForm = styled.form`
 
     position: relative;
     
-    @media (min-width: 800px) {
-        width: 35%;
+    
+    @media (min-width: 700px) {
+        width: 30%;
     }
+
 
     >img{
         width: 135px;
@@ -35,6 +37,8 @@ export const StyledForm = styled.form`
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        gap: 30px;
     }
 
     header{
