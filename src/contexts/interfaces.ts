@@ -7,3 +7,8 @@ export interface iContextChildrenProps {
 export interface iUserProviderValue {
     
 }
+
+export interface iUserLogin{
+    email: string;
+    password: string;
+}
