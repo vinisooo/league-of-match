@@ -5,5 +5,10 @@ export interface iContextChildrenProps {
 }
 
 export interface iUserProviderValue {
-    
+    login: (data: iUserLogin) => Promise<void>;
 }
+
+export interface iUserLogin{
+    email: string;
+    password: string;
+}4

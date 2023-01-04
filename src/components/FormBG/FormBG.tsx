@@ -8,7 +8,7 @@ interface iFormBGProps{
 }
 
 export function FormBG({imageBG}:iFormBGProps){
-
+    
     return(
         <StyledFormBG>
             <img src={imageBG === "login"? loginBG : registerBG} />
