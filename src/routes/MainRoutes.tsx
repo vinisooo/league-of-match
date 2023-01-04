@@ -1,7 +1,7 @@
-import { Login } from "pages/Login";
-import { MyProfile } from "pages/MyProfile";
-import { Players } from "pages/Players";
-import { Register } from "pages/Register";
+import { Login } from "pages/Login/Login";
+import { MyProfile } from "pages/MyProfile/MyProfile";
+import { Players } from "pages/Players/Players";
+import { Register } from "pages/Register/Register";
 import { Route, Routes } from "react-router-dom";
 
 export function MainRoutes () {
