@@ -1,5 +1,9 @@
+import { Header } from "components/Header/Header"
+
 export function Players () {
     return (
-        <div>Players</div>
+        <div>
+            <Header/>
+        </div>
     )
 }
