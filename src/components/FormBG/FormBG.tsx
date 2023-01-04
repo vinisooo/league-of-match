@@ -14,5 +14,4 @@ export function FormBG({imageBG}:iFormBGProps){
             <img src={imageBG === "login"? loginBG : registerBG} />
         </StyledFormBG>
     )
-    
 }
