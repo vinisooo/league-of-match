@@ -1,6 +1,8 @@
 import { Header } from "components/Header/Header"
 import { UserContext } from "contexts/UserContext"
 import { useContext } from "react"
+import logo from "../../assets/logo.svg";
+import { Link } from "react-router-dom";
 
 export function Players () {
     const {players} = useContext(UserContext)
@@ -33,6 +35,22 @@ export function Players () {
                     ))}
                 </ul>
             </main>
+            <footer>
+                <div>
+                    <div>
+                        <img src={logo} alt="Logo" />
+                        <p>Feito com ❤️ por alunos da Kenzie Academy Brasil</p>
+                    </div>
+                    <div>
+                        <a target="_blank" href="">Gabriel Galvao Pavao - PO</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/bernardo-guimaraes-59aa6320a/">Bernardo Guimaraes Oliveira Nogueira - SM</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/vin%C3%ADcius-lira-a6294b244/">Carlos Vinícius Lira Moreira - QA</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/typhonn003/">Diego Lima - QA</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/mauibuarque/">Maui Andrade Buarque - QA</a>
+                        <a target="_blank" href="">Kaique Amorim Vasconcelos Da Silva - QA</a>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }
