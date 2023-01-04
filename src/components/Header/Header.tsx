@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.svg";
-import { StyledHeaderDashBoard } from "./StyledFormBG";
+import { StyledHeaderDashBoard } from "./StyledHeader";
 import { Link } from "react-router-dom";
 
 export function Header() {
