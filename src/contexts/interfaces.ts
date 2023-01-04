@@ -6,9 +6,20 @@ export interface iContextChildrenProps {
 
 export interface iUserProviderValue {
     login: (data: iUserLogin) => Promise<void>;
+    players: iPlayers[]
 }
 
 export interface iUserLogin{
     email: string;
     password: string;
-}4
+}
+
+export interface iPlayers{
+    email:string;
+    nickname:string;
+    elo:string;
+    route:string:
+    id:number:
+    main:string:
+    bio:string
+}
