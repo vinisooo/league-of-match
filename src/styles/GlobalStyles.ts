@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
         line-height: 1;
         list-style: none;
         box-sizing: border-box;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
     
     body{

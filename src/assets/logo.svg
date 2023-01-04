@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="640"
+   width="2010"
    height="525"
-   viewBox="0 0 169.33333 138.90625"
+   viewBox="0 0 531.81249 138.90625"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="logo_icon.svg"
+   sodipodi:docname="logo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1.0998546"
-     inkscape:cx="80.46518"
-     inkscape:cy="302.76729"
+     inkscape:zoom="0.38885733"
+     inkscape:cx="1006.796"
+     inkscape:cy="92.578943"
      inkscape:window-width="2560"
      inkscape:window-height="1346"
      inkscape:window-x="-11"
@@ -62,30 +62,72 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.1696px;line-height:43.9617px;font-family:'Friz Quadrata';-inkscape-font-specification:'Friz Quadrata Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.183175"
+       x="474.99002"
+       y="38.194038"
+       id="text495-5"
+       inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
+       inkscape:export-xdpi="95.861267"
+       inkscape:export-ydpi="95.861267"><tspan
+         sodipodi:role="line"
+         id="tspan493-8"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.1696px;font-family:'Friz Quadrata';-inkscape-font-specification:'Friz Quadrata Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.183175"
+         x="474.99002"
+         y="38.194038">OF</tspan></text>
     <path
        style="fill:#16db65;fill-opacity:1;stroke:none;stroke-width:0.542389px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 52.066949,80.004865 15.78066,-30.451712 v -7.52047 L 52.560079,28.717763 H 0.90314996 L 29.628849,51.155873 h 15.16423 l -6.28762,8.999882 z"
+       d="m 52.348785,79.246698 15.78066,-30.451712 v -7.52047 L 52.841915,27.959596 H 1.184986 l 28.725699,22.43811 h 15.16423 l -6.28762,8.999882 z"
        id="path1201"
        inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
        inkscape:export-xdpi="95.861267"
        inkscape:export-ydpi="95.861267" />
     <path
        style="fill:#16db65;fill-opacity:1;stroke:none;stroke-width:0.542389px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 116.72966,80.004855 100.94898,49.553123 v -7.52045 l 15.28752,-13.31491 h 51.65691 l -28.72568,22.4381 h -15.16424 l 6.28762,8.999882 z"
+       d="M 117.0115,79.246688 101.23082,48.794956 v -7.52045 l 15.28752,-13.31491 h 51.65691 l -28.72568,22.4381 h -15.16424 l 6.28762,8.999882 z"
        id="path1201-9"
        inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
        inkscape:export-xdpi="95.861267"
        inkscape:export-ydpi="95.861267" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:68.0321px;line-height:85.04px;font-family:'Friz Quadrata';-inkscape-font-specification:'Friz Quadrata Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.354333"
+       x="174.38341"
+       y="53.124153"
+       id="text495"
+       inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
+       inkscape:export-xdpi="95.861267"
+       inkscape:export-ydpi="95.861267"><tspan
+         sodipodi:role="line"
+         id="tspan493"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:68.0321px;font-family:'Friz Quadrata';-inkscape-font-specification:'Friz Quadrata Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.354333"
+         x="174.38341"
+         y="53.124153">LEAGUE </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:100.151px;line-height:1.25;font-family:'Friz Quadrata';-inkscape-font-specification:'Friz Quadrata Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.521622"
+       x="126.80843"
+       y="136.43936"
+       id="text18467"
+       inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
+       inkscape:export-xdpi="95.861267"
+       inkscape:export-ydpi="95.861267"><tspan
+         sodipodi:role="line"
+         id="tspan18465"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:100.151px;font-family:'Friz Quadrata';-inkscape-font-specification:'Friz Quadrata Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.521622"
+         x="126.80843"
+         y="136.43936">MATCH</tspan></text>
     <path
        style="fill:#16db65;fill-opacity:1;stroke:none;stroke-width:0.362718px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 84.397999,136.95704 V 59.698005 h -6.95414 l -14.84977,55.455135 z"
+       d="M 84.679835,136.19887 V 58.939838 h -6.95414 l -14.84977,55.455132 z"
        id="path951"
        inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
        inkscape:export-xdpi="95.861267"
        inkscape:export-ydpi="95.861267" />
     <path
        style="fill:#16db65;fill-opacity:1;stroke:none;stroke-width:0.362718px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 84.397999,136.95704 c -5.48891,-21.39974 -3.79627,-52.982345 0,-77.259035 h 6.95414 l 14.849771,55.455135 z"
+       d="m 84.679835,136.19887 c -5.48891,-21.39974 -3.79627,-52.982342 0,-77.259032 h 6.95414 l 14.849775,55.455132 z"
        id="path951-7"
        sodipodi:nodetypes="ccccc"
        inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
@@ -93,14 +135,14 @@
        inkscape:export-ydpi="95.861267" />
     <path
        style="fill:#16db65;fill-opacity:1;stroke:none;stroke-width:0.362718px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 84.397999,38.172823 V 2.3319737 h -15.51302 l -7.41828,12.9095793 z"
+       d="M 84.679835,37.414656 V 1.5738061 h -15.51302 l -7.41828,12.9095799 z"
        id="path9115"
        inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"
        inkscape:export-xdpi="95.861267"
        inkscape:export-ydpi="95.861267" />
     <path
        style="fill:#16db65;fill-opacity:1;stroke:none;stroke-width:0.362718px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 84.397999,38.172823 c -4.87133,-11.94695 -5.40535,-25.44526 0,-35.8408493 H 99.911024 L 107.3293,15.241553 Z"
+       d="m 84.679835,37.414656 c -4.87133,-11.94695 -5.40535,-25.44526 0,-35.8408499 h 15.513025 l 7.41828,12.9095799 z"
        id="path9115-7"
        sodipodi:nodetypes="ccccc"
        inkscape:export-filename="C:\Users\Diego\Desktop\logo.png"

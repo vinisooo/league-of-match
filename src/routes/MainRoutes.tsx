@@ -12,6 +12,7 @@ export function MainRoutes () {
             <Route path="/register" element={<Register/>}/>
             <Route path="/myprofile" element={<MyProfile/>}/>
             <Route path="/players" element={<Players/>}/>
+            <Route path="*" element={<p>Not Found</p>}/>
         </Routes>
     )
 }
