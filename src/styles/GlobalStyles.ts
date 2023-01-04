@@ -34,9 +34,24 @@ export const GlobalStyles = createGlobalStyle`
 
     button {
         cursor: pointer;
+        transition: 0.3s ease;
     }
 
     :root {
+        --color-black-1: #020202;
+        --color-black-2: #131316;
 
+        --color-grey-1: #26262C;
+        --color-grey-2: #393A41;
+        --color-grey-3: #6A6B70;
+
+        --color-white: #FFFFFF;
+        
+        --color-brand-1: #16db65;
+        --color-brand-2: #058c42;
+        --color-brand-3: #04471c;
+        --color-brand-4: #0D2818;
+
+        --color-error: #ed4337
     }
 `
