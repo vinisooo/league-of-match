@@ -13,6 +13,7 @@ import { LoginSchema } from "contexts/schemas";
 import { useContext } from "react";
 import { UserContext } from "contexts/UserContext";
 
+import "animate.css"
 
 export function Login () {
 
@@ -24,7 +25,7 @@ export function Login () {
     });
     
     return (
-        <LoginPage>
+        <LoginPage className="animate__animated animate__fadeIn">
             <FormBG imageBG="login"/>
             <Form formTitle="Login" callback={handleSubmit(login)}>
                 <InputBox errors={errors.email?.message} label="email" register={register("email")} />
