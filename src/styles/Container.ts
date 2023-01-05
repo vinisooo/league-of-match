@@ -4,9 +4,9 @@ export const StyledContainerPlayers = styled.div`
     width: 100%;
     max-width: 1150px;
     margin: 0 auto;
-    padding: 0 0.6rem;
+    padding: 0 1.2rem;
 
-    img {
+    footer img {
         height: 60px;
     }
 `

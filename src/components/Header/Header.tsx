@@ -7,6 +7,7 @@ export function Header() {
   return (
     <StyledHeader>
       <img src={logo} alt="Logo" />
+
       <button>
         <div></div>
         <div></div>
@@ -14,7 +15,7 @@ export function Header() {
 
       <div>
         <Link to={"/"}>Home</Link>
-        <Link to={"/"}>DashBoard</Link>
+        <Link className="emphasis" to={"/"}>Dashboard</Link>
         <Link to={"/"}>Meu Perfil</Link>
         <Link to={"/"}>Sair</Link>
       </div>
