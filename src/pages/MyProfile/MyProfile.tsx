@@ -26,7 +26,6 @@ interface character {
 }
 
 export function MyProfile() {
-
   const { user, loadUser } = useContext(UserContext);
   const [characters, setCharacters] = useState([]);
 
@@ -81,11 +80,6 @@ export function MyProfile() {
                 <label>Nickname</label>
 
                 <input type="text" value={user?.nickname} disabled />
-                <input
-                  type="text"
-                  value={user?.nickname}
-                  disabled
-                 />
               </div>
 
               <button type="button">
@@ -97,11 +91,6 @@ export function MyProfile() {
               <div>
                 <label>Bio</label>
                 <input type="text" value={user?.bio} disabled />
-                <input
-                  type="text"
-                  value={user?.bio}
-                  disabled
-                />
               </div>
 
               <button type="button">
@@ -113,11 +102,6 @@ export function MyProfile() {
               <div>
                 <label>Elo</label>
                 <input type="text" value={user?.elo} disabled />
-                <input
-                  type="text"
-                  value={user?.elo}
-                  disabled
-                />
               </div>
 
               <button type="button">
@@ -129,11 +113,6 @@ export function MyProfile() {
               <div>
                 <label>Rota de prederência</label>
                 <input type="text" value={user?.route} disabled />
-                <input
-                  type="text"
-                  value={user?.route}
-                  disabled
-                />
               </div>
 
               <button type="button">
@@ -145,11 +124,6 @@ export function MyProfile() {
               <div>
                 <label>Discord</label>
                 <input type="text" value={user?.discord} disabled />
-                <input
-                  type="text"
-                  value={user?.discord}
-                  disabled
-                />
               </div>
 
               <button type="button">

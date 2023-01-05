@@ -48,12 +48,6 @@ export function UserProvider({ children }: iContextChildrenProps) {
       toast.success("Logado com sucesso");
 
       navigate("/players");
-      localStorage.setItem(
-        "@league-of-match: logged-user",
-        JSON.stringify(request.data)
-        );
-        toast.success("Logado com sucesso");
-
 
     } catch (err) {
       toast.error("Email ou senha incorretos");
