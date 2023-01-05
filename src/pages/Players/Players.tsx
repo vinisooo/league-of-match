@@ -1,3 +1,5 @@
+
+import { UserCard } from "components/UserCard/UserCard"
 import { Header } from "components/Header/Header"
 import { UserContext } from "contexts/UserContext"
 import { useContext } from "react"
@@ -9,6 +11,7 @@ export function Players () {
 
 
     return (
+        <UserCard />
         <div>
             <Header/>
             <section>
