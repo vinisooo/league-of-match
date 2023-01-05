@@ -12,5 +12,4 @@ export const LoginPage = styled.div`
         
         justify-content: space-between;
     }
-
 `
