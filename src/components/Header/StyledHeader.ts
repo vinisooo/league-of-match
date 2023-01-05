@@ -1,10 +1,9 @@
 import styled  from "styled-components";
 
-export const StyledHeaderDashBoard = styled.header`
+export const StyledHeader = styled.header`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
 
     img{
         width: 50%;

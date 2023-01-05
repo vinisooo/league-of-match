@@ -1,10 +1,11 @@
 import logo from "../../assets/logo.svg";
-import { StyledHeaderDashBoard } from "./StyledHeader";
+import { StyledHeader } from "./StyledHeader";
 import { Link } from "react-router-dom";
 
 export function Header() {
+  
   return (
-    <StyledHeaderDashBoard>
+    <StyledHeader>
       <img src={logo} alt="Logo" />
       <button>
         <div></div>
@@ -17,6 +18,6 @@ export function Header() {
         <Link to={"/"}>Meu Perfil</Link>
         <Link to={"/"}>Sair</Link>
       </div>
-    </StyledHeaderDashBoard>
+    </StyledHeader>
   );
 }
