@@ -32,7 +32,7 @@ export const StyledInputBox = styled.fieldset`
     label{
         color: var(--color-grey-3);
         position: absolute;
-
+        pointer-events: none;
         left: 10px;
         top: 7px;
 

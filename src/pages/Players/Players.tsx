@@ -9,6 +9,7 @@ import { Footer } from "components/Footer/Footer";
 export function Players() {
   const { players } = useContext(UserContext);
 
+  console.log(players)
   return (
     <>
       <StyledContainerPlayers>
