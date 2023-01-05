@@ -47,8 +47,8 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
       toast.success("Logado com sucesso");
 
+      setUser(request.data.accessToken)
       navigate("/players");
-
     } catch (err) {
       toast.error("Email ou senha incorretos");
       console.log(err);
@@ -57,7 +57,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
   async function getAllPlayers() {
     try {
-      const token = localStorage.getItem("@league-of-match: bearer-token");
+      const token = localStorage.getItem("@league-of-match: token");
       if (token) {
         const response = await api.get("/users", {
           headers: {
