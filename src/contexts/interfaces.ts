@@ -17,7 +17,6 @@ export interface iUserLogin {
   password: string;
 }
 
-
 export interface iPlayers {
   email: string;
   nickname: string;
@@ -29,5 +28,13 @@ export interface iPlayers {
   profileIcon?: string;
   discord?: string;
 }
+export interface iUserRegister {
+  email: string;
+  password: string;
+  confirmPassword: string;
+  nickname: string;
+  elo: string;
+  route: string;
+}
 
-
+registerUser: (data: iUserRegister) => Promise<void>;
