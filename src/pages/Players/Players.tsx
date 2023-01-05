@@ -9,6 +9,7 @@ import { StyledContainerPlayers } from "styles/Container";
 export function Players() {
   const { players } = useContext(UserContext);
 
+  console.log(players)
   return (
     <StyledContainerPlayers>
       <Header />
