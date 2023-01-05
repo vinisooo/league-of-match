@@ -32,6 +32,10 @@ export const GlobalStyles = createGlobalStyle`
         color: #ffffff;
     }
 
+    a {
+        text-decoration: none;
+    }
+    
     button {
         cursor: pointer;
         transition: 0.3s ease;
