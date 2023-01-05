@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import {
@@ -11,14 +11,15 @@ import {
   Aside,
 } from "./styles";
 
-import ImgTest from "../../assets/register-bg.png";
+import ImgBackground from "../../assets/register-bg.png";
 import ImgEdit from "../../assets/edit.svg";
 import ImgSearch from "../../assets/search.svg";
-import ImgX from "../../assets/login-bg.png";
+import ImgProfile from "../../assets/login-bg.png";
 
 import { Header } from "components/Header/Header";
 import { icons } from "./icons";
 import { api } from "services/api";
+import { UserContext } from "contexts/UserContext";
 
 interface character {
   icon: "string";
@@ -26,22 +27,23 @@ interface character {
 }
 
 export function MyProfile() {
-  const getUserLocalStorageJSON = localStorage.getItem(
-    "@league-of-match: logged-user"
-  );
+  //   const getUserLocalStorageJSON = localStorage.getItem(
+  //     "@league-of-match: logged-user"
+  //   );
 
-  const getUserLocalStorage = JSON.parse(getUserLocalStorageJSON!);
+  //   const getUserLocalStorage = JSON.parse(getUserLocalStorageJSON!);
 
-  const user = getUserLocalStorage.user;
+  //   const user = getUserLocalStorage.user;
 
+  const { user, setUser, loadUser } = useContext(UserContext);
   const { register, handleSubmit } = useForm({
-    defaultValues: {
-      nickname: user.nickname,
-      bio: user.bio,
-      elo: user.elo,
-      route: user.route,
-      discord: user.discord,
-    },
+    // defaultValues: {
+    //   nickname: user?.nickname,
+    //   bio: user?.bio,
+    //   elo: user?.elo,
+    //   route: user?.route,
+    //   discord: user?.discord,
+    // },
   });
 
   const [characters, setCharacters] = useState([]);
@@ -54,17 +56,39 @@ export function MyProfile() {
     getCharacters();
   }, []);
 
+  async function changeProfileIcon(img: string) {
+    const id = localStorage.getItem("@league-of-match: id");
+
+    const data = {
+      profileIcon: img,
+    };
+
+    try {
+      await api.patch(`/users/${id}`, data);
+
+      loadUser();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <>
       <Header />
       <Container>
-        <Aside url={ImgTest}>
+        <Aside url={ImgBackground}>
           <WrapperProfile>
-            <div>
-              <img src={ImgX} alt="" />
-            </div>
+            {user?.profileIcon ? (
+              <div>
+                <img src={user?.profileIcon} alt="" />
+              </div>
+            ) : (
+              <div>
+                <img src={ImgProfile} alt="" />
+              </div>
+            )}
 
-            <p>{user.nickname}</p>
+            <p>{user && user.nickname}</p>
           </WrapperProfile>
         </Aside>
 
@@ -73,7 +97,12 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Nickname</label>
-                <input type="text" disabled {...register("nickname")} />
+                <input
+                  type="text"
+                  value={user?.nickname}
+                  disabled
+                  {...register("nickname")}
+                />
               </div>
 
               <button type="button">
@@ -84,7 +113,12 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Bio</label>
-                <input type="text" disabled {...register("bio")} />
+                <input
+                  type="text"
+                  value={user?.bio}
+                  disabled
+                  {...register("bio")}
+                />
               </div>
 
               <button type="button">
@@ -95,7 +129,12 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Elo</label>
-                <input type="text" disabled {...register("elo")} />
+                <input
+                  type="text"
+                  value={user?.elo}
+                  disabled
+                  {...register("elo")}
+                />
               </div>
 
               <button type="button">
@@ -106,7 +145,12 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Rota de prederência</label>
-                <input type="text" disabled {...register("route")} />
+                <input
+                  type="text"
+                  value={user?.route}
+                  disabled
+                  {...register("route")}
+                />
               </div>
 
               <button type="button">
@@ -117,7 +161,12 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Discord</label>
-                <input type="text" disabled {...register("discord")} />
+                <input
+                  type="text"
+                  value={user?.discord}
+                  disabled
+                  {...register("discord")}
+                />
               </div>
 
               <button type="button">
@@ -133,7 +182,10 @@ export function MyProfile() {
               <ul>
                 {icons.map((icon, index) => (
                   <ButtonIcon key={index}>
-                    <button type="button">
+                    <button
+                      onClick={() => changeProfileIcon(icon)}
+                      type="button"
+                    >
                       <img src={icon} alt="" />
                     </button>
                   </ButtonIcon>
@@ -157,7 +209,7 @@ export function MyProfile() {
                 {characters.map((character: character, index) => (
                   <ButtonIcon key={index}>
                     <button type="button">
-                      <img src={character.icon} alt="" />
+                      <img src={character.icon} alt={character.name} />
                     </button>
                   </ButtonIcon>
                 ))}
