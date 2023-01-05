@@ -22,6 +22,7 @@ export const DivSelect = styled.div`
 
 export const SelectRegister = styled.select`
   height: 49px;
+  width: 49%;
   background-color: transparent;
   border: 2px solid var(--color-grey-3);
   color: var(--color-grey-3);

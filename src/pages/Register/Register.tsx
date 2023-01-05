@@ -25,9 +25,11 @@ export function Register() {
   } = useForm<iUserRegister>({
     resolver: yupResolver(RegisterSchema),
   });
+  const onSubmit = handleSubmit(registerUser);
+  console.log(errors);
   return (
     <RegisterPage>
-      <Form formTitle="Cadastrar" left callback={handleSubmit(registerUser)}>
+      <Form formTitle="Cadastrar" left callback={onSubmit}>
         <InputBox
           errors={errors.email?.message}
           label="Email"
@@ -36,11 +38,13 @@ export function Register() {
         <InputBox
           errors={errors.password?.message}
           label="Senha"
+          type="password"
           register={register("password")}
         />
         <InputBox
           errors={errors.confirmPassword?.message}
           label="Confimar Senha"
+          type="password"
           register={register("confirmPassword")}
         />
         <InputBox
@@ -49,7 +53,7 @@ export function Register() {
           register={register("nickname")}
         />
         <DivSelect>
-          <SelectRegister>
+          <SelectRegister {...register("elo")}>
             <OptionRegister>Selecione seu elo</OptionRegister>
             <OptionRegister>Ferro</OptionRegister>
             <OptionRegister>Bronze</OptionRegister>
@@ -61,7 +65,7 @@ export function Register() {
             <OptionRegister>Grão-Mestre</OptionRegister>
             <OptionRegister>Desafiante</OptionRegister>
           </SelectRegister>
-          <SelectRegister>
+          <SelectRegister {...register("route")}>
             <OptionRegister>Sua rota preferida</OptionRegister>
             <OptionRegister>TopLane</OptionRegister>
             <OptionRegister>MidLane</OptionRegister>
