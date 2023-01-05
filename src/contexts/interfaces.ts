@@ -18,8 +18,8 @@ export interface iPlayers{
     email:string;
     nickname:string;
     elo:string;
-    route:string:
-    id:number:
-    main:string:
+    route:string;
+    id:number;
+    main:string;
     bio:string
 }

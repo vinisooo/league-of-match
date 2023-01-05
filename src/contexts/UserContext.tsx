@@ -7,6 +7,7 @@ import {
 import { api } from "services/api";
 import { iUserLogin } from "./interfaces";
 import { toast } from "react-toastify";
+import { request } from "http";
 
 export const UserContext = createContext({} as iUserProviderValue);
 
@@ -20,8 +21,9 @@ export function UserProvider({ children }: iContextChildrenProps) {
       localStorage.setItem(
         "@league-of-match: logged-user",
         JSON.stringify(request.data)
-      );
-      toast.success("Logado com sucesso");
+        );
+        toast.success("Logado com sucesso");
+        setPlayers(request.data.ac)
     } catch (err) {
       toast.error("Email ou senha incorretos");
       console.log(err);
