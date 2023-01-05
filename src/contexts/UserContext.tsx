@@ -7,23 +7,54 @@ import {
 import { api } from "services/api";
 import { iUserLogin } from "./interfaces";
 import { toast } from "react-toastify";
-import { request } from "http";
+import { useNavigate } from "react-router";
 
 export const UserContext = createContext({} as iUserProviderValue);
 
 export function UserProvider({ children }: iContextChildrenProps) {
+  const navigate = useNavigate();
+
   const [players, setPlayers] = useState<iPlayers[]>([]);
+  const [user, setUser] = useState<iPlayers | undefined>();
+
+  useEffect(() => {
+    loadUser();
+  }, []);
+
+  async function loadUser() {
+    const token = localStorage.getItem("@league-of-match: token");
+    const id = localStorage.getItem("@league-of-match: id");
+    if (token) {
+      try {
+        api.defaults.headers.authorization = `Bearer ${token}`;
+        const { data } = await api.get(`/users/${id}`);
+        setUser(data);
+      } catch (error) {
+        console.log(error);
+        window.localStorage.clear();
+      }
+    }
+  }
 
   async function login(data: iUserLogin) {
     try {
       const request = await api.post("/login", data);
 
+
+      localStorage.setItem("@league-of-match: token", request.data.accessToken);
+      localStorage.setItem("@league-of-match: id", request.data.user.id);
+
+      setUser(request.data.user);
+
+      toast.success("Logado com sucesso");
+
+      navigate("/myprofile");
       localStorage.setItem(
         "@league-of-match: logged-user",
         JSON.stringify(request.data)
         );
         toast.success("Logado com sucesso");
-        setPlayers(request.data.ac)
+
     } catch (err) {
       toast.error("Email ou senha incorretos");
       console.log(err);
@@ -52,7 +83,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
   }, []);
 
   return (
-    <UserContext.Provider value={{ login, players }}>
+    <UserContext.Provider value={{ login, players, user, setUser, loadUser }}>
       {children}
     </UserContext.Provider>
   );
