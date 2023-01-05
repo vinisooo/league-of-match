@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface AsideProps {
+  url: string;
+}
+
 export const Container = styled.div`
   width: 100%;
   padding-top: 1.5rem;
@@ -7,21 +11,51 @@ export const Container = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 
-  aside {
-    width: 40%;
-
-    div {
-      width: 100%;
-      img {
-        width: 100%;
-        height: 100vh;
-      }
-    }
-  }
-
   main {
     width: 50%;
     padding-right: 2rem;
+  }
+`;
+
+export const Aside = styled.aside<AsideProps>`
+  width: 40%;
+  height: 100vh;
+  background-image: ${({ url }) => `url(${url})`};
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const WrapperProfile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--color-black-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: calc(5rem - 2px);
+      height: calc(5rem - 2px);
+      border-radius: 50%;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-brand-1);
+    padding: 0.5rem 0;
   }
 `;
 
@@ -99,7 +133,7 @@ export const SectionMain = styled.section`
 
   div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 
     p {

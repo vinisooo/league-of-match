@@ -4,6 +4,8 @@ import {
   SectionChooseIcons,
   ButtonIcon,
   SectionMain,
+  WrapperProfile,
+  Aside,
 } from "./styles";
 import ImgTest from "../../assets/register-bg.png";
 import ImgEdit from "../../assets/edit.svg";
@@ -13,11 +15,15 @@ import ImgX from "../../assets/login-bg.png";
 export function MyProfile() {
   return (
     <Container>
-      <aside>
-        <div>
-          <img src={ImgTest} alt="" />
-        </div>
-      </aside>
+      <Aside url={ImgTest}>
+        <WrapperProfile>
+          <div>
+            <img src={ImgX} alt="" />
+          </div>
+
+          <p>Meu nome</p>
+        </WrapperProfile>
+      </Aside>
 
       <main>
         <form action="">
