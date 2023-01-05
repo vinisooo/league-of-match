@@ -12,6 +12,7 @@ export function Players() {
   return (
     <StyledContainerPlayers>
       <Header />
+      
       <section>
         <input type="text" placeholder="Pesquisar usuário" />
         <div>
@@ -23,6 +24,7 @@ export function Players() {
           </select>
         </div>
       </section>
+
       <main>
         <ul>
           {players.map((elem) => (
@@ -36,6 +38,7 @@ export function Players() {
           ))}
         </ul>
       </main>
+      
       <footer>
         <div>
           <div>
@@ -71,8 +74,8 @@ export function Players() {
               Kaique Amorim Vasconcelos Da Silva - QA
             </a>
           </div>
-        </StyledContainerPlayers>
+        </div>
       </footer>
-    </div>
+    </StyledContainerPlayers>    
   );
 }
