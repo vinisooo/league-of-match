@@ -28,6 +28,7 @@ export interface iPlayers {
   profileIcon?: string;
   discord?: string;
 }
+
 export interface iUserRegister {
   email: string;
   password: string;
@@ -38,3 +39,4 @@ export interface iUserRegister {
 }
 
 registerUser: (data: iUserRegister) => Promise<void>;
+

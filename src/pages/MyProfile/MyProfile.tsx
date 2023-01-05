@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 
 import {
   Container,
@@ -27,25 +26,8 @@ interface character {
 }
 
 export function MyProfile() {
-  //   const getUserLocalStorageJSON = localStorage.getItem(
-  //     "@league-of-match: logged-user"
-  //   );
 
-  //   const getUserLocalStorage = JSON.parse(getUserLocalStorageJSON!);
-
-  //   const user = getUserLocalStorage.user;
-
-  const { user, setUser, loadUser } = useContext(UserContext);
-  const { register, handleSubmit } = useForm({
-    // defaultValues: {
-    //   nickname: user?.nickname,
-    //   bio: user?.bio,
-    //   elo: user?.elo,
-    //   route: user?.route,
-    //   discord: user?.discord,
-    // },
-  });
-
+  const { user, loadUser } = useContext(UserContext);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -97,12 +79,13 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Nickname</label>
+
+                <input type="text" value={user?.nickname} disabled />
                 <input
                   type="text"
                   value={user?.nickname}
                   disabled
-                  {...register("nickname")}
-                />
+                 />
               </div>
 
               <button type="button">
@@ -113,11 +96,11 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Bio</label>
+                <input type="text" value={user?.bio} disabled />
                 <input
                   type="text"
                   value={user?.bio}
                   disabled
-                  {...register("bio")}
                 />
               </div>
 
@@ -129,11 +112,11 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Elo</label>
+                <input type="text" value={user?.elo} disabled />
                 <input
                   type="text"
                   value={user?.elo}
                   disabled
-                  {...register("elo")}
                 />
               </div>
 
@@ -145,11 +128,11 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Rota de prederência</label>
+                <input type="text" value={user?.route} disabled />
                 <input
                   type="text"
                   value={user?.route}
                   disabled
-                  {...register("route")}
                 />
               </div>
 
@@ -161,11 +144,11 @@ export function MyProfile() {
             <Input>
               <div>
                 <label>Discord</label>
+                <input type="text" value={user?.discord} disabled />
                 <input
                   type="text"
                   value={user?.discord}
                   disabled
-                  {...register("discord")}
                 />
               </div>
 
