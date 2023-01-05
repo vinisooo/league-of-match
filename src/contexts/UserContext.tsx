@@ -40,6 +40,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
     try {
       const request = await api.post("/login", data);
 
+
       localStorage.setItem("@league-of-match: token", request.data.accessToken);
       localStorage.setItem("@league-of-match: id", request.data.user.id);
 
@@ -48,6 +49,12 @@ export function UserProvider({ children }: iContextChildrenProps) {
       toast.success("Logado com sucesso");
 
       navigate("/myprofile");
+      localStorage.setItem(
+        "@league-of-match: logged-user",
+        JSON.stringify(request.data)
+        );
+        toast.success("Logado com sucesso");
+
     } catch (err) {
       toast.error("Email ou senha incorretos");
       console.log(err);

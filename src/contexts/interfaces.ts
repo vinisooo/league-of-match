@@ -17,6 +17,7 @@ export interface iUserLogin {
   password: string;
 }
 
+
 export interface iPlayers {
   email: string;
   nickname: string;
@@ -28,3 +29,5 @@ export interface iPlayers {
   profileIcon?: string;
   discord?: string;
 }
+
+

@@ -4,13 +4,16 @@ import { UserContext } from "contexts/UserContext";
 import { useContext } from "react";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
+import { StyledContainerPlayers } from "styles/Container";
 
 export function Players() {
   const { players } = useContext(UserContext);
 
+  console.log(players)
   return (
-    <div>
+    <StyledContainerPlayers>
       <Header />
+      
       <section>
         <input type="text" placeholder="Pesquisar usuário" />
         <div>
@@ -22,6 +25,7 @@ export function Players() {
           </select>
         </div>
       </section>
+
       <main>
         <ul>
           {players.map((elem) => (
@@ -35,6 +39,7 @@ export function Players() {
           ))}
         </ul>
       </main>
+      
       <footer>
         <div>
           <div>
@@ -72,6 +77,6 @@ export function Players() {
           </div>
         </div>
       </footer>
-    </div>
+    </StyledContainerPlayers>    
   );
 }

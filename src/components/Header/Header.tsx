@@ -1,22 +1,38 @@
 import logo from "../../assets/logo.svg";
-import { StyledHeaderDashBoard } from "./StyledHeader";
+import { StyledHeader } from "./StyledHeader";
 import { Link } from "react-router-dom";
 
 export function Header() {
+  
   return (
-    <StyledHeaderDashBoard>
-      <img src={logo} alt="Logo" />
+    <StyledHeader>
+      <img src={logo} alt="Logo do Site" />
+
       <button>
-        <div></div>
-        <div></div>
+        <span></span>
+        <span></span>
       </button>
 
-      <div>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/"}>DashBoard</Link>
-        <Link to={"/"}>Meu Perfil</Link>
-        <Link to={"/"}>Sair</Link>
-      </div>
-    </StyledHeaderDashBoard>
+      <nav>
+        <ul>
+          <li>
+            <Link to={"/"}>Home</Link>
+          </li>
+
+          <li>
+            <Link className="emphasis" to={"/players"}>Dashboard</Link>
+          </li>
+
+          <li>
+            <Link to={"/myprofile"}>Meu Perfil</Link>
+          </li>
+
+          <li>
+            <Link to={"/login"}>Sair</Link>
+          </li>
+        </ul>
+      </nav>
+
+    </StyledHeader>
   );
 }
