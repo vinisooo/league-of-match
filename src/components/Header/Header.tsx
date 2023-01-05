@@ -1,5 +1,4 @@
 import logo from "../../assets/logo.svg";
-import menuIcon from "../../assets/menu-icon.svg";
 import { StyledHeader } from "./StyledHeader";
 import { Link } from "react-router-dom";
 
@@ -9,7 +8,10 @@ export function Header() {
     <StyledHeader>
       <img src={logo} alt="Logo do Site" />
 
-      <img src={menuIcon} alt="Menu de Navegação" />
+      <button>
+        <span></span>
+        <span></span>
+      </button>
 
       <nav>
         <ul>

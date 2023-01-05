@@ -12,41 +12,38 @@ export const StyledHeader = styled.header`
         height: 35px;
     }
 
+    nav {
+        display: none;
+    }
 
     button{
         background-color: transparent;
         border: none;
-
         display: flex;
         flex-direction: column;
-
         align-items: center;
         gap: 10px;
     }
 
-    button div{
+    button span{
+        background-color: white;
         height: 3px;
         width: 40px;
-        background-color: white;
-        transition: 0.3s ease;
+        transition: 0.4s ease;
     }
     
-    button:hover div{
+    button:hover span{
         transform: rotate(45deg) translateY(10px);
     }
-    :hover div + div{
-        transform: rotate(-45deg) translateY(10px);
-    }
 
-    > div{
-        display: none;
+    button:hover span + span{
+        transform: rotate(-45deg) translateY(-8px);
     }
 
 
     @media (min-width: 700px){
         height: 80px;
 
-        
         img{
             height: 40px;
         }
@@ -54,8 +51,12 @@ export const StyledHeader = styled.header`
         button{
             display: none;
         }
-
-        div{
+        
+        nav {
+            display: unset;
+        }
+        
+        ul{
             display: flex;
             gap: 50px;
             
@@ -64,7 +65,7 @@ export const StyledHeader = styled.header`
                 font-weight: 300;
                 color: var(--color-white);
             }
-
+    
             .emphasis{
                 color: var(--color-brand-1);
                 border-bottom: 1px solid var(--color-brand-1);
