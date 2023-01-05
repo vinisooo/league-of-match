@@ -47,7 +47,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
       toast.success("Logado com sucesso");
 
-      navigate("/myprofile");
+      navigate("/players");
       localStorage.setItem(
         "@league-of-match: logged-user",
         JSON.stringify(request.data)
