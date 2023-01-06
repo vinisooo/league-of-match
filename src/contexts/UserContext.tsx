@@ -16,22 +16,35 @@ export function UserProvider({ children }: iContextChildrenProps) {
   const navigate = useNavigate();
 
   const [players, setPlayers] = useState<iPlayers[]>([]);
-  const [user, setUser] = useState<iPlayers | undefined>();
+  const [user, setUser] = useState({} as iPlayers);
+  const [loading, setLoading] = useState(true);
 
-  async function loadUser() {
-    const token = localStorage.getItem("@league-of-match: token");
-    const id = localStorage.getItem("@league-of-match: id");
-    if (token) {
+  useEffect(() => {
+    async function loadUser() {
+      const token = localStorage.getItem("@league-of-match: token");
+      const id = localStorage.getItem("@league-of-match: id");
+
+      if (!token) {
+        setLoading(false);
+        return;
+      }
+
       try {
-        api.defaults.headers.authorization = `Bearer ${token}`;
-        const { data } = await api.get(`/users/${id}`);
+        const { data } = await api.patch(`/users/${id}`, user, {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        });
         setUser(data);
       } catch (error) {
         console.log(error);
-        window.localStorage.clear();
+      } finally {
+        setLoading(false);
       }
     }
-  }
+
+    loadUser();
+  }, []);
 
   async function login(data: iUserLogin) {
     try {
@@ -42,15 +55,9 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
       setUser(request.data.user);
 
-      navigate("/myprofile");
-      localStorage.setItem(
-        "@league-of-match: logged-user",
-        JSON.stringify(request.data)
-      );
       toast.success("Logado com sucesso");
-      setUser(request.data.accessToken)
-      navigate("/players");
 
+      navigate("/players");
     } catch (err) {
       toast.error("Email ou senha incorretos");
       console.log(err);
@@ -84,13 +91,18 @@ export function UserProvider({ children }: iContextChildrenProps) {
     }
   }
 
-  useEffect(() => {
-    
-    loadUser();
-  }, []);
-
   return (
-    <UserContext.Provider value={{ login, players, user, setUser, loadUser, getAllPlayers,registerUser }}>
+    <UserContext.Provider
+      value={{
+        login,
+        players,
+        user,
+        loading,
+        getAllPlayers,
+        registerUser,
+        setUser,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
