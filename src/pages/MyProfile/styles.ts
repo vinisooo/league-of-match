@@ -14,6 +14,7 @@ export const Container = styled.div`
   main {
     width: 50%;
     padding-right: 2rem;
+    margin-top: 100px;
   }
 `;
 

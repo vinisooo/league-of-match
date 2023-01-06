@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { StyledContainerPlayers } from "styles/Container";
 
 import {
   Container,
