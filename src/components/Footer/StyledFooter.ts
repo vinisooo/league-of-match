@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-    background-color: var(--color-black-1);
+    margin-top: 50px;
     padding: 35px 0;
+    background-color: var(--color-black-1);
     font-size: 10px;
     font-weight: 600;
     color: var(--color-grey-3);

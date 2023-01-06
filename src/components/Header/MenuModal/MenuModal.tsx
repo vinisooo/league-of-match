@@ -1,7 +1,6 @@
 import { NavList } from "../NavList/NavList";
 import { StyledMenuModal } from "./StyledMenuModal";
 import logo from "assets/logo.svg";
-
 import "animate.css"
 
 export function MenuModal () {
@@ -11,7 +10,7 @@ export function MenuModal () {
             <section className="animate__animated animate__fadeInRight">
                 <NavList/>
                 
-                <img src={logo} alt="" />
+                <img src={logo} alt="Logo do Site" />
             </section>
         </StyledMenuModal>
     )
