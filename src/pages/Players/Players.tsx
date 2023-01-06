@@ -1,18 +1,21 @@
 import { UserCard } from "components/UserCard/UserCard";
 import { Header } from "components/Header/Header";
 import { UserContext } from "contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { StyledContainerPlayers } from "styles/Container";
 import { Footer } from "components/Footer/Footer";
 
 export function Players() {
+
   const { players } = useContext(UserContext);
+
+  const [mobMenu, setMobMenu] = useState(false);
 
   console.log(players)
   return (
     <>
       <StyledContainerPlayers>
-        <Header />
+        <Header mobMenu={mobMenu} setMobMenu={setMobMenu}/>
         
         <section>
           <input type="text" placeholder="Pesquisar usuário" />

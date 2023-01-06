@@ -34,11 +34,11 @@ export const StyledHeader = styled.header`
         transition: 0.4s ease;
     }
     
-    button:hover span{
+    .close-modal-icon span{
         transform: rotate(45deg) translateY(10px);
     }
 
-    button:hover span + span{
+    .close-modal-icon span + span{
         transform: rotate(-45deg) translateY(-8px);
     }
 

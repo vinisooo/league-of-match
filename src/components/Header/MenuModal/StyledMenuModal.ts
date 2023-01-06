@@ -19,6 +19,8 @@ export const StyledMenuModal = styled.div`
         align-items: flex-end;
         justify-content: space-between;
         background-color: var(--color-black-2);
+
+        animation-duration: 0.4s;
     }
     
     img {
