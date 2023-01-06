@@ -11,6 +11,7 @@ export interface iUserProviderValue {
   user: iPlayers | undefined;
   setUser: React.Dispatch<React.SetStateAction<iPlayers | undefined>>;
   loadUser: () => void;
+  getAllPlayers: ()=> void;
 }
 
 export interface iUserLogin {
@@ -24,7 +25,10 @@ export interface iPlayers {
   elo: string;
   route: string;
   id: number;
-  main?: string;
+  main?: {
+    name: string;
+    card: string;
+  };
   bio?: string;
   profileIcon?: string;
   discord?: string;

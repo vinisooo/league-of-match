@@ -93,9 +93,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
   }, []);
 
   return (
-    <UserContext.Provider
-      value={{ login, players, user, setUser, loadUser, registerUser }}
-    >
+    <UserContext.Provider value={{ login, players, user, setUser, loadUser, getAllPlayers,registerUser }}>
       {children}
     </UserContext.Provider>
   );

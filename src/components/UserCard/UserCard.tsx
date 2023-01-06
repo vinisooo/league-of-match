@@ -1,34 +1,29 @@
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
 import { StyledCard } from "./StyledUserCard";
+import { iPlayers } from "contexts/interfaces";
 
-interface iUserCard {
-  nickname: string,
-  elo: string,
-  route: string,
-  bio: string,
-  icon: string,
-  main: {
-    name: string,
-    card: string
-  }
+interface iUserProps{
+  user: iPlayers;
 }
 
-export function UserCard({nickname, elo, route, bio, icon, main}: iUserCard) {
+export function UserCard({user}:iUserProps) {
+
+  console.log(user.profileIcon)
   return (
     <StyledCard>
       <div className="main_img">
-        <img src={main.card} alt={`Foto do personagem ${main.name}`} />
+        <img src={user.main?.card} alt={`Foto do personagem ${user.main?.name}`} />
       </div>
       <div className="user_icon">
-        <img src={icon} alt={`Icone do ${nickname}`} />
+        <img src={user.profileIcon} alt={`Icone do ${user.nickname}`} />
       </div>
       <div className="user_info">
         <div className="info_persona">
-          <h2>{nickname}</h2>
-          <span>{main.name} | {elo} | {route}</span>
+          <h2>{user.nickname}</h2>
+          <span>{user.main?.name} | {user.elo} | {user.route}</span>
         </div>
         <div className="info_bio">
-          <p>{bio}</p>
+          <p>{user.bio}</p>
         </div>
         <div className="info_btns">
           <DefaultBtn size="40%" green>Vamos Jogar!</DefaultBtn>
@@ -38,3 +33,16 @@ export function UserCard({nickname, elo, route, bio, icon, main}: iUserCard) {
     </StyledCard>
   );
 }
+
+
+// interface iUser {
+//   nickname: string,
+//   elo: string,
+//   route: string,
+//   bio: string,
+//   icon: string,
+//   main: {
+//     name: string,
+//     card: string
+//   }
+// }

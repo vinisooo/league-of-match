@@ -8,6 +8,8 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
 
+    z-index: 5;
+
     img{
         height: 35px;
     }

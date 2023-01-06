@@ -26,7 +26,7 @@ interface character {
 }
 
 export function MyProfile() {
-  const { user, loadUser } = useContext(UserContext);
+  const { user, loadUser, getAllPlayers } = useContext(UserContext);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -48,6 +48,7 @@ export function MyProfile() {
       await api.patch(`/users/${id}`, data);
 
       loadUser();
+      getAllPlayers();
     } catch (error) {
       console.error(error);
     }
