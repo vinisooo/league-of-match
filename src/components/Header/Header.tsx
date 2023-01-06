@@ -3,12 +3,17 @@ import { StyledHeader } from "./StyledHeader";
 import { NavList } from "./NavList/NavList";
 import { MenuModal } from "./MenuModal/MenuModal";
 import { useState } from "react";
+import disableScroll from 'disable-scroll';
 
 
 
 export function Header() {
-  
   const [mobMenu, setMobMenu] = useState(false);
+  if (mobMenu) {
+    disableScroll.on();
+  } else {
+    disableScroll.off();
+  }
 
   return (
     <>

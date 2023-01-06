@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     z-index: 5;
 
     img{
