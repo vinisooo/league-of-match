@@ -6,6 +6,7 @@ export interface iContextChildrenProps {
 
 export interface iUserProviderValue {
   login: (data: iUserLogin) => Promise<void>;
+  registerUser: (data: iUserRegister) => Promise<void>;
   players: iPlayers[];
   user: iPlayers | undefined;
   setUser: React.Dispatch<React.SetStateAction<iPlayers | undefined>>;
@@ -28,6 +29,7 @@ export interface iPlayers {
   profileIcon?: string;
   discord?: string;
 }
+
 export interface iUserRegister {
   email: string;
   password: string;
@@ -36,5 +38,3 @@ export interface iUserRegister {
   elo: string;
   route: string;
 }
-
-registerUser: (data: iUserRegister) => Promise<void>;

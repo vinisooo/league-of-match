@@ -3,6 +3,7 @@ import {
   iContextChildrenProps,
   iPlayers,
   iUserProviderValue,
+  iUserRegister,
 } from "./interfaces";
 import { api } from "services/api";
 import { iUserLogin } from "./interfaces";
@@ -40,7 +41,6 @@ export function UserProvider({ children }: iContextChildrenProps) {
     try {
       const request = await api.post("/login", data);
 
-
       localStorage.setItem("@league-of-match: token", request.data.accessToken);
       localStorage.setItem("@league-of-match: id", request.data.user.id);
 
@@ -52,12 +52,21 @@ export function UserProvider({ children }: iContextChildrenProps) {
       localStorage.setItem(
         "@league-of-match: logged-user",
         JSON.stringify(request.data)
-        );
-        toast.success("Logado com sucesso");
-
+      );
+      toast.success("Logado com sucesso");
     } catch (err) {
       toast.error("Email ou senha incorretos");
       console.log(err);
+    }
+  }
+
+  async function registerUser(data: iUserRegister) {
+    try {
+      const request = await api.post("/register", data);
+      toast.success("Usuário registrado com sucesso");
+    } catch (error) {
+      toast.error("Registro não efetuado");
+      console.log(error);
     }
   }
 
@@ -83,7 +92,9 @@ export function UserProvider({ children }: iContextChildrenProps) {
   }, []);
 
   return (
-    <UserContext.Provider value={{ login, players, user, setUser, loadUser }}>
+    <UserContext.Provider
+      value={{ login, players, user, setUser, loadUser, registerUser }}
+    >
       {children}
     </UserContext.Provider>
   );
