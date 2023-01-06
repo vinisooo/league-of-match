@@ -4,6 +4,8 @@ import { UserContext } from "contexts/UserContext";
 import { useContext, useEffect, useState } from "react";
 import { StyledContainerPlayers } from "styles/Container";
 import { Footer } from "components/Footer/Footer";
+import { StyledMain } from "./StyledPlayers";
+import { InputBox } from "components/InputBox/InputBox";
 
 export function Players() {
   const { players, getAllPlayers } = useContext(UserContext);
@@ -17,27 +19,39 @@ export function Players() {
   return (
     <>
       <StyledContainerPlayers>
-        <Header />
+        <Header />  
 
-        <section>
-          <input type="text" placeholder="Pesquisar usuário" />
-          <div>
-            <select>
+        <StyledMain>
+          <section>
+            <InputBox type="text" label="Pesquisar usuário" />
+            <select name="" id="">
               <option value="">Rota</option>
+              <option value="top">Top</option>
+              <option value="jungle">Jungle</option>
+              <option value="mid">Mid</option>
+              <option value="adc">Adc</option>
+              <option value="suport">Suport</option>
             </select>
-            <select>
+            <select name="" id="">
               <option value="">Elo</option>
+              <option value="ferro">Ferro</option>
+              <option value="bronze">Bronze</option>
+              <option value="prata">Prata</option>
+              <option value="ouro">Ouro</option>
+              <option value="platina">Platina</option>
+              <option value="diamante">Diamante</option>
+              <option value="mestre">Mestre</option>
+              <option value="graomestre">Grão-Mestre</option>
+              <option value="desafiante">Desafiante</option>
             </select>
-          </div>
-        </section>
+          </section>
 
-        <main>
           <div>
             {players.map((user) => (
               <UserCard key={user.id} user={user} />
             ))}
           </div>
-        </main>
+        </StyledMain>
       </StyledContainerPlayers>
 
       <Footer />
