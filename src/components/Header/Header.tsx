@@ -5,9 +5,11 @@ import { MenuModal } from "./MenuModal/MenuModal";
 import { useState } from "react";
 import disableScroll from 'disable-scroll';
 
+export interface iHeaderProps {
+  isMyProfile?: boolean;
+}
 
-
-export function Header() {
+export function Header({ isMyProfile } : iHeaderProps) {
   const [mobMenu, setMobMenu] = useState(false);
   if (mobMenu) {
     disableScroll.on();
@@ -18,7 +20,7 @@ export function Header() {
   return (
     <>
       {mobMenu && <MenuModal/>}
-      <StyledHeader>
+      <StyledHeader isMyProfile={isMyProfile}>
         <img src={logo} alt="Logo do Site" />
 
         <button onClick={()=>setMobMenu(!mobMenu)} className={mobMenu ? "close-modal-icon": ""}>

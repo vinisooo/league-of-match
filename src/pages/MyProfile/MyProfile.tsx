@@ -56,7 +56,7 @@ export function MyProfile() {
 
   return (
     <>
-      <Header />
+      <Header isMyProfile={true}/>
       <Container>
         <Aside url={ImgBackground}>
           <WrapperProfile>
