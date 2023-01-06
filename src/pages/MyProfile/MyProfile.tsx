@@ -70,7 +70,7 @@ export function MyProfile() {
 
   return user.hasOwnProperty("id") ? (
     <>
-      <Header />
+      <Header isMyProfile={true}/>
       <Container>
         <Aside url={ImgBackground}>
           <WrapperProfile>

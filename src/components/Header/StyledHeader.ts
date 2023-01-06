@@ -1,6 +1,7 @@
-import styled  from "styled-components";
+import styled, { css }  from "styled-components";
+import { iHeaderProps } from "./Header";
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled.header<iHeaderProps>`
     width: 100%;
     height: 70px;
     margin-bottom: 50px;
@@ -8,7 +9,13 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    z-index: 5;
+    ${({isMyProfile}) => {
+        if (isMyProfile) {
+            return css`
+                margin-bottom: 0;
+            `
+        }
+    }}
 
     img{
         height: 35px;

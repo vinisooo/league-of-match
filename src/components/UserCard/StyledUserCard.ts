@@ -12,7 +12,7 @@ export const StyledCard = styled.div`
   background-color: var(--color-black-2);
 
   position: relative;
-  z-index: -1;
+  z-index: 0;
 
   border: 2px solid var(--color-brand-4);
 
