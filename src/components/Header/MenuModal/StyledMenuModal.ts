@@ -9,7 +9,7 @@ export const StyledMenuModal = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 1;
+    z-index: 4;
 
     section {
         width: 70%;

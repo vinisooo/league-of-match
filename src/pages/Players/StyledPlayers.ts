@@ -7,6 +7,8 @@ export const StyledMain = styled.main`
 
   margin-bottom: 1rem;
 
+  margin-top: 120px;
+
   section {
     display: flex;
     gap: 0.625rem;

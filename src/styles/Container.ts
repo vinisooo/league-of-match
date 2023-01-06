@@ -6,7 +6,7 @@ interface iStyledContainerProps {
 
 export const StyledContainerPlayers = styled.div<iStyledContainerProps>`
     width: 100%;
-    max-width: 1150px;
+    max-width: 1220px;
     margin: 0 auto;
     padding: 0 1.2rem;
 

@@ -18,8 +18,8 @@ export function Players() {
   }, []);
   return (
     <>
+      <Header />  
       <StyledContainerPlayers>
-        <Header />  
 
         <StyledMain>
           <section>
