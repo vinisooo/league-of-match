@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const RegisterPage = styled.div`
   display: flex;
   flex-direction: row;
-  footer {
+  div {
     display: flex;
     align-items: center;
     width: 100%;

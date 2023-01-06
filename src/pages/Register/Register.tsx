@@ -71,14 +71,14 @@ export function Register() {
             <OptionRegister>Suporte</OptionRegister>
           </SelectRegister>
         </DivSelect>
-        <footer>
+        <div>
           <DefaultLink to="/login" size="49%">
             Ja tenho conta
           </DefaultLink>
           <DefaultBtn type="submit" green size="49%">
             Registrar
           </DefaultBtn>
-        </footer>
+        </div>
       </Form>
       <FormBG imageBG="register" />
     </RegisterPage>
