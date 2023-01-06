@@ -6,19 +6,19 @@ import { StyledContainerPlayers } from "styles/Container";
 import { Footer } from "components/Footer/Footer";
 
 export function Players() {
+  const { players, getAllPlayers } = useContext(UserContext);
 
-  const { players,getAllPlayers } = useContext(UserContext);
-
-  useEffect(()=>{
-    (()=>{
+  useEffect(() => {
+    function handleGetAllPlayers() {
       getAllPlayers();
-    })()
-  },[])
+    }
+    handleGetAllPlayers();
+  }, []);
   return (
     <>
       <StyledContainerPlayers>
-        <Header/>
-        
+        <Header />
+
         <section>
           <input type="text" placeholder="Pesquisar usuário" />
           <div>
@@ -33,12 +33,14 @@ export function Players() {
 
         <main>
           <div>
-            {players.map(user => <UserCard key={user.id} user={user} />)}
+            {players.map((user) => (
+              <UserCard key={user.id} user={user} />
+            ))}
           </div>
         </main>
       </StyledContainerPlayers>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }
