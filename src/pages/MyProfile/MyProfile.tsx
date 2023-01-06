@@ -38,8 +38,6 @@ export function MyProfile() {
   }, []);
 
   async function changeProfileIcon(img: string) {
-    const id = localStorage.getItem("@league-of-match: id");
-
     const data = {
       profileIcon: img,
     };
@@ -54,7 +52,7 @@ export function MyProfile() {
     }
   }
 
-  return (
+  return user ? (
     <>
       <Header />
       <Container>
@@ -177,5 +175,7 @@ export function MyProfile() {
         </main>
       </Container>
     </>
+  ) : (
+    <div>NAO LOGADO</div>
   );
 }

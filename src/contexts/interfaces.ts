@@ -8,10 +8,9 @@ export interface iUserProviderValue {
   login: (data: iUserLogin) => Promise<void>;
   registerUser: (data: iUserRegister) => Promise<void>;
   players: iPlayers[];
-  user: iPlayers | undefined;
-  setUser: React.Dispatch<React.SetStateAction<iPlayers | undefined>>;
+  user: iPlayers;
   loadUser: () => void;
-  getAllPlayers: ()=> void;
+  getAllPlayers: () => void;
 }
 
 export interface iUserLogin {
