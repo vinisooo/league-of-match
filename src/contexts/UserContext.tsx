@@ -22,18 +22,19 @@ export function UserProvider({ children }: iContextChildrenProps) {
   useEffect(() => {
     async function loadUser() {
       const token = localStorage.getItem("@league-of-match: token");
+      const id = localStorage.getItem("@league-of-match: id");
+
       if (!token) {
         setLoading(false);
         return;
       }
 
       try {
-        const { data } = await api.patch(`/users/${user.id}`, {
+        const { data } = await api.patch(`/users/${id}`, user, {
           headers: {
             authorization: `Bearer ${token}`,
           },
         });
-
         setUser(data);
       } catch (error) {
         console.log(error);
@@ -50,12 +51,11 @@ export function UserProvider({ children }: iContextChildrenProps) {
       const request = await api.post("/login", data);
 
       localStorage.setItem("@league-of-match: token", request.data.accessToken);
+      localStorage.setItem("@league-of-match: id", request.data.user.id);
 
       setUser(request.data.user);
 
       toast.success("Logado com sucesso");
-
-      setUser(request.data.accessToken);
 
       navigate("/players");
     } catch (err) {
@@ -93,7 +93,6 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
   useEffect(() => {
     getAllPlayers();
-    loadUser();
   }, []);
 
   return (
@@ -102,9 +101,10 @@ export function UserProvider({ children }: iContextChildrenProps) {
         login,
         players,
         user,
-        loadUser,
+        loading,
         getAllPlayers,
         registerUser,
+        setUser,
       }}
     >
       {children}

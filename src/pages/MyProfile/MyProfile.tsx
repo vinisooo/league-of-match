@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
 import {
   Container,
@@ -26,7 +27,7 @@ interface character {
 }
 
 export function MyProfile() {
-  const { user, loadUser, getAllPlayers } = useContext(UserContext);
+  const { user, loading, getAllPlayers, setUser } = useContext(UserContext);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -43,16 +44,31 @@ export function MyProfile() {
     };
 
     try {
-      await api.patch(`/users/${id}`, data);
+      const token = localStorage.getItem("@league-of-match: token");
 
-      loadUser();
+      await api.patch(`/users/${user.id}`, data, {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
+
+      const newUser = user;
+
+      newUser.profileIcon = img;
+
+      setUser(newUser);
+
       getAllPlayers();
     } catch (error) {
       console.error(error);
     }
   }
 
-  return user ? (
+  if (loading) {
+    return null;
+  }
+
+  return user.hasOwnProperty("id") ? (
     <>
       <Header />
       <Container>
@@ -176,6 +192,6 @@ export function MyProfile() {
       </Container>
     </>
   ) : (
-    <div>NAO LOGADO</div>
+    <Navigate to="/login" />
   );
 }

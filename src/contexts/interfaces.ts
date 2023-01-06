@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 export interface iContextChildrenProps {
   children: React.ReactNode;
@@ -9,8 +9,9 @@ export interface iUserProviderValue {
   registerUser: (data: iUserRegister) => Promise<void>;
   players: iPlayers[];
   user: iPlayers;
-  loadUser: () => void;
   getAllPlayers: () => void;
+  loading: boolean;
+  setUser: Dispatch<SetStateAction<iPlayers>>;
 }
 
 export interface iUserLogin {
