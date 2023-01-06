@@ -2,7 +2,6 @@ import { UserCard } from "components/UserCard/UserCard";
 import { Header } from "components/Header/Header";
 import { UserContext } from "contexts/UserContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { StyledContainerPlayers } from "styles/Container";
 import { Footer } from "components/Footer/Footer";
 
