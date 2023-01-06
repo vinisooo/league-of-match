@@ -17,10 +17,6 @@ export function UserProvider({ children }: iContextChildrenProps) {
   const [players, setPlayers] = useState<iPlayers[]>([]);
   const [user, setUser] = useState<iPlayers | undefined>();
 
-  useEffect(() => {
-    loadUser();
-  }, []);
-
   async function loadUser() {
     const token = localStorage.getItem("@league-of-match: token");
     const id = localStorage.getItem("@league-of-match: id");
@@ -74,6 +70,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
   useEffect(() => {
     getAllPlayers();
+    loadUser();
   }, []);
 
   return (
