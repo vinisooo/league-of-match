@@ -4,14 +4,11 @@ import { StyledNavList } from "./StyledNavList";
 export function NavList () {
     const location = useLocation();
 
-    const navigate = useNavigate();
-
-    const loggedUser = localStorage.getItem("@league-of-match: logged-user");
+    const loggedUser = localStorage.getItem("@league-of-match: token");
 
     function logOut(){
         localStorage.removeItem("@league-of-match: id");
         localStorage.removeItem("@league-of-match: token");
-        localStorage.removeItem("@league-of-match: logged-user");
     }
 
     return (
