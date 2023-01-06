@@ -41,7 +41,7 @@ export function NavList () {
                                 <Link to={"/register"} className={location.pathname === "/register" ? "emphasis" : ""}>Registrar</Link>
                         </li>
                         <li>
-                                <Link to={"/login"} className={location.pathname === "/register" ? "emphasis" : ""}>Logar</Link>
+                                <Link to={"/login"} className={location.pathname === "/login" ? "emphasis" : ""}>Logar</Link>
                         </li>
                     </>
                     

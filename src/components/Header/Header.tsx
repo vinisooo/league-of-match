@@ -4,6 +4,7 @@ import { NavList } from "./NavList/NavList";
 import { MenuModal } from "./MenuModal/MenuModal";
 import { useState } from "react";
 import disableScroll from 'disable-scroll';
+import { StyledContainerPlayers } from "styles/Container";
 
 export interface iHeaderProps {
   isMyProfile?: boolean;
@@ -21,14 +22,17 @@ export function Header({ isMyProfile } : iHeaderProps) {
     <>
       {mobMenu && <MenuModal/>}
       <StyledHeader isMyProfile={isMyProfile}>
-        <img src={logo} alt="Logo do Site" />
+        <StyledContainerPlayers>
 
-        <button onClick={()=>setMobMenu(!mobMenu)} className={mobMenu ? "close-modal-icon": ""}>
-          <span></span>
-          <span></span>
-        </button>
+          <img src={logo} alt="Logo do Site" />
 
-        <NavList/>
+          <button onClick={()=>setMobMenu(!mobMenu)} className={mobMenu ? "close-modal-icon": ""}>
+            <span></span>
+            <span></span>
+          </button>
+          <NavList/>
+        </StyledContainerPlayers>
+
       </StyledHeader>
     </>
     

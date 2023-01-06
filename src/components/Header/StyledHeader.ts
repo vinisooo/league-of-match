@@ -5,9 +5,19 @@ export const StyledHeader = styled.header<iHeaderProps>`
     width: 100%;
     height: 70px;
     margin-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    >div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    position: fixed;
+
+    background-color: var(--color-grey-1);
+    top: 0;
+    z-index: 4;
 
     ${({isMyProfile}) => {
         if (isMyProfile) {
@@ -33,7 +43,7 @@ export const StyledHeader = styled.header<iHeaderProps>`
         align-items: center;
         gap: 10px;
         position: relative;
-        z-index: 1000;
+        z-index: 10;
     }
 
     button span{
