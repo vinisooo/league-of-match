@@ -8,7 +8,6 @@ interface iUserProps{
 
 export function UserCard({user}:iUserProps) {
 
-  console.log(user.profileIcon)
   return (
     <StyledCard>
       <div className="main_img">
@@ -33,16 +32,3 @@ export function UserCard({user}:iUserProps) {
     </StyledCard>
   );
 }
-
-
-// interface iUser {
-//   nickname: string,
-//   elo: string,
-//   route: string,
-//   bio: string,
-//   icon: string,
-//   main: {
-//     name: string,
-//     card: string
-//   }
-// }

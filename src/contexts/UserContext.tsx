@@ -91,10 +91,6 @@ export function UserProvider({ children }: iContextChildrenProps) {
     }
   }
 
-  useEffect(() => {
-    getAllPlayers();
-  }, []);
-
   return (
     <UserContext.Provider
       value={{
