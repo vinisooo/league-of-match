@@ -12,7 +12,7 @@ export const StyledHeader = styled.header`
         height: 35px;
     }
 
-    nav {
+    > nav {
         display: none;
     }
 
@@ -23,6 +23,8 @@ export const StyledHeader = styled.header`
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        position: relative;
+        z-index: 1000;
     }
 
     button span{
@@ -32,11 +34,11 @@ export const StyledHeader = styled.header`
         transition: 0.4s ease;
     }
     
-    button:hover span{
+    .close-modal-icon span{
         transform: rotate(45deg) translateY(10px);
     }
 
-    button:hover span + span{
+    .close-modal-icon span + span{
         transform: rotate(-45deg) translateY(-8px);
     }
 
@@ -54,22 +56,6 @@ export const StyledHeader = styled.header`
         
         nav {
             display: unset;
-        }
-        
-        ul{
-            display: flex;
-            gap: 50px;
-            
-            a{
-                font-size: 16px;
-                font-weight: 300;
-                color: var(--color-white);
-            }
-    
-            .emphasis{
-                color: var(--color-brand-1);
-                border-bottom: 1px solid var(--color-brand-1);
-            }
         }
     }
 `

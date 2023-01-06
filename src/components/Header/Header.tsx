@@ -1,38 +1,29 @@
-import logo from "../../assets/logo.svg";
+import logo from "assets/logo.svg";
 import { StyledHeader } from "./StyledHeader";
-import { Link } from "react-router-dom";
+import { NavList } from "./NavList/NavList";
+import { MenuModal } from "./MenuModal/MenuModal";
+import { useState } from "react";
+
+
 
 export function Header() {
   
+  const [mobMenu, setMobMenu] = useState(false);
+
   return (
-    <StyledHeader>
-      <img src={logo} alt="Logo do Site" />
+    <>
+      {mobMenu && <MenuModal/>}
+      <StyledHeader>
+        <img src={logo} alt="Logo do Site" />
 
-      <button>
-        <span></span>
-        <span></span>
-      </button>
+        <button onClick={()=>setMobMenu(!mobMenu)} className={mobMenu ? "close-modal-icon": ""}>
+          <span></span>
+          <span></span>
+        </button>
 
-      <nav>
-        <ul>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-
-          <li>
-            <Link className="emphasis" to={"/players"}>Dashboard</Link>
-          </li>
-
-          <li>
-            <Link to={"/myprofile"}>Meu Perfil</Link>
-          </li>
-
-          <li>
-            <Link to={"/login"}>Sair</Link>
-          </li>
-        </ul>
-      </nav>
-
-    </StyledHeader>
+        <NavList/>
+      </StyledHeader>
+    </>
+    
   );
 }

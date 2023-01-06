@@ -18,10 +18,6 @@ export function UserProvider({ children }: iContextChildrenProps) {
   const [players, setPlayers] = useState<iPlayers[]>([]);
   const [user, setUser] = useState<iPlayers | undefined>();
 
-  useEffect(() => {
-    loadUser();
-  }, []);
-
   async function loadUser() {
     const token = localStorage.getItem("@league-of-match: token");
     const id = localStorage.getItem("@league-of-match: id");
@@ -48,12 +44,16 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
       toast.success("Logado com sucesso");
 
+
       navigate("/myprofile");
       localStorage.setItem(
         "@league-of-match: logged-user",
         JSON.stringify(request.data)
       );
       toast.success("Logado com sucesso");
+      setUser(request.data.accessToken)
+      navigate("/players");
+
     } catch (err) {
       toast.error("Email ou senha incorretos");
       console.log(err);
@@ -72,7 +72,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
   async function getAllPlayers() {
     try {
-      const token = localStorage.getItem("@league-of-match: bearer-token");
+      const token = localStorage.getItem("@league-of-match: token");
       if (token) {
         const response = await api.get("/users", {
           headers: {
@@ -89,6 +89,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
   useEffect(() => {
     getAllPlayers();
+    loadUser();
   }, []);
 
   return (

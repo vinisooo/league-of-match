@@ -5,7 +5,7 @@ export const LoginSchema = yup.object().shape({
     .string()
     .required("Nome de usuário obrigatório")
     .email("Email inválido"),
-  password: yup.string().required("Senhaa obrigatória"),
+  password: yup.string().required("Senha obrigatória"),
 });
 
 export const RegisterSchema = yup.object().shape({
