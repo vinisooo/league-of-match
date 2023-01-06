@@ -9,13 +9,13 @@ export function Players() {
 
   const { players } = useContext(UserContext);
 
-  const [mobMenu, setMobMenu] = useState(false);
+
 
   console.log(players)
   return (
     <>
       <StyledContainerPlayers>
-        <Header mobMenu={mobMenu} setMobMenu={setMobMenu}/>
+        <Header/>
         
         <section>
           <input type="text" placeholder="Pesquisar usuário" />

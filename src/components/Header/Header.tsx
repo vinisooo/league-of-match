@@ -4,13 +4,12 @@ import { NavList } from "./NavList/NavList";
 import { MenuModal } from "./MenuModal/MenuModal";
 import { useState } from "react";
 
-interface iHeaderProps{
-  mobMenu: boolean;
-  setMobMenu: any;
-}
 
-export function Header({mobMenu, setMobMenu}: iHeaderProps) {
+
+export function Header() {
   
+  const [mobMenu, setMobMenu] = useState(false);
+
   return (
     <>
       {mobMenu && <MenuModal/>}
