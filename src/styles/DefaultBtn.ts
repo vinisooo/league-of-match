@@ -21,6 +21,8 @@ export const DefaultBtn = styled.button<iStyledButtonProps>`
 
     padding: 15px;
 
+    white-space: nowrap;
+
     :hover{
         filter: brightness(1.1);
     }
@@ -42,6 +44,8 @@ export const DefaultLink = styled(Link)<iStyledButtonProps>`
     font-size: 14px;
 
     padding: 15px;
+
+    white-space: nowrap;
 
     width: ${props=> props.size? props.size : "50%"};
 
