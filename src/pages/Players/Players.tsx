@@ -9,8 +9,6 @@ export function Players() {
 
   const { players } = useContext(UserContext);
 
-
-
   console.log(players)
   return (
     <>
@@ -30,19 +28,11 @@ export function Players() {
         </section>
 
         <main>
-          <ul>
-            {players.map((elem) => (
-              <li key={elem.id}>
-                <h2>{elem.nickname}</h2>
-                <h2>{elem.route}</h2>
-                <h2>{elem.elo}</h2>
-                <h2>Main {elem.main}</h2>
-                <h2>{elem.bio}</h2>
-              </li>
-            ))}
-          </ul>
+          <div>
+            {players.map(user => <UserCard user={user} />)}
+          </div>
         </main>
-      </StyledContainerPlayers>    
+      </StyledContainerPlayers>
 
       <Footer/>
     </>

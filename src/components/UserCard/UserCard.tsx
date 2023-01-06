@@ -1,25 +1,34 @@
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
 import { StyledCard } from "./StyledUserCard";
 
-export function UserCard() {
+interface iUserCard {
+  nickname: string,
+  elo: string,
+  route: string,
+  bio: string,
+  icon: string,
+  main: {
+    name: string,
+    card: string
+  }
+}
+
+export function UserCard({nickname, elo, route, bio, icon, main}: iUserCard) {
   return (
     <StyledCard>
       <div className="main_img">
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Irelia_0.jpg" alt="Imagem do campeão" />
+        <img src={main.card} alt={`Foto do personagem ${main.name}`} />
       </div>
       <div className="user_icon">
-        <img src="https://i.imgur.com/DGcUc2Q.png" alt="Icone do usuário" />
+        <img src={icon} alt={`Icone do ${nickname}`} />
       </div>
       <div className="user_info">
         <div className="info_persona">
-          <h2>Nome do usuário</h2>
-          <span>Main do usuário | Elo do usuário | Lane do usuário</span>
+          <h2>{nickname}</h2>
+          <span>{main.name} | {elo} | {route}</span>
         </div>
         <div className="info_bio">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-            distinctio tenetur, quis sint minus officia magnam. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Esse distinctio
-            tenetur, quis sint minus officia magnam.</p>
+          <p>{bio}</p>
         </div>
         <div className="info_btns">
           <DefaultBtn size="40%" green>Vamos Jogar!</DefaultBtn>
