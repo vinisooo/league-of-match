@@ -79,12 +79,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
     try {
       const token = localStorage.getItem("@league-of-match: token");
       if (token) {
-        const response = await api.get("/users", {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await api.get("/users");
         setPlayers(response.data);
       }
     } catch (error) {
