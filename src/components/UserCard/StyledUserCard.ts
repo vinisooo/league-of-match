@@ -7,13 +7,16 @@ export const StyledCard = styled.div`
 
   height: 240px;
   width: 580px;
+  max-width: 100%;
 
   background-color: var(--color-black-2);
 
   position: relative;
+  z-index: -1;
 
   border: 2px solid var(--color-brand-4);
 
+  
   transition: 0.5s;
 
   .main_img {
@@ -39,6 +42,10 @@ export const StyledCard = styled.div`
     position: absolute;
     top: 50px;
     left: 65px;
+    border-radius: 50%;
+    border: 3px solid var(--color-black-2);
+
+    overflow: hidden;
   }
 
   .user_icon img {
