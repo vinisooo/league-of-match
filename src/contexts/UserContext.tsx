@@ -68,6 +68,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
     try {
       const request = await api.post("/register", data);
       toast.success("Usuário registrado com sucesso");
+      navigate("/login");
     } catch (error) {
       toast.error("Registro não efetuado");
       console.log(error);
