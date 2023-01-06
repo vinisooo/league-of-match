@@ -85,7 +85,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
   }
 
   useEffect(() => {
-    getAllPlayers();
+    
     loadUser();
   }, []);
 
