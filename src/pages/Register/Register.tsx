@@ -24,7 +24,6 @@ export function Register() {
     resolver: yupResolver(RegisterSchema),
   });
   const onSubmit = handleSubmit(registerUser);
-  console.log(errors);
   return (
     <RegisterPage>
       <Form formTitle="Cadastrar" left callback={onSubmit}>
