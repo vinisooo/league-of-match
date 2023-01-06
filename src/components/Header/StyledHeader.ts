@@ -13,6 +13,10 @@ export const StyledHeader = styled.header<iHeaderProps>`
         height: 100%;
     }
 
+    >div >nav{
+        display: none;
+    }
+
     position: fixed;
 
     background-color: var(--color-grey-1);
@@ -75,6 +79,10 @@ export const StyledHeader = styled.header<iHeaderProps>`
         
         nav {
             display: unset;
+        }
+
+        >div >nav{
+            display: flex;
         }
     }
 `

@@ -8,6 +8,7 @@ export const StyledNavList = styled.nav`
         display: flex;
         flex-direction: column;
         gap: 40px;
+        
     }
 
     li {
@@ -72,7 +73,6 @@ export const StyledNavList = styled.nav`
 
         .emphasis{
             color: var(--color-brand-1);
-            border-bottom: 2px solid var(--color-brand-1);
         }
 
         .emphasis::after{
