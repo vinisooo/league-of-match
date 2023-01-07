@@ -10,6 +10,13 @@ import { iUserLogin } from "./interfaces";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 
+import top from "../assets/routeIcons/top.svg";
+import mid from "../assets/routeIcons/mid.svg";
+import adc from "../assets/routeIcons/adc.svg";
+import jungle from "../assets/routeIcons/jungle.svg";
+import sup from "../assets/routeIcons/sup.svg";
+
+
 export const UserContext = createContext({} as iUserProviderValue);
 
 export function UserProvider({ children }: iContextChildrenProps) {
@@ -88,6 +95,21 @@ export function UserProvider({ children }: iContextChildrenProps) {
     }
   }
 
+  function getRouteIcon(route:string){
+    if(route === "TopLane"){
+      return top;
+    }if(route === "MidLane"){
+      return mid
+    }if(route === "Adc"){
+      return adc;
+    }if(route === "Jungle"){
+      return jungle
+    }if(route === "Suporte"){
+      return sup;
+    }
+    
+  }
+
   return (
     <UserContext.Provider
       value={{
@@ -98,6 +120,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
         getAllPlayers,
         registerUser,
         setUser,
+        getRouteIcon
       }}
     >
       {children}

@@ -72,6 +72,17 @@ export const StyledCard = styled.div`
     gap: 0.3rem;
   }
 
+  .info_persona > div{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .info_persona img{
+    width: 19px;
+    height: 19px;
+  }
+
   .info_bio {
     height: 40%;
 

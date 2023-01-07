@@ -12,6 +12,7 @@ export interface iUserProviderValue {
   getAllPlayers: () => void;
   loading: boolean;
   setUser: Dispatch<SetStateAction<iPlayers>>;
+  getRouteIcon: (route:string)=> string | undefined;
 }
 
 export interface iUserLogin {

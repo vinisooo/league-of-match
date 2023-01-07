@@ -2,14 +2,21 @@ import { DefaultBtn } from "styles/DefaultBtn";
 import { StyledCard } from "./StyledPlayerCard";
 import { iPlayers } from "contexts/interfaces";
 
+import { useContext } from "react";
+import { UserContext } from "contexts/UserContext";
+
+
 interface iPlayerCardProps{
     user: iPlayers
 }
 
 export function PlayerCard({user}:iPlayerCardProps) {
     
+    const {getRouteIcon} = useContext(UserContext);
+
     const userNameAux = user.nickname.replace(" ", "+");
 
+    
     return(
         <StyledCard>
             <div className="main_bg">
@@ -21,8 +28,11 @@ export function PlayerCard({user}:iPlayerCardProps) {
             </div>
             <div className="user_info">
                 <div className="info_persona">
-                    <h2>{user.nickname}</h2>
-                    <span>{user.elo} | Main</span>
+                    <div>
+                        <h2>{user.nickname}</h2>
+                        <img src={getRouteIcon(user.route) || ""}></img>
+                    </div>
+                    <span>{user.elo} {user.main && `| Main ${user.main.name}`}</span>
                 </div>
                 <div className="info_bio">
                     <p>{user?.bio}</p>
