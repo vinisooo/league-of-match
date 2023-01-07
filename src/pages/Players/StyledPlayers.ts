@@ -43,6 +43,12 @@ export const StyledMain = styled.main`
     grid-template-columns: repeat(auto-fit,300px);
   }
 
+  @media (max-width: 700px) {
+    >div{
+      grid-gap: 30px;
+    }
+  }
+
   @keyframes inputAnimation {
     0% {
       box-shadow: 0 0 5px 0 var(--color-brand-1);

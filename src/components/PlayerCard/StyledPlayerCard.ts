@@ -1,9 +1,10 @@
+import { api } from './../../services/api';
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
   box-sizing: border-box;
 
-  width: 320px;
+  width: 90vw;
   height: 460px;
 
   background-color: var(--color-black-2);
@@ -13,6 +14,10 @@ export const StyledCard = styled.div`
   border: 2px solid var(--color-brand-4);
 
   transition: 0.5s;
+
+  @media (min-width: 600px) {
+    width: 320px;
+  }
 
   .main_bg {
     height: 30%;
@@ -39,10 +44,11 @@ export const StyledCard = styled.div`
   .user_icon {
     width: 120px;
     height: 120px;
+    left: 50%;
+    margin-left: -60px;
 
     position: absolute;
     top: 75px;
-    left: 100px;
 
     overflow: hidden;
   }
