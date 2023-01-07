@@ -12,6 +12,7 @@ export interface iUserProviderValue {
   getAllPlayers: () => void;
   loading: boolean;
   setUser: Dispatch<SetStateAction<iPlayers>>;
+  getRouteIcon: (route:string)=> string | undefined;
 }
 
 export interface iUserLogin {
@@ -26,8 +27,13 @@ export interface iPlayers {
   route: string;
   id: number;
   main?: {
+    id: number;
     name: string;
+    icon: string;
+    splashart: string;
+    skin_splashart: string;
     card: string;
+    skin_card: string;
   };
   bio?: string;
   profileIcon?: string;

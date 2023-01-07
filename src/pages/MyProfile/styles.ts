@@ -28,6 +28,18 @@ export const Aside = styled.aside<AsideProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+
+  .fade{
+    position: absolute;
+    bottom: 0;
+    height: 60vh;
+    width: 100%;
+    background-color: red;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 87%, rgba(0,0,0,1) 100%);
+  }
 `;
 
 export const WrapperProfile = styled.div`
@@ -35,6 +47,9 @@ export const WrapperProfile = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+  z-index: 4;
 
   div {
     width: 5rem;
@@ -173,6 +188,10 @@ export const SectionMain = styled.section`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 22px 0;
     gap: 1rem;
   }
 `;
@@ -186,6 +205,8 @@ export const ButtonIcon = styled.li`
   align-items: center;
   justify-content: center;
 
+  position: relative;
+
   button {
     width: calc(2.5rem - 2px);
     height: calc(2.5rem - 2px);
@@ -196,6 +217,31 @@ export const ButtonIcon = styled.li`
       width: 100%;
       height: 100%;
       border-radius: 50%;
+    }
+
+    span{
+      position: absolute;
+      color: var(--color-grey-2);
+      background-color: var(--color-brand-1);
+      top: -10px;
+      padding: 4px;
+      left: 0;
+      display: none;
+      z-index: 5;
+      white-space: nowrap;
+    }
+
+    *{
+      pointer-events: none;
+    }
+  }
+
+  button:hover{
+
+    box-shadow: 0 0 10px 2px var(--color-brand-1);
+
+    span{
+      display: flex;
     }
   }
 `;

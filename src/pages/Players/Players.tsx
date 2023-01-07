@@ -6,6 +6,7 @@ import { StyledContainerPlayers } from "styles/Container";
 import { Footer } from "components/Footer/Footer";
 import { StyledMain } from "./StyledPlayers";
 import { InputBox } from "components/InputBox/InputBox";
+import { PlayerCard } from "components/PlayerCard/PlayerCard";
 
 export function Players() {
   const { players, getAllPlayers } = useContext(UserContext);
@@ -48,7 +49,7 @@ export function Players() {
 
           <div>
             {players.map((user) => (
-              <UserCard key={user.id} user={user} />
+              <PlayerCard key={user.id} user={user} />
             ))}
           </div>
         </StyledMain>
