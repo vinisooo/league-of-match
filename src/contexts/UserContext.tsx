@@ -20,6 +20,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    
     async function loadUser() {
       const token = localStorage.getItem("@league-of-match: token");
       const id = localStorage.getItem("@league-of-match: id");

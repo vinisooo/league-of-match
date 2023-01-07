@@ -21,6 +21,7 @@ import { Header } from "components/Header/Header";
 import { icons } from "./icons";
 import { api } from "services/api";
 import { UserContext } from "contexts/UserContext";
+import { toast } from "react-toastify";
 
 interface character {
   icon: "string";
@@ -34,7 +35,7 @@ export function MyProfile() {
   useEffect(() => {
     async function getCharacters() {
       const { data } = await api.get("/characters");
-      setCharacters(data.splice(0, 18));
+      setCharacters(data);
     }
     getCharacters();
   }, []);
@@ -65,6 +66,28 @@ export function MyProfile() {
     }
   }
 
+  async function setMain(character: any){
+    const data = {
+      main: character
+    }
+    try{
+      const token = localStorage.getItem("@league-of-match: token");
+      const userID = localStorage.getItem("@league-of-match: id");
+
+      const response = await api.patch(`/users/${userID}`,data,{
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
+
+      toast.success("Seu main foi alterado");
+      setUser(response.data)
+      getAllPlayers();
+    }catch(err){
+      console.log(err)
+    }
+  }
+
   if (loading) {
     return null;
   }
@@ -73,7 +96,7 @@ export function MyProfile() {
     <>
       <Header isMyProfile={true}/>
       <Container>
-        <Aside url={ImgBackground}>
+        <Aside url={user.main?.splashart || "https://sirus.b-cdn.net/wp-content/uploads/2021/05/league-of-legends-01.jpg"}>
           <WrapperProfile>
             {user?.profileIcon ? (
               <div>
@@ -87,6 +110,7 @@ export function MyProfile() {
 
             <p>{user && user.nickname}</p>
           </WrapperProfile>
+          <span className="fade"></span>
         </Aside>
 
         <main>
@@ -181,8 +205,9 @@ export function MyProfile() {
               <ul>
                 {characters.map((character: character, index) => (
                   <ButtonIcon key={index}>
-                    <button type="button">
+                    <button type="button" onClick={()=>setMain(character)}>
                       <img src={character.icon} alt={character.name} />
+                      <span>{character.name}</span>
                     </button>
                   </ButtonIcon>
                 ))}

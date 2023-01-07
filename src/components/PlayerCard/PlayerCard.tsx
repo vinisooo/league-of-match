@@ -13,7 +13,7 @@ export function PlayerCard({user}:iPlayerCardProps) {
     return(
         <StyledCard>
             <div className="main_bg">
-                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg" alt="Foto do personagem" />
+                <img src={user.main?.splashart||"https://sirus.b-cdn.net/wp-content/uploads/2021/05/league-of-legends-01.jpg"} alt="Foto do personagem" />
             </div>
             <div className="main_bgshadow" />
             <div className="user_icon">

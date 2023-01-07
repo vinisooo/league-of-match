@@ -26,8 +26,13 @@ export interface iPlayers {
   route: string;
   id: number;
   main?: {
+    id: number;
     name: string;
+    icon: string;
+    splashart: string;
+    skin_splashart: string;
     card: string;
+    skin_card: string;
   };
   bio?: string;
   profileIcon?: string;
