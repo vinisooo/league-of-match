@@ -34,6 +34,15 @@ export const StyledMain = styled.main`
     animation: inputAnimation 2s infinite;
   }
 
+  >div{
+    margin-top: 50px;
+    display: grid;
+    grid-gap: 130px;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit,300px);
+  }
+
   @keyframes inputAnimation {
     0% {
       box-shadow: 0 0 5px 0 var(--color-brand-1);
