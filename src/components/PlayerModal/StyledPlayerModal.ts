@@ -75,7 +75,7 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
             transition: 0.3s ease;
         }
 
-        @media (min-width: 700px;) {
+        @media (min-width: 700px) {
             width: 170px;
             height: 170px;
             top: -100px;
