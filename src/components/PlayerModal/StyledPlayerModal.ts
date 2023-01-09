@@ -55,6 +55,7 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
         header{
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         header figure{
@@ -76,9 +77,11 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
         }
 
         @media (min-width: 700px) {
-            width: 170px;
-            height: 170px;
-            top: -100px;
+            header figure{
+                width: 170px;
+                height: 170px;
+                top: -100px;
+            }
         }
 
         header figure img{
@@ -130,7 +133,9 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
         .user-info{
 
             position: relative;
-            width: 400px;
+            width: 100%;
+            max-width: 400px;
+
             padding-right: 20px;
             margin: 0 auto;
             margin-top: 30px;
