@@ -4,7 +4,7 @@ interface iStyledPlayerModalProps{
     mainSplashArt?: string
 }
 
-export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
+export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
 
     height: 100vh;
     width: 100vw;
