@@ -10,7 +10,7 @@ export const StyledDiv = styled.div`
   .home_bg {
     height: 500px;
 
-    background-image: url("https://i.imgur.com/X9E3vE9.jpeg");
+    background-image: url("https://i.ibb.co/R9D5f4G/X9E3vE9.jpg");
     background-position: top center;
     background-size: cover;
   }
@@ -23,7 +23,7 @@ export const StyledDiv = styled.div`
     top: 0;
     left: 0;
 
-    box-shadow: inset 0px 0px 20px 30px var(--color-black-2);
+    box-shadow: inset 0px -50px 70px 30px var(--color-black-1);
     background-color: rgba(0, 0, 0, 0.5);
   }
 

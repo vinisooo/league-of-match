@@ -13,7 +13,7 @@ export function PlayerModal(){
 
     const { players, getRouteIcon } = useContext(UserContext);
     const { userId } = useParams();
-    const [modalPlayer, setModalPlayer] = useState<iPlayers>({} as iPlayers);
+    const [modalPlayer, setModalPlayer] = useState({} as iPlayers);
 
     useEffect(()=>{
         const foundUser: iPlayers| undefined = players.find((player)=>{
@@ -24,7 +24,7 @@ export function PlayerModal(){
         }
     })
 
-    disableScroll.on()
+    disableScroll.on();
 
     return(
         <StyledPlayerModal mainSplashArt={modalPlayer.main?.splashart}>
