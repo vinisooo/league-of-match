@@ -31,14 +31,19 @@ export const Aside = styled.aside<AsideProps>`
 
   position: relative;
 
-  .fade{
+  .fade {
     position: absolute;
     bottom: 0;
     height: 60vh;
     width: 100%;
     background-color: red;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 87%, rgba(0,0,0,1) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 1) 87%,
+      rgba(0, 0, 0, 1) 100%
+    );
   }
 `;
 
@@ -158,9 +163,11 @@ export const SectionMain = styled.section`
       color: var(--color-grey-3);
     }
 
-    div {
+    form {
       width: 11.5rem;
       border: 1px solid var(--color-grey-3);
+
+      display: flex;
 
       input {
         width: 100%;
@@ -219,7 +226,7 @@ export const ButtonIcon = styled.li`
       border-radius: 50%;
     }
 
-    span{
+    span {
       position: absolute;
       color: var(--color-grey-2);
       background-color: var(--color-brand-1);
@@ -231,16 +238,15 @@ export const ButtonIcon = styled.li`
       white-space: nowrap;
     }
 
-    *{
+    * {
       pointer-events: none;
     }
   }
 
-  button:hover{
-
+  button:hover {
     box-shadow: 0 0 10px 2px var(--color-brand-1);
 
-    span{
+    span {
       display: flex;
     }
   }
