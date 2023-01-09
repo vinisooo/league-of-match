@@ -1,12 +1,12 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
   iContextChildrenProps,
   iPlayers,
   iUserProviderValue,
   iUserRegister,
+  iUserLogin
 } from "./interfaces";
 import { api } from "services/api";
-import { iUserLogin } from "./interfaces";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 
@@ -16,10 +16,9 @@ import adc from "../assets/routeIcons/adc.svg";
 import jungle from "../assets/routeIcons/jungle.svg";
 import sup from "../assets/routeIcons/sup.svg";
 
-
 export const UserContext = createContext({} as iUserProviderValue);
 
-export function UserProvider({ children }: iContextChildrenProps) {
+export function UserProvider ({ children }: iContextChildrenProps) {
   const navigate = useNavigate();
 
   const [players, setPlayers] = useState<iPlayers[]>([]);
@@ -27,8 +26,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    
-    async function loadUser() {
+    async function loadUser () {
       const token = localStorage.getItem("@league-of-match: token");
       const id = localStorage.getItem("@league-of-match: id");
 
@@ -40,8 +38,8 @@ export function UserProvider({ children }: iContextChildrenProps) {
       try {
         const { data } = await api.patch(`/users/${id}`, user, {
           headers: {
-            authorization: `Bearer ${token}`,
-          },
+            authorization: `Bearer ${token}`
+          }
         });
         setUser(data);
       } catch (error) {
@@ -54,7 +52,7 @@ export function UserProvider({ children }: iContextChildrenProps) {
     loadUser();
   }, []);
 
-  async function login(data: iUserLogin) {
+  async function login (data: iUserLogin) {
     try {
       const request = await api.post("/login", data);
 
@@ -72,9 +70,9 @@ export function UserProvider({ children }: iContextChildrenProps) {
     }
   }
 
-  async function registerUser(data: iUserRegister) {
+  async function registerUser (data: iUserRegister) {
     try {
-      const request = await api.post("/register", data);
+      await api.post("/register", data);
       toast.success("Usuário registrado com sucesso");
       navigate("/players");
     } catch (error) {
@@ -83,25 +81,25 @@ export function UserProvider({ children }: iContextChildrenProps) {
     }
   }
 
-  async function getAllPlayers() {
+  async function getAllPlayers () {
     try {
-        const response = await api.get("/users");
-        setPlayers(response.data);
+      const response = await api.get("/users");
+      setPlayers(response.data);
     } catch (error) {
       console.log(error);
     }
   }
 
-  function getRouteIcon(route:string){
-    if(route === "TopLane"){
+  function getRouteIcon (route: string) {
+    if (route === "TopLane") {
       return top;
-    }if(route === "MidLane"){
-      return mid
-    }if(route === "Adc"){
+    } if (route === "MidLane") {
+      return mid;
+    } if (route === "Adc") {
       return adc;
-    }if(route === "Jungle"){
-      return jungle
-    }if(route === "Suporte"){
+    } if (route === "Jungle") {
+      return jungle;
+    } if (route === "Suporte") {
       return sup;
     }
     return "";

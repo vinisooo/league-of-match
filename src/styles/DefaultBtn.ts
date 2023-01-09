@@ -1,20 +1,19 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-interface iStyledButtonProps{
-    green?: boolean
+interface iStyledButtonProps {
+    green?: boolean;
     size?: string;
     small?: boolean;
 }
 
 export const DefaultBtn = styled.button<iStyledButtonProps>`
 
-    background-color: ${props=> props.green? "var(--color-brand-1)" :"var(--color-grey-2)"};
-    color: ${props=> props.green? "var(--color-black-1)" :"var(--color-grey-3)"};
+    background-color: ${props => props.green ? "var(--color-brand-1)" : "var(--color-grey-2)"};
+    color: ${props => props.green ? "var(--color-black-1)" : "var(--color-grey-3)"};
 
-    width: ${props=> props.size? props.size : "50%"};
-    height: ${props=> props.small ? "32px": "49px"};
+    width: ${props => props.size ? props.size : "50%"};
+    height: ${props => props.small ? "32px" : "49px"};
 
     font-weight: 500;
     font-size: 14px;
@@ -31,9 +30,9 @@ export const DefaultBtn = styled.button<iStyledButtonProps>`
 
 export const DefaultLink = styled(Link)<iStyledButtonProps>`
 
-    background-color: ${props=> props.green? "var(--color-brand-1)" :"var(--color-grey-2)"};
+    background-color: ${props => props.green ? "var(--color-brand-1)" : "var(--color-grey-2)"};
 
-    color: ${props=> props.green? "var(--color-brand-1)" :"var(--color-grey-3)"};
+    color: ${props => props.green ? "var(--color-brand-1)" : "var(--color-grey-3)"};
 
     display: flex;
     align-items: center;
@@ -47,9 +46,9 @@ export const DefaultLink = styled(Link)<iStyledButtonProps>`
 
     white-space: nowrap;
 
-    width: ${props=> props.size? props.size : "50%"};
+    width: ${props => props.size ? props.size : "50%"};
 
-    height: ${props=> props.small ? "32px": "49px"};
+    height: ${props => props.small ? "32px" : "49px"};
 
     :hover{
         filter: brightness(1.1);

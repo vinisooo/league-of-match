@@ -1,26 +1,22 @@
-import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
+import React, { useContext } from "react";
+import { DefaultLink } from "styles/DefaultBtn";
 import { StyledCard } from "./StyledPlayerCard";
 import { iPlayers } from "contexts/interfaces";
-
-import { useContext } from "react";
 import { UserContext } from "contexts/UserContext";
 
-
-interface iPlayerCardProps{
+interface iPlayerCardProps {
     user: iPlayers
 }
 
-export function PlayerCard({user}:iPlayerCardProps) {
-    
-    const {getRouteIcon} = useContext(UserContext);
+export function PlayerCard ({ user }: iPlayerCardProps) {
+    const { getRouteIcon } = useContext(UserContext);
 
     const userNameAux = user.nickname.replace(" ", "+");
 
-    
-    return(
+    return (
         <StyledCard>
             <div className="main_bg">
-                <img src={user.main?.splashart||"https://sirus.b-cdn.net/wp-content/uploads/2021/05/league-of-legends-01.jpg"} alt="Foto do personagem" />
+                <img src={user.main?.splashart || "https://sirus.b-cdn.net/wp-content/uploads/2021/05/league-of-legends-01.jpg"} alt="Foto do personagem" />
             </div>
             <div className="main_bgshadow" />
             <div className="user_icon">

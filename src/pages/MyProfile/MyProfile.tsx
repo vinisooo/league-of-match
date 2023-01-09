@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { StyledContainerPlayers } from "styles/Container";
 
 import {
   Container,
@@ -9,10 +8,9 @@ import {
   ButtonIcon,
   SectionMain,
   WrapperProfile,
-  Aside,
+  Aside
 } from "./styles";
 
-import ImgBackground from "../../assets/register-bg.png";
 import ImgEdit from "../../assets/edit.svg";
 import ImgSearch from "../../assets/search.svg";
 import ImgProfile from "../../assets/login-bg.png";
@@ -28,7 +26,7 @@ interface iCharacter {
   name: "string";
 }
 
-export function MyProfile() {
+export function MyProfile () {
   const { user, loading, getAllPlayers, setUser } = useContext(UserContext);
   const [characters, setCharacters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -36,7 +34,7 @@ export function MyProfile() {
   const [filterCharacters, setFilterCharacters] = useState([]);
 
   useEffect(() => {
-    async function getCharacters() {
+    async function getCharacters () {
       try {
         const { data } = await api.get("/characters");
 
@@ -47,7 +45,7 @@ export function MyProfile() {
     }
 
     if (characters.length > 0) {
-      if (searchValue == "" || searchValue == undefined) {
+      if (searchValue === "" || searchValue === undefined) {
         setFilterCharacters(characters);
       } else {
         setFilterCharacters(
@@ -61,9 +59,9 @@ export function MyProfile() {
     getCharacters();
   }, [characters, searchValue]);
 
-  async function changeProfileIcon(img: string) {
+  async function changeProfileIcon (img: string) {
     const data = {
-      profileIcon: img,
+      profileIcon: img
     };
 
     try {
@@ -71,8 +69,8 @@ export function MyProfile() {
 
       await api.patch(`/users/${user.id}`, data, {
         headers: {
-          authorization: `Bearer ${token}`,
-        },
+          authorization: `Bearer ${token}`
+        }
       });
 
       const newUser = user;
@@ -87,9 +85,9 @@ export function MyProfile() {
     }
   }
 
-  async function setMain(character: iCharacter) {
+  async function setMain (character: iCharacter) {
     const data = {
-      main: character,
+      main: character
     };
     try {
       const token = localStorage.getItem("@league-of-match: token");
@@ -97,8 +95,8 @@ export function MyProfile() {
 
       const response = await api.patch(`/users/${userID}`, data, {
         headers: {
-          authorization: `Bearer ${token}`,
-        },
+          authorization: `Bearer ${token}`
+        }
       });
 
       toast.success("Seu main foi alterado");
@@ -109,7 +107,7 @@ export function MyProfile() {
     }
   }
 
-  function updateSearchValue(event: React.FormEvent<HTMLFormElement>) {
+  function updateSearchValue (event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSearchValue(inputValue);
   }
@@ -210,7 +208,7 @@ export function MyProfile() {
             <ul>
               {icons.map((icon, index) => (
                 <ButtonIcon key={index}>
-                  <button onClick={() => changeProfileIcon(icon)} type="button">
+                  <button onClick={async () => { await changeProfileIcon(icon) }} type="button">
                     <img src={icon} alt="" />
                   </button>
                 </ButtonIcon>
@@ -222,9 +220,9 @@ export function MyProfile() {
             <div>
               <p>Main</p>
 
-              <form onSubmit={(event) => updateSearchValue(event)}>
+              <form onSubmit={(event) => { updateSearchValue(event) }}>
                 <input
-                  onChange={(event) => setInputValue(event.target.value)}
+                  onChange={(event) => { setInputValue(event.target.value) }}
                   type="text"
                   placeholder="Pesquisar campeão"
                 />
@@ -237,7 +235,7 @@ export function MyProfile() {
             <ul>
               {filterCharacters.map((character: iCharacter, index) => (
                 <ButtonIcon key={index}>
-                  <button type="button" onClick={() => setMain(character)}>
+                  <button type="button" onClick={async () => { await setMain(character) }}>
                     <img src={character.icon} alt={character.name} />
                     <span>{character.name}</span>
                   </button>

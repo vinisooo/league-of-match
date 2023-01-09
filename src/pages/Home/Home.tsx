@@ -1,3 +1,4 @@
+import React from "react";
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
 import logo from "../../assets/logo.svg";
@@ -5,7 +6,7 @@ import { DefaultBtn } from "styles/DefaultBtn";
 import { StyledContainerPlayers } from "styles/Container";
 import { StyledDiv } from "./StyledHome";
 
-export function Home() {
+export function Home () {
   return (
     <StyledDiv>
       <Header />

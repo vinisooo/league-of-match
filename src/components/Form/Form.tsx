@@ -1,3 +1,4 @@
+import React from "react";
 import logo from "../../assets/logo.svg";
 import { StyledForm } from "./StyledForm";
 
@@ -8,7 +9,7 @@ interface iFormProps {
   callback: () => void;
 }
 
-export function Form({ children, formTitle, left, callback }: iFormProps) {
+export function Form ({ children, formTitle, left, callback }: iFormProps) {
   return (
     <StyledForm noValidate onSubmit={callback}>
       <img

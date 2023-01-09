@@ -1,3 +1,4 @@
+import React from "react";
 import { StyledFooter } from "./StyledFooter";
 import logo from "../../assets/logo.svg";
 import { StyledContainerPlayers } from "styles/Container";
