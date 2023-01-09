@@ -23,12 +23,10 @@ import { api } from "services/api";
 import { UserContext } from "contexts/UserContext";
 import { toast } from "react-toastify";
 
-interface Icharacter {
+interface iCharacter {
   icon: "string";
   name: "string";
 }
-
-interface Isearch {}
 
 export function MyProfile() {
   const { user, loading, getAllPlayers, setUser } = useContext(UserContext);
@@ -56,7 +54,7 @@ export function MyProfile() {
       setFilterCharacters(characters);
     } else {
       setFilterCharacters(
-        characters.filter((character: Icharacter) =>
+        characters.filter((character: iCharacter) =>
           character.name.toLowerCase().includes(searchValue.toLowerCase())
         )
       );
@@ -89,7 +87,7 @@ export function MyProfile() {
     }
   }
 
-  async function setMain(character: any) {
+  async function setMain(character: iCharacter) {
     const data = {
       main: character,
     };
@@ -237,7 +235,7 @@ export function MyProfile() {
               </form>
             </div>
             <ul>
-              {filterCharacters.map((character: Icharacter, index) => (
+              {filterCharacters.map((character: iCharacter, index) => (
                 <ButtonIcon key={index}>
                   <button type="button" onClick={() => setMain(character)}>
                     <img src={character.icon} alt={character.name} />
