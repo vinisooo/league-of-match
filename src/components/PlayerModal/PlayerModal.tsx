@@ -21,7 +21,7 @@ export function PlayerModal () {
         if (foundUser) {
             setModalPlayer(foundUser)
         }
-    }, [])
+    })
 
     disableScroll.on()
 
