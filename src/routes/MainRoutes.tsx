@@ -1,3 +1,4 @@
+import { Home } from "pages/Home/Home";
 import { Login } from "pages/Login/Login";
 import { MyProfile } from "pages/MyProfile/MyProfile";
 import { Players } from "pages/Players/Players";
@@ -8,7 +9,7 @@ export function MainRoutes () {
  
     return (
         <Routes>
-            <Route path="/" element={<div>Home</div>}/>
+            <Route path="/" element={<Home />}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>            
             <Route path="/myprofile" element={<MyProfile/>}/>
