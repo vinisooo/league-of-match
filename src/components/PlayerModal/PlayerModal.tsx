@@ -1,8 +1,8 @@
 import { StyledPlayerModal } from "./StyledPlayerModal";
 
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "contexts/UserContext";
-import React, { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { iPlayers } from "contexts/interfaces";
 import disableScroll from "disable-scroll";
 
@@ -16,14 +16,14 @@ export function PlayerModal () {
 
     useEffect(() => {
         const foundUser: iPlayers | undefined = players.find((player) => {
-            return player.id === userId
+            return player.id === Number(userId)
         })
         if (foundUser) {
             setModalPlayer(foundUser)
         }
     })
 
-    disableScroll.on();
+    disableScroll.on()
 
     return (
         <StyledPlayerModal mainSplashArt={modalPlayer.main?.splashart}>
