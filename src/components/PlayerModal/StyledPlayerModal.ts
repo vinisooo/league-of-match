@@ -25,6 +25,19 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
         position: relative;
     }
 
+    >div::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        
+        background-image: url(${props=> props.mainSplashArt});
+        opacity: 0.2;
+        pointer-events: none;
+    }
+    
     .image-bg{
         height: 100vh;
         width: 100vw;
@@ -45,8 +58,8 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
         }
 
         header figure{
-            width: 170px;
-            height: 170px;
+            width: 140px;
+            height: 140px;
             overflow: hidden;
 
             display: flex;
@@ -57,6 +70,14 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
             border: 4px solid var(--color-brand-1);
 
             position: absolute;
+            top: -70px;
+
+            transition: 0.3s ease;
+        }
+
+        @media (min-width: 700px;) {
+            width: 170px;
+            height: 170px;
             top: -100px;
         }
 
@@ -68,16 +89,28 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
             transition: 0.3s ease;
         }
 
-        header figure:hover img{
-            transform: scale(1.1);
+        header figure:hover{
+
+            box-shadow: 0 0 32px 0 var(--color-brand-1);
+
+            img{
+                transform: scale(1.05);
+            }
         }
+        
 
         header a{
             color: var(--color-brand-1);
             position: absolute;
             right: 30px;
             background: transparent;
-            font-size: 30px
+            font-size: 30px;
+            opacity: .7;
+            transition: 0.3s ease;
+        }
+
+        header a:hover{
+            opacity: 1;
         }
 
         header h2{
@@ -88,9 +121,17 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
         font-weight: 700;
         }
 
+        header .user-route{
+            display: flex;
+            align-items: center;
+        }
+
+
         .user-info{
 
+            position: relative;
             width: 400px;
+            padding-right: 20px;
             margin: 0 auto;
             margin-top: 30px;
 
@@ -127,13 +168,30 @@ export const StyledPlayerModal = styled.div<iStyledPlayerModalProps>`
             }
 
             p{
-            span{
+                font-size: 16px;
+                color: var(--color-white);
+            }
+
+            p span{
                 color: var(--color-grey-3);
             }
-            font-size: 16px;
-            color: var(--color-white);
+
+            .user-route{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .user-route img{
+                width: 16px;
+                height: 16px;
+            }
+        
         }
-        }
+    }
+
+    .animate__fadeInUp{
+        animation-duration: 0.5s;
     }
 
 `
