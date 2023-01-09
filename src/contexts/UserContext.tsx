@@ -85,11 +85,8 @@ export function UserProvider({ children }: iContextChildrenProps) {
 
   async function getAllPlayers() {
     try {
-      const token = localStorage.getItem("@league-of-match: token");
-      if (token) {
         const response = await api.get("/users");
         setPlayers(response.data);
-      }
     } catch (error) {
       console.log(error);
     }
