@@ -1,13 +1,13 @@
+import React from "react";
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
 import { StyledCard } from "./StyledUserCard";
 import { iPlayers } from "contexts/interfaces";
 
-interface iUserProps{
+interface iUserProps {
   user: iPlayers;
 }
 
-export function UserCard({user}:iUserProps) {
-
+export function UserCard ({ user }: iUserProps) {
   return (
     <StyledCard>
       <div className="main_img">

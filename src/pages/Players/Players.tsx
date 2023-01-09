@@ -1,7 +1,6 @@
-import { UserCard } from "components/UserCard/UserCard";
 import { Header } from "components/Header/Header";
 import { UserContext } from "contexts/UserContext";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { StyledContainerPlayers } from "styles/Container";
 import { Footer } from "components/Footer/Footer";
 import { StyledMain } from "./StyledPlayers";
@@ -9,18 +8,18 @@ import { InputBox } from "components/InputBox/InputBox";
 import { PlayerCard } from "components/PlayerCard/PlayerCard";
 import { Outlet } from "react-router-dom";
 
-export function Players() {
+export function Players () {
   const { players, getAllPlayers } = useContext(UserContext);
 
   useEffect(() => {
-    function handleGetAllPlayers() {
+    function handleGetAllPlayers () {
       getAllPlayers();
     }
     handleGetAllPlayers();
   }, []);
   return (
     <>
-      <Header />  
+      <Header />
       <StyledContainerPlayers>
 
         <StyledMain>

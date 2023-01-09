@@ -2,7 +2,7 @@ import logo from "assets/logo.svg";
 import { StyledHeader } from "./StyledHeader";
 import { NavList } from "./NavList/NavList";
 import { MenuModal } from "./MenuModal/MenuModal";
-import { useState } from "react";
+import React, { useState } from "react";
 import disableScroll from 'disable-scroll';
 import { StyledContainerPlayers } from "styles/Container";
 
@@ -10,7 +10,7 @@ export interface iHeaderProps {
   isMyProfile?: boolean;
 }
 
-export function Header({ isMyProfile } : iHeaderProps) {
+export function Header ({ isMyProfile }: iHeaderProps) {
   const [mobMenu, setMobMenu] = useState(false);
   if (mobMenu) {
     disableScroll.on();
@@ -26,7 +26,7 @@ export function Header({ isMyProfile } : iHeaderProps) {
 
           <img src={logo} alt="Logo do Site" />
 
-          <button onClick={()=>setMobMenu(!mobMenu)} className={mobMenu ? "close-modal-icon": ""}>
+          <button onClick={() => { setMobMenu(!mobMenu) }} className={mobMenu ? "close-modal-icon" : ""}>
             <span></span>
             <span></span>
           </button>
@@ -35,6 +35,5 @@ export function Header({ isMyProfile } : iHeaderProps) {
 
       </StyledHeader>
     </>
-    
   );
 }

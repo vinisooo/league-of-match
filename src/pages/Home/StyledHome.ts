@@ -67,4 +67,4 @@ export const StyledDiv = styled.div`
   footer {
     margin: 0;
   }
-`;
+`

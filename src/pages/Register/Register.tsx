@@ -1,12 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { RegisterSchema } from "contexts/schemas";
 import { UserContext } from "contexts/UserContext";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import {
   DivSelect,
   OptionRegister,
   RegisterPage,
-  SelectRegister,
+  SelectRegister
 } from "./StyledRegister";
 import { useForm } from "react-hook-form";
 import { iUserRegister } from "contexts/interfaces";
@@ -14,14 +14,15 @@ import { Form } from "components/Form/Form";
 import { InputBox } from "components/InputBox/InputBox";
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
 import { FormBG } from "components/FormBG/FormBG";
-export function Register() {
+
+export function Register () {
   const { registerUser } = useContext(UserContext);
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<iUserRegister>({
-    resolver: yupResolver(RegisterSchema),
+    resolver: yupResolver(RegisterSchema)
   });
   const onSubmit = handleSubmit(registerUser);
   return (

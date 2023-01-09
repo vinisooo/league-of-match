@@ -8,5 +8,5 @@ export const icons = [
   "https://lolskinstore.com/wp-content/uploads/2020/11/maincatprod_icon_image.png",
   "https://cdnb.artstation.com/p/assets/images/images/012/031/803/large/thomas-randby-npe-mf.jpg",
   "https://i.pinimg.com/550x/3b/c1/54/3bc1541d98bbcb1ae5aa672864fd2a48.jpg",
-  "https://cdnb.artstation.com/p/assets/images/images/012/033/967/large/thomas-randby-npe-lux.jpg",
+  "https://cdnb.artstation.com/p/assets/images/images/012/033/967/large/thomas-randby-npe-lux.jpg"
 ];

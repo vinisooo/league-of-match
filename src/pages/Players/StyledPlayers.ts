@@ -60,4 +60,4 @@ export const StyledMain = styled.main`
       box-shadow: 0 0 5px 0 var(--color-brand-1);
     }
   }
-`;
+`

@@ -2,28 +2,23 @@ import { Form } from "components/Form/Form";
 import { FormBG } from "components/FormBG/FormBG";
 import { LoginPage } from "./StyledLogin";
 import { InputBox } from "components/InputBox/InputBox";
-
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
-
 import { useForm } from "react-hook-form";
 import { iUserLogin } from "contexts/interfaces";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginSchema } from "contexts/schemas";
-
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "contexts/UserContext";
 
 import "animate.css"
 
 export function Login () {
-
     const { login } = useContext(UserContext);
 
     const { register, handleSubmit, formState: { errors } } = useForm<iUserLogin>({
         mode: "onBlur",
         resolver: yupResolver(LoginSchema)
     });
-    
     return (
         <LoginPage className="animate__animated animate__fadeIn">
             <FormBG imageBG="login"/>

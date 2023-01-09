@@ -1,4 +1,4 @@
-import styled, { css }  from "styled-components";
+import styled, { css } from "styled-components";
 import { iHeaderProps } from "./Header";
 
 export const StyledHeader = styled.header<iHeaderProps>`
@@ -23,7 +23,7 @@ export const StyledHeader = styled.header<iHeaderProps>`
     top: 0;
     z-index: 4;
 
-    ${({isMyProfile}) => {
+    ${({ isMyProfile }) => {
         if (isMyProfile) {
             return css`
                 margin-bottom: 0;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-interface iStyledPlayerModalProps{
-    mainSplashArt?: string
+interface iStyledPlayerModalProps {
+    mainSplashArt?: string;
 }
 
 export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
@@ -33,7 +33,7 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
         bottom: 0;
         left: 0;
         
-        background-image: url(${props=> props.mainSplashArt});
+        background-image: url(${props => props.mainSplashArt});
         opacity: 0.2;
         pointer-events: none;
     }
