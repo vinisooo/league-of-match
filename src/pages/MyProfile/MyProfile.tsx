@@ -46,19 +46,19 @@ export function MyProfile() {
       }
     }
 
-    getCharacters();
-  }, [searchValue]);
-
-  useEffect(() => {
-    if (searchValue == "" || searchValue == undefined) {
-      setFilterCharacters(characters);
-    } else {
-      setFilterCharacters(
-        characters.filter((character: iCharacter) =>
-          character.name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-      );
+    if (characters.length > 0) {
+      if (searchValue == "" || searchValue == undefined) {
+        setFilterCharacters(characters);
+      } else {
+        setFilterCharacters(
+          characters.filter((character: iCharacter) =>
+            character.name.toLowerCase().includes(searchValue.toLowerCase())
+          )
+        );
+      }
     }
+
+    getCharacters();
   }, [characters, searchValue]);
 
   async function changeProfileIcon(img: string) {
