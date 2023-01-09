@@ -25,7 +25,7 @@ export interface iPlayers {
   nickname: string;
   elo: string;
   route: string;
-  id: number;
+  id: number | string;
   main?: {
     id: number;
     name: string;

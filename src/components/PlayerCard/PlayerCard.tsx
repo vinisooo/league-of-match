@@ -1,4 +1,4 @@
-import { DefaultBtn } from "styles/DefaultBtn";
+import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
 import { StyledCard } from "./StyledPlayerCard";
 import { iPlayers } from "contexts/interfaces";
 
@@ -38,8 +38,8 @@ export function PlayerCard({user}:iPlayerCardProps) {
                     <p>{user?.bio}</p>
                 </div>
                 <div className="info_btns">
-                    <DefaultBtn green size="100%">Vamos jogar!</DefaultBtn>
-                    <a target="_blank" href={`https://www.leagueofgraphs.com/pt/summoner/br/${userNameAux}`}>Ver histórico de partida</a>
+                    <DefaultLink to={`${user.id}`} green size="100%">Vamos jogar!</DefaultLink>
+                    <a className="historic" target="_blank" href={`https://www.leagueofgraphs.com/pt/summoner/br/${userNameAux}`}>Ver histórico de partida</a>
                 </div>
             </div>
         </StyledCard>
