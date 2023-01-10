@@ -87,5 +87,5 @@ export const developers = [
         github: "https://github.com/mauibuarque",
         linkedin: "https://www.linkedin.com/in/mauibuarque/",
         id: 6
-    },
+    }
 ];
