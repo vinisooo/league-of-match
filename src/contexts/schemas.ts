@@ -26,15 +26,15 @@ export const RegisterSchema = yup.object().shape({
     .required("Elo obrigatório para cadastro")
     .oneOf(
       [
-        "Ferro",
-        "Bronze",
-        "Prata",
-        "Ouro",
-        "Platina",
-        "Diamante",
-        "Mestre",
-        "Grão-Mestre",
-        "Desafiante"
+        "ferro",
+        "bronze",
+        "prata",
+        "ouro",
+        "platina",
+        "diamante",
+        "mestre",
+        "grão-mestre",
+        "desafiante"
       ],
       "Elo obrigatório para cadastro"
     ),
@@ -42,7 +42,7 @@ export const RegisterSchema = yup.object().shape({
     .string()
     .required("Rota obrigatória para cadastro")
     .oneOf(
-      ["TopLane", "MidLane", "Adc", "Jungle", "Suport"],
+      ["toplane", "midlane", "adc", "jungle", "suport"],
       "Rota obrigatória para cadastro"
     )
 });
