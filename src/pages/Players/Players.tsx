@@ -27,26 +27,28 @@ export function Players () {
         <StyledMain>
           <section>
             <InputBox type="text" label="Pesquisar usuário" />
-            <select>
-              <option value="">Rota</option>
-              <option value="top">Top</option>
-              <option value="jungle">Jungle</option>
-              <option value="mid">Mid</option>
-              <option value="adc">Adc</option>
-              <option value="suport">Suport</option>
-            </select>
-            <select>
-              <option value="">Elo</option>
-              <option value="ferro">Ferro</option>
-              <option value="bronze">Bronze</option>
-              <option value="prata">Prata</option>
-              <option value="ouro">Ouro</option>
-              <option value="platina">Platina</option>
-              <option value="diamante">Diamante</option>
-              <option value="mestre">Mestre</option>
-              <option value="graomestre">Grão-Mestre</option>
-              <option value="desafiante">Desafiante</option>
-            </select>
+            <div>
+              <select>
+                <option value="">Rota</option>
+                <option value={"toplane"}>Topo</option>
+                <option value={"jungle"}>Selva</option>
+                <option value={"midlane"}>Meio</option>
+                <option value={"adc"}>Atirador</option>
+                <option value={"suport"}>Suporte</option>
+              </select>
+              <select>
+                <option value="">Elo</option>
+                <option value={"ferro"}>Ferro</option>
+                <option value={"bronze"}>Bronze</option>
+                <option value={"prata"}>Prata</option>
+                <option value={"ouro"}>Ouro</option>
+                <option value={"platina"}>Platina</option>
+                <option value={"diamante"}>Diamante</option>
+                <option value={"mestre"}>Mestre</option>
+                <option value={"grão-mestre"}>Grão-Mestre</option>
+                <option value={"desafiante"}>Desafiante</option>
+              </select>
+            </div>
           </section>
 
           <ul>
