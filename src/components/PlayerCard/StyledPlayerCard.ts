@@ -1,7 +1,6 @@
-import { api } from './../../services/api';
 import styled from "styled-components";
 
-export const StyledCard = styled.div`
+export const StyledCard = styled.li`
   box-sizing: border-box;
 
   width: 90vw;

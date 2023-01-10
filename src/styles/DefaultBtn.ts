@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 interface iStyledButtonProps {
-    green?: boolean;
+    green?: boolean | string;
     size?: string;
     small?: boolean;
 }
