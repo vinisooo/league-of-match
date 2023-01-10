@@ -34,7 +34,7 @@ export const StyledMain = styled.main`
     animation: inputAnimation 2s infinite;
   }
 
-  >div{
+  >ul{
     margin-top: 50px;
     display: grid;
     grid-gap: 130px;
