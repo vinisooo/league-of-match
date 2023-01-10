@@ -51,24 +51,24 @@ export function Register () {
         <DivSelect>
           <select {...register("elo")}>
             <option >Selecione seu elo</option>
-            <option value={"Ferro"}>Ferro</option>
-            <option value={"Bronze"}>Bronze</option>
-            <option value={"Prata"}>Prata</option>
-            <option value={"Ouro"}>Ouro</option>
-            <option value={"Platina"}>Platina</option>
-            <option value={"Diamante"}>Diamante</option>
-            <option value={"Mestre"}>Mestre</option>
-            <option value={"Grão-Mestre"}>Grão-Mestre</option>
-            <option value={"Desafiante"}>Desafiante</option>
+            <option value={"ferro"}>Ferro</option>
+            <option value={"bronze"}>Bronze</option>
+            <option value={"prata"}>Prata</option>
+            <option value={"ouro"}>Ouro</option>
+            <option value={"platina"}>Platina</option>
+            <option value={"diamante"}>Diamante</option>
+            <option value={"mestre"}>Mestre</option>
+            <option value={"grão-mestre"}>Grão-Mestre</option>
+            <option value={"desafiante"}>Desafiante</option>
           </select>
           {errors.elo && <span>{errors.elo.message}</span>}
           <select {...register("route")}>
             <option>Sua rota preferida</option>
-            <option value={"TopLane"}>TopLane</option>
-            <option value={"MidLane"}>MidLane</option>
-            <option value={"Adc"}>Adc</option>
-            <option value={"Jungle"}>Jungle</option>
-            <option value={"Suport"}>Suport</option>
+            <option value={"toplane"}>TopLane</option>
+            <option value={"midlane"}>MidLane</option>
+            <option value={"adc"}>Adc</option>
+            <option value={"jungle"}>Jungle</option>
+            <option value={"suport"}>Suport</option>
           </select>
           {errors.route && <span>{errors.route.message}</span>}
         </DivSelect>
