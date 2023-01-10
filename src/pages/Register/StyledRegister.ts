@@ -5,7 +5,6 @@ export const RegisterPage = styled.div`
   div {
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: space-between;
   }
 `;
