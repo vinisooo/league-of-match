@@ -2,7 +2,7 @@ import React from "react";
 import { Home } from "pages/Home/Home";
 import { Login } from "pages/Login/Login";
 import { MyProfile } from "pages/MyProfile/MyProfile";
-import { Players } from "pages/MyProfile/Players/Players";
+import { Players } from "pages/Players/Players";
 import { Register } from "pages/Register/Register";
 import { Route, Routes } from "react-router-dom";
 import { PlayerModal } from "components/PlayerModal/PlayerModal";
