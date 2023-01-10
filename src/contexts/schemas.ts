@@ -1,13 +1,8 @@
 import * as yup from "yup";
 
 export const LoginSchema = yup.object().shape({
-  email: yup
-    .string()
-    .required("Email obrigatório")
-    .email("Email inválido"),
-  password: yup
-    .string()
-    .required("Senha obrigatória")
+  email: yup.string().required("Email obrigatório").email("Email inválido"),
+  password: yup.string().required("Senha obrigatória")
 });
 
 export const RegisterSchema = yup.object().shape({
@@ -25,13 +20,29 @@ export const RegisterSchema = yup.object().shape({
   confirmPassword: yup
     .string()
     .required("Confirmação de senha obrigatória para cadastro"),
-  nickname: yup
-    .string()
-    .required("Nome de usuário obrigatório para cadastro"),
+  nickname: yup.string().required("Nome de usuário obrigatório para cadastro"),
   elo: yup
     .string()
-    .required("Elo obrigatório para cadastro"),
+    .required("Elo obrigatório para cadastro")
+    .oneOf(
+      [
+        "Ferro",
+        "Bronze",
+        "Prata",
+        "Ouro",
+        "Platina",
+        "Diamante",
+        "Mestre",
+        "Grão-Mestre",
+        "Desafiante"
+      ],
+      "Elo obrigatório para cadastro"
+    ),
   route: yup
     .string()
     .required("Rota obrigatória para cadastro")
+    .oneOf(
+      ["TopLane", "MidLane", "Adc", "Jungle", "Suport"],
+      "Rota obrigatória para cadastro"
+    )
 });
