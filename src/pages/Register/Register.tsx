@@ -60,15 +60,17 @@ export function Register () {
             <option value={"Mestre"}>Mestre</option>
             <option value={"Grão-Mestre"}>Grão-Mestre</option>
             <option value={"Desafiante"}>Desafiante</option>
-          </select >
+          </select>
+          {errors.elo && <span>{errors.elo.message}</span>}
           <select {...register("route")}>
             <option>Sua rota preferida</option>
             <option value={"TopLane"}>TopLane</option>
             <option value={"MidLane"}>MidLane</option>
             <option value={"Adc"}>Adc</option>
             <option value={"Jungle"}>Jungle</option>
-            <option value={"Suporte"}>Suporte</option>
+            <option value={"Suport"}>Suport</option>
           </select>
+          {errors.route && <span>{errors.route.message}</span>}
         </DivSelect>
         <div>
           <DefaultLink to="/login" size="49%">
