@@ -6,15 +6,16 @@ import { Link } from "react-router-dom";
 interface iFormProps {
   children: React.ReactNode;
   left?: boolean;
+  leftImg?: boolean;
   formTitle?: string;
   callback: () => void;
 }
 
-export function Form ({ children, formTitle, left, callback }: iFormProps) {
+export function Form ({ children, formTitle, leftImg, left, callback }: iFormProps) {
   return (
     <StyledForm noValidate onSubmit={callback}>
       <img
-        className={left ? "align-img-left" : ""}
+        className={leftImg ? "align-img-left" : ""}
         src={logo}
         alt="league of match"
       />
