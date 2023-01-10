@@ -28,9 +28,9 @@ export function AboutDev () {
                             <h3>Projeto realizado usando as seguintes ferramentas:</h3>
                             <ul>
                                 {
-                                    technologies.map((tech, index) => {
+                                    technologies.map((tech) => {
                                         return (
-                                            <li key={index}>
+                                            <li key={tech.id}>
                                                 <img src={tech.img} alt={tech.name} />
                                                 <span>{tech.name}</span>
                                             </li>
