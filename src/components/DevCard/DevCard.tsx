@@ -1,17 +1,18 @@
 import React from "react";
 import { StyledDevCard } from "./StyledDevCard"
 
-interface iDev {
+interface iDevProps {
     dev: {
         name: string;
         img: string;
         part: string;
         github: string;
         linkedin: string;
+        id: number;
     }
 }
 
-export function DevCard ({ dev }: iDev) {
+export function DevCard ({ dev }: iDevProps) {
     return (
         <StyledDevCard>
             <figure>

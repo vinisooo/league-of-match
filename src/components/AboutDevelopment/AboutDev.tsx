@@ -43,9 +43,9 @@ export function AboutDev () {
                             <h3>Desenvolvedores do Projeto:</h3>
                             <ul>
                                 {
-                                    developers.map((dev, index) => {
+                                    developers.map((dev) => {
                                         return (
-                                            <DevCard dev={dev} key={index}/>
+                                            <DevCard dev={dev} key={dev.id}/>
                                         )
                                     })
                                 }

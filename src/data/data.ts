@@ -31,48 +31,55 @@ export const developers = [
         img: "https://ca.slack-edge.com/TQZR39SET-U03K5B5LWSF-7f8889614785-512",
         part: "Desenvolvimento Front-end",
         github: "https://github.com/Typhonn003",
-        linkedin: "https://www.linkedin.com/in/typhonn003/"
+        linkedin: "https://www.linkedin.com/in/typhonn003/",
+        id: 0
     },
     {
         name: "Bernardo Guimarães",
         img: "https://ca.slack-edge.com/TQZR39SET-U03KJ309E81-933194036a76-512",
         part: "Desenvolvimento Front-end e Fake API",
         github: "https://github.com/megaurso",
-        linkedin: "https://www.linkedin.com/in/bernardo-guimaraes-59aa6320a/"
+        linkedin: "https://www.linkedin.com/in/bernardo-guimaraes-59aa6320a/",
+        id: 1
     },
     {
         name: "Gabriel Galvão",
         img: "https://ca.slack-edge.com/TQZR39SET-U03KV63F8SC-fe6773475b4f-512",
         part: "Desenvolvimento Front-end",
         github: "https://github.com/gabrielgpavao",
-        linkedin: "https://www.linkedin.com/in/gabrielgpavao/"
+        linkedin: "https://www.linkedin.com/in/gabrielgpavao/",
+        id: 2
     },
     {
         name: "Kaique Amorim",
         img: "https://ca.slack-edge.com/TQZR39SET-U03FZL3S0LT-f6e0b5be38cb-512",
         part: "Desenvolvimento Front-end",
         github: "https://github.com/KaiqueVasc",
-        linkedin: ""
+        linkedin: "",
+        id: 3
     },
     {
         name: "Iago Pinto Pereira",
         img: "https://ca.slack-edge.com/TQZR39SET-U03QHCA9VB3-5fd94ad0117b-512",
         part: "Desenvolvimento Front-end",
         github: "https://github.com/Iago111996",
-        linkedin: "https://www.linkedin.com/in/iago-pinto-1b07aa208/"
+        linkedin: "https://www.linkedin.com/in/iago-pinto-1b07aa208/",
+        id: 4
     },
     {
         name: "Vinícius Lira",
         img: "https://ca.slack-edge.com/TQZR39SET-U03MXPXPMLZ-669fc4aaa83e-512",
         part: "Desenvolvimento Front-end e UI",
         github: "https://github.com/vinisooo",
-        linkedin: "https://www.linkedin.com/in/vin%C3%ADcius-lira-a6294b244/"
+        linkedin: "https://www.linkedin.com/in/vin%C3%ADcius-lira-a6294b244/",
+        id: 5
     },
     {
         name: "Mauí Andrade Buarque",
         img: "https://ca.slack-edge.com/TQZR39SET-U03NMKYC28M-f196c8cd5a25-512",
         part: "Desenvolvimento Front-end",
         github: "https://github.com/mauibuarque",
-        linkedin: "https://www.linkedin.com/in/mauibuarque/"
+        linkedin: "https://www.linkedin.com/in/mauibuarque/",
+        id: 6
     },
 ];
