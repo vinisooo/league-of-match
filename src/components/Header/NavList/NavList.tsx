@@ -1,9 +1,11 @@
-import React from "react";
+import { UserContext } from "contexts/UserContext";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { StyledNavList } from "./StyledNavList";
 
 export function NavList () {
     const location = useLocation();
+    const { setPreviousPage } = useContext(UserContext)
 
     const loggedUser = localStorage.getItem("@league-of-match: token");
 
@@ -12,6 +14,9 @@ export function NavList () {
         localStorage.removeItem("@league-of-match: token");
     }
 
+    function updatePreviousPage () {
+        setPreviousPage(location.pathname)
+    }
     return (
         <StyledNavList>
             <ul>
@@ -30,18 +35,17 @@ export function NavList () {
                         </li>
 
                         <li>
-                            <Link to={"/login"} onClick={logOut}>Sair</Link>
+                            <Link to={"/"} onClick={logOut}>Sair</Link>
                         </li>
                     </>
                     : <>
                         <li>
-                                <Link to={"/register"} className={location.pathname === "/register" ? "emphasis" : ""}>Registrar</Link>
+                            <Link to={"/register"} onClick={updatePreviousPage} className={location.pathname === "/register" ? "emphasis" : ""}>Registrar</Link>
                         </li>
                         <li>
-                                <Link to={"/login"} className={location.pathname === "/login" ? "emphasis" : ""}>Logar</Link>
+                            <Link to={"/login"} onClick={updatePreviousPage} className={location.pathname === "/login" ? "emphasis" : ""}>Logar</Link>
                         </li>
                     </>
-
                 }
             </ul>
         </StyledNavList>

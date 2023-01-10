@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../assets/logo.svg";
 import { StyledForm } from "./StyledForm";
 import { Link } from "react-router-dom";
+import { UserContext } from "contexts/UserContext";
 
 interface iFormProps {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ interface iFormProps {
 }
 
 export function Form ({ children, formTitle, left, callback }: iFormProps) {
+  const { previousPage } = useContext(UserContext)
   return (
     <StyledForm noValidate onSubmit={callback}>
       <img
@@ -24,7 +26,7 @@ export function Form ({ children, formTitle, left, callback }: iFormProps) {
         </header>
         {children}
       </div>
-      <Link to="/" className={left ? "left-home" : ""} >← Voltar para home</Link>
+      <Link to={previousPage} className={left ? "left-home" : ""} >← Voltar para {previousPage === "/players" ? "Players" : "Home"}</Link>
     </StyledForm>
   );
 }
