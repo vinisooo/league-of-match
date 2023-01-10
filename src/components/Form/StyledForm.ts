@@ -61,4 +61,22 @@ export const StyledForm = styled.form`
         color: var(--color-brand-1);
     }
 
+    >a{
+        position: absolute;
+        bottom: 40px;
+        right: 60px;
+
+        color: var(--color-grey-3);
+
+        transition: 0.3s ease;
+    }
+
+    >a:hover{
+        filter: brightness(1.5);
+    }
+
+    .left-home{
+        left: 60px;
+    }
+
 `
