@@ -1,5 +1,5 @@
 import { Form } from "components/Form/Form";
-import { FormBG } from "components/FormBG/FormBG";
+import { FormBG } from "components/FormImageBG/FormImageBG";
 import { LoginPage } from "./StyledLogin";
 import { InputBox } from "components/InputBox/InputBox";
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
