@@ -17,7 +17,11 @@ export const RegisterSchema = yup.object().shape({
     .email("Email inválido"),
   password: yup
     .string()
-    .required("Senha obrigatória para cadastro"),
+    .required("Senha obrigatória para cadastro")
+    .matches(/(?=.*?[A-Z])/, "Pelo menos uma letra maiúscula")
+    .matches(/(?=.*?[a-z])/, "Pelo menos uma letra minúscula")
+    .matches(/(?=.*?[0-9])/, "Pelo menos um dígito")
+    .min(8, "Pelo menos 8 caracteres"),
   confirmPassword: yup
     .string()
     .required("Confirmação de senha obrigatória para cadastro"),
