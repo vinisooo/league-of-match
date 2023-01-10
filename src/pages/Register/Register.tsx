@@ -63,12 +63,12 @@ export function Register () {
           </select>
           {errors.elo && <span>{errors.elo.message}</span>}
           <select {...register("route")}>
-            <option>Sua rota preferida</option>
-            <option value={"toplane"}>TopLane</option>
-            <option value={"midlane"}>MidLane</option>
-            <option value={"adc"}>Adc</option>
-            <option value={"jungle"}>Jungle</option>
-            <option value={"suport"}>Suport</option>
+            <option>Selecione sua rota</option>
+            <option value={"toplane"}>Topo</option>
+            <option value={"jungle"}>Selva</option>
+            <option value={"midlane"}>Meio</option>
+            <option value={"adc"}>Atirador</option>
+            <option value={"suport"}>Suporte</option>
           </select>
           {errors.route && <span>{errors.route.message}</span>}
         </DivSelect>
