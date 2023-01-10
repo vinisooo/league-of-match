@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyledAboutDev, SeeMore} from "./StyledAboutDev";
+import { StyledAboutDev, SeeMore } from "./StyledAboutDev";
 import { StyledContainerPlayers } from "styles/Container";
 import { technologies, developers } from "data/data";
 import { DevCard } from "components/DevCard/DevCard";
@@ -57,7 +57,7 @@ export function AboutDev () {
                         </div>
                     </StyledContainerPlayers>
                     <aside>
-                        <img src="https://camo.githubusercontent.com/fc59303e8d7b2854316f6e51f024184132a25b7377164a6a7a5c80dd83bf6230/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f30392f63362f32392f30396336323930336265656261333336646339646137366562356339613130372e676966" alt="coding" />
+                        <img src="https://i.pinimg.com/originals/09/c6/29/09c62903beeba336dc9da76eb5c9a107.gif" alt="coding" />
                     </aside>
                 </StyledAboutDev>
             }

@@ -154,6 +154,11 @@ export const StyledAboutDev = styled.section`
 
         img{
             height: 100%;
+            opacity: 0.7;
+            transition: 0.5s ease;
+        }
+        img:hover{
+            opacity: 1;
         }
     }
 
