@@ -119,7 +119,7 @@ export function MyProfile () {
   return user.hasOwnProperty("id") ? (
     <>
       <Header isMyProfile={true} />
-      <Container>
+      <Container className="animate__animated animate__fadeIn">
         <Aside
           url={
             user.main?.splashart ||

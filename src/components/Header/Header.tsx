@@ -21,7 +21,7 @@ export function Header ({ isMyProfile }: iHeaderProps) {
   return (
     <>
       {mobMenu && <MenuModal/>}
-      <StyledHeader isMyProfile={isMyProfile}>
+      <StyledHeader isMyProfile={isMyProfile} className="animate__animated animate__fadeIn">
         <StyledContainerPlayers>
 
           <img src={logo} alt="Logo do Site" />

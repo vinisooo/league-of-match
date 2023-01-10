@@ -9,7 +9,7 @@ import { AboutDev } from "components/AboutDevelopment/AboutDev";
 
 export function Home () {
   return (
-    <StyledDiv>
+    <StyledDiv className="animate__animated animate__fadeIn">
       <Header />
 
       <main>
