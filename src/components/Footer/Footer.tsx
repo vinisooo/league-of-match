@@ -26,7 +26,7 @@ export function Footer () {
                     </li>
 
                     <li>
-                        <a target="_blank" href="https://www.linkedin.com/in/vin%C3%ADcius-lira-a6294b244/">
+                        <a target="_blank" href="https://www.linkedin.com/in/iago-pinto-1b07aa208/">
                             Iago Pereira - TL
                         </a>
                     </li>
