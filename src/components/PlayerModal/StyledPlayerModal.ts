@@ -201,7 +201,7 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
         color: var(--color-black-1);
         background-color: var(--color-brand-1);
         max-width: 400px;
-        margin-top: 20px;
+        margin-top: 40px;
         transition: 0.3s ease;
     }
 
