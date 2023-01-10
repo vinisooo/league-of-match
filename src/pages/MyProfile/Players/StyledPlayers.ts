@@ -7,11 +7,16 @@ export const StyledMain = styled.main`
 
   margin-bottom: 1rem;
 
-  margin-top: 120px;
+  margin-top: 100px;
 
   section {
     display: flex;
     gap: 0.625rem;
+  }
+
+  section > div {
+    display: flex;
+    gap: 10px;
   }
 
   select {
@@ -34,18 +39,51 @@ export const StyledMain = styled.main`
     animation: inputAnimation 2s infinite;
   }
 
-  >ul{
-    margin-top: 50px;
+  >ul {
+    margin-top: 30px;
+    width: 100%;
+
     display: grid;
-    grid-gap: 130px;
-    justify-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit,300px);
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  @media (max-width: 700px) {
-    >div{
-      grid-gap: 30px;
+  @media (max-width: 1200px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 920px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 740px) {
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (max-width: 760px) {
+    section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    section > div {      
+      justify-content: space-between;
+    }
+
+    select {
+      width: 50%;
+    }
+
+    ul {
+      display: flex;
+
+      overflow-x: auto;
     }
   }
 

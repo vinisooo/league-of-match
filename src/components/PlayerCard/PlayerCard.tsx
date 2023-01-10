@@ -30,9 +30,7 @@ export function PlayerCard ({ user }: iPlayerCardProps) {
                     </div>
                     <span>{user.elo} {user.main && `| Main ${user.main.name}`}</span>
                 </div>
-                <div className="info_bio">
-                    <p>{user?.bio}</p>
-                </div>
+                <p>{user?.bio}</p>
                 <div className="info_btns">
                     <DefaultLink to={`${user.id}`} green="true" size="100%">Vamos jogar!</DefaultLink>
                     <a className="historic" target="_blank" href={`https://www.leagueofgraphs.com/pt/summoner/br/${userNameAux}`}>Ver histórico de partida</a>
