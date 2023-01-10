@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledCard = styled.li`
   box-sizing: border-box;
 
-  width: 90vw;
+  min-width: 270px;
   height: 460px;
 
   background-color: var(--color-black-2);
@@ -13,10 +13,6 @@ export const StyledCard = styled.li`
   border: 2px solid var(--color-brand-4);
 
   transition: 0.5s;
-
-  @media (min-width: 600px) {
-    width: 320px;
-  }
 
   .main_bg {
     height: 30%;
@@ -88,7 +84,7 @@ export const StyledCard = styled.li`
     height: 19px;
   }
 
-  .info_bio {
+  p {
     height: 40%;
 
     display: flex;
