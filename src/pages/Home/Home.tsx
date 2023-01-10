@@ -5,10 +5,11 @@ import logo from "../../assets/logo.svg";
 import { DefaultBtn } from "styles/DefaultBtn";
 import { StyledContainerPlayers } from "styles/Container";
 import { StyledDiv } from "./StyledHome";
+import { AboutDev } from "components/AboutDevelopment/AboutDev";
 
 export function Home () {
   return (
-    <StyledDiv>
+    <StyledDiv className="animate__animated animate__fadeIn">
       <Header />
 
       <main>
@@ -29,6 +30,7 @@ export function Home () {
             </div>
           </StyledContainerPlayers>
         </section>
+        <AboutDev/>
       </main>
 
       <Footer />

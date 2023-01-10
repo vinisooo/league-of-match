@@ -20,7 +20,7 @@ export function Players () {
   return (
     <>
       <Header />
-      <StyledContainerPlayers>
+      <StyledContainerPlayers className="animate__animated animate__fadeIn">
 
         <StyledMain>
           <section>

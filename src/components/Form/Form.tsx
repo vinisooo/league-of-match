@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 import { StyledForm } from "./StyledForm";
+import { Link } from "react-router-dom";
 
 interface iFormProps {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ export function Form ({ children, formTitle, left, callback }: iFormProps) {
         </header>
         {children}
       </div>
+      <Link to="/" className={left ? "left-home" : ""} >← Voltar para home</Link>
     </StyledForm>
   );
 }

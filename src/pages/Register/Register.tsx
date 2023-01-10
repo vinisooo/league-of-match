@@ -26,7 +26,7 @@ export function Register () {
   });
   const onSubmit = handleSubmit(registerUser);
   return (
-    <RegisterPage>
+    <RegisterPage className="animate__animated animate__fadeIn">
       <Form formTitle="Cadastrar" left callback={onSubmit}>
         <InputBox
           errors={errors.email?.message}
