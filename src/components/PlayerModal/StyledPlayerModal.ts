@@ -25,6 +25,12 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
         position: relative;
     }
 
+    @media (max-height: 650px) {
+        >div{
+            height: 60vh;
+        }
+    }
+
     >div::before{
         content: "";
         position: absolute;
@@ -57,6 +63,10 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
             justify-content: center;
             flex-wrap: wrap;
         }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         header figure{
             width: 140px;
@@ -135,6 +145,9 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
             position: relative;
             width: 100%;
             max-width: 400px;
+            max-height: 150px;
+
+            overflow-y: scroll;
 
             padding-right: 20px;
             margin: 0 auto;
@@ -143,24 +156,6 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
             display: flex;
             flex-direction: column;
             gap: 20px;
-
-            overflow-y: auto;
-
-            a{
-                width: 100%;
-                padding: 15px;
-                text-align: center;
-
-                text-decoration: none;
-                color: var(--color-black-1);
-                background-color: var(--color-brand-1);
-                transition: 0.3s ease;
-            }
-
-            
-            a:hover{
-                filter: brightness(1.1);
-            }
 
             h3{
                 font-size: 16px;
@@ -193,6 +188,26 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
             }
         
         }
+    }
+
+    
+    .bottom-btn{
+        margin: 0 auto;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+
+        text-decoration: none;
+        color: var(--color-black-1);
+        background-color: var(--color-brand-1);
+        max-width: 400px;
+        margin-top: 20px;
+        transition: 0.3s ease;
+    }
+
+    
+    .bottom-btn:hover{
+        filter: brightness(1.1);
     }
 
     .animate__fadeInUp{

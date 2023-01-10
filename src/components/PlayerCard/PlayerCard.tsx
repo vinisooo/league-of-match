@@ -20,7 +20,7 @@ export function PlayerCard ({ user }: iPlayerCardProps) {
             </figure>
             <div className="main_bgshadow" ></div>
             <figure className="user_icon">
-                <img src={user.profileIcon || "https://i.imgur.com/5UOr55q.png"} alt="Icone do usuário" />
+                <img src={user.profileIcon || "https://i.ibb.co/FX7YqmQ/5UOr55q.png"} alt="Icone do usuário" />
             </figure>
             <div className="user_info">
                 <div className="info_persona">
