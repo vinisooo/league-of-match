@@ -11,6 +11,8 @@ import { Outlet } from "react-router-dom";
 export function Players () {
   const { players, getAllPlayers } = useContext(UserContext);
 
+  const filteredPlayersByMain = players.filter(player => player.main)
+
   useEffect(() => {
     function handleGetAllPlayers () {
       getAllPlayers();
@@ -25,7 +27,7 @@ export function Players () {
         <StyledMain>
           <section>
             <InputBox type="text" label="Pesquisar usuário" />
-            <select name="" id="">
+            <select>
               <option value="">Rota</option>
               <option value="top">Top</option>
               <option value="jungle">Jungle</option>
@@ -33,7 +35,7 @@ export function Players () {
               <option value="adc">Adc</option>
               <option value="suport">Suport</option>
             </select>
-            <select name="" id="">
+            <select>
               <option value="">Elo</option>
               <option value="ferro">Ferro</option>
               <option value="bronze">Bronze</option>
@@ -47,11 +49,11 @@ export function Players () {
             </select>
           </section>
 
-          <div>
-            {players.map((user) => (
+          <ul>
+            {filteredPlayersByMain.map((user) => (
               <PlayerCard key={user.id} user={user} />
             ))}
-          </div>
+          </ul>
         </StyledMain>
       </StyledContainerPlayers>
 
