@@ -60,10 +60,10 @@ export function PlayerModal () {
                                 {modalPlayer.bio}
                             </p>
                         }
-                            <a target="_blank" href={`https://www.leagueofgraphs.com/pt/summoner/br/${modalPlayer.nickname?.replace(" ", "+")}`}>
-                                Ver histórico de partidas
-                            </a>
                     </div>
+                    <a className="bottom-btn" target="_blank" href={`https://www.leagueofgraphs.com/pt/summoner/br/${modalPlayer.nickname?.replace(" ", "+")}`}>
+                        Ver histórico de partidas
+                    </a>
                 </div>
             </div>
         </StyledPlayerModal>
