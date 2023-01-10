@@ -4,9 +4,7 @@ import { UserContext } from "contexts/UserContext";
 import React, { useContext } from "react";
 import {
   DivSelect,
-  OptionRegister,
-  RegisterPage,
-  SelectRegister
+  RegisterPage
 } from "./StyledRegister";
 import { useForm } from "react-hook-form";
 import { iUserRegister } from "contexts/interfaces";
@@ -51,26 +49,28 @@ export function Register () {
           register={register("nickname")}
         />
         <DivSelect>
-          <SelectRegister {...register("elo")}>
-            <OptionRegister>Selecione seu elo</OptionRegister>
-            <OptionRegister>Ferro</OptionRegister>
-            <OptionRegister>Bronze</OptionRegister>
-            <OptionRegister>Prata</OptionRegister>
-            <OptionRegister>Ouro</OptionRegister>
-            <OptionRegister>Platina</OptionRegister>
-            <OptionRegister>Diamante</OptionRegister>
-            <OptionRegister>Mestre</OptionRegister>
-            <OptionRegister>Grão-Mestre</OptionRegister>
-            <OptionRegister>Desafiante</OptionRegister>
-          </SelectRegister>
-          <SelectRegister {...register("route")}>
-            <OptionRegister>Sua rota preferida</OptionRegister>
-            <OptionRegister>TopLane</OptionRegister>
-            <OptionRegister>MidLane</OptionRegister>
-            <OptionRegister>Adc</OptionRegister>
-            <OptionRegister>Jungle</OptionRegister>
-            <OptionRegister>Suporte</OptionRegister>
-          </SelectRegister>
+          <select {...register("elo")}>
+            <option >Selecione seu elo</option>
+            <option value={"Ferro"}>Ferro</option>
+            <option value={"Bronze"}>Bronze</option>
+            <option value={"Prata"}>Prata</option>
+            <option value={"Ouro"}>Ouro</option>
+            <option value={"Platina"}>Platina</option>
+            <option value={"Diamante"}>Diamante</option>
+            <option value={"Mestre"}>Mestre</option>
+            <option value={"Grão-Mestre"}>Grão-Mestre</option>
+            <option value={"Desafiante"}>Desafiante</option>
+          </select>
+          {errors.elo && <span>{errors.elo.message}</span>}
+          <select {...register("route")}>
+            <option>Sua rota preferida</option>
+            <option value={"TopLane"}>TopLane</option>
+            <option value={"MidLane"}>MidLane</option>
+            <option value={"Adc"}>Adc</option>
+            <option value={"Jungle"}>Jungle</option>
+            <option value={"Suport"}>Suport</option>
+          </select>
+          {errors.route && <span>{errors.route.message}</span>}
         </DivSelect>
         <div>
           <DefaultLink to="/login" size="49%">
