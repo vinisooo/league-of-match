@@ -25,7 +25,7 @@ export function Login () {
             <Form formTitle="Login" callback={handleSubmit(login)}>
                 <InputBox type="email" errors={errors.email?.message} label="email" register={register("email")} />
                 <InputBox type="password" errors={errors.password?.message} label="senha" register={register("password")}/>
-                <div>
+                <div className="form-btns">
                     <DefaultLink to="/register" size="49%">Criar conta</DefaultLink>
                     <DefaultBtn type="submit" green size="49%">Entrar</DefaultBtn>
                 </div>
