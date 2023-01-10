@@ -24,6 +24,7 @@ export function UserProvider ({ children }: iContextChildrenProps) {
   const [players, setPlayers] = useState<iPlayers[]>([]);
   const [user, setUser] = useState({} as iPlayers);
   const [loading, setLoading] = useState(true);
+  const [previousPage, setPreviousPage] = useState('')
 
   useEffect(() => {
     async function loadUser () {
@@ -107,6 +108,8 @@ export function UserProvider ({ children }: iContextChildrenProps) {
         players,
         user,
         loading,
+        previousPage,
+        setPreviousPage,
         getAllPlayers,
         registerUser,
         setUser,
