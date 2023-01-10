@@ -21,18 +21,24 @@ export const StyledDevCard = styled.li`
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid var(--color-black-2);
+        border: 3px solid var(--color-black-2);
+        transition: 0.3s ease;
 
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.3s ease;
         }
     }
 
     figure:hover{
-        border: 2px solid var(--color-brand-1);
-        box-shadow:  0 0 32px 0 var(--color-brand-1);
+        border: 3px solid var(--color-brand-1);
+        box-shadow:  0 0 10px 0 var(--color-brand-1);
+
+        img{
+            transform: scale(1.1);
+        }
     }
 
     >div{
