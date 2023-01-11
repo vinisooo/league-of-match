@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Navigate } from "react-router-dom";
 
 import {
@@ -17,100 +17,14 @@ import ImgProfile from "../../assets/login-bg.png";
 
 import { Header } from "components/Header/Header";
 import { icons } from "./icons";
-import { api } from "services/api";
 import { UserContext } from "contexts/UserContext";
-import { toast } from "react-toastify";
 
-interface iCharacter {
-  icon: "string";
-  name: "string";
-}
+import { iCharacter } from "contexts/interfaces";
+import { ProfileContext } from "contexts/ProfileContext";
 
 export function MyProfile () {
-  const { user, loading, getAllPlayers, setUser } = useContext(UserContext);
-  const [characters, setCharacters] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [filterCharacters, setFilterCharacters] = useState([]);
-
-  useEffect(() => {
-    async function getCharacters () {
-      try {
-        const { data } = await api.get("/characters");
-
-        setCharacters(data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    if (characters.length > 0) {
-      if (searchValue === "" || searchValue === undefined) {
-        setFilterCharacters(characters);
-      } else {
-        setFilterCharacters(
-          characters.filter((character: iCharacter) =>
-            character.name.toLowerCase().includes(searchValue.toLowerCase())
-          )
-        );
-      }
-    }
-
-    getCharacters();
-  }, [characters, searchValue]);
-
-  async function changeProfileIcon (img: string) {
-    const data = {
-      profileIcon: img
-    };
-
-    try {
-      const token = localStorage.getItem("@league-of-match: token");
-
-      await api.patch(`/users/${user.id}`, data, {
-        headers: {
-          authorization: `Bearer ${token}`
-        }
-      });
-
-      const newUser = user;
-
-      newUser.profileIcon = img;
-
-      setUser(newUser);
-
-      getAllPlayers();
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  async function setMain (character: iCharacter) {
-    const data = {
-      main: character
-    };
-    try {
-      const token = localStorage.getItem("@league-of-match: token");
-      const userID = localStorage.getItem("@league-of-match: id");
-
-      const response = await api.patch(`/users/${userID}`, data, {
-        headers: {
-          authorization: `Bearer ${token}`
-        }
-      });
-
-      toast.success("Seu main foi alterado");
-      setUser(response.data);
-      getAllPlayers();
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  function updateSearchValue (event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSearchValue(inputValue);
-  }
+  const { user, loading } = useContext(UserContext);
+  const { changeProfileIcon, updateSearchValue, setInputValue, setMain, filterCharacters } = useContext(ProfileContext)
 
   if (loading) {
     return null;
@@ -208,7 +122,12 @@ export function MyProfile () {
             <ul>
               {icons.map((icon, index) => (
                 <ButtonIcon key={index}>
-                  <button onClick={async () => { await changeProfileIcon(icon) }} type="button">
+                  <button
+                    onClick={async () => {
+                      await changeProfileIcon(icon);
+                    }}
+                    type="button"
+                  >
                     <img src={icon} alt="" />
                   </button>
                 </ButtonIcon>
@@ -220,9 +139,15 @@ export function MyProfile () {
             <div>
               <p>Main</p>
 
-              <form onSubmit={(event) => { updateSearchValue(event) }}>
+              <form
+                onSubmit={(event) => {
+                  updateSearchValue(event);
+                }}
+              >
                 <input
-                  onChange={(event) => { setInputValue(event.target.value) }}
+                  onChange={(event) => {
+                    setInputValue(event.target.value);
+                  }}
                   type="text"
                   placeholder="Pesquisar campeão"
                 />
@@ -235,7 +160,12 @@ export function MyProfile () {
             <ul>
               {filterCharacters.map((character: iCharacter, index) => (
                 <ButtonIcon key={index}>
-                  <button type="button" onClick={async () => { await setMain(character) }}>
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      await setMain(character);
+                    }}
+                  >
                     <img src={character.icon} alt={character.name} />
                     <span>{character.name}</span>
                   </button>

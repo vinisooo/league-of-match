@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, FormEvent, SetStateAction } from "react";
 
 export interface iContextChildrenProps {
   children: React.ReactNode;
@@ -49,4 +49,17 @@ export interface iUserRegister {
   nickname: string;
   elo: string;
   route: string;
+}
+
+export interface iCharacter {
+  icon: "string";
+  name: "string";
+}
+
+export interface iProfileProviderValue {
+  changeProfileIcon: (img: string) => Promise<void>;
+  updateSearchValue: (event: FormEvent<HTMLFormElement>) => void;
+  setInputValue: Dispatch<SetStateAction<string>>;
+  setMain: (character: iCharacter) => Promise<void>;
+  filterCharacters: iCharacter[];
 }

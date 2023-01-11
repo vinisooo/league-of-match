@@ -7,20 +7,22 @@ import "animate.css";
 
 export function App () {
   return (
+    <>
     <UserProvider>
-      <Routes />
-      <ToastContainer
-        position="bottom-left"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
+        <Routes />
     </UserProvider>
+    <ToastContainer
+    position="bottom-left"
+    autoClose={2000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="dark"
+    />
+    </>
   );
 }

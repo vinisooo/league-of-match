@@ -15,6 +15,11 @@ export const Container = styled.div`
     width: 50%;
     padding-right: 2rem;
     margin-top: 100px;
+
+    @media (max-width: 600px) {
+      width: 100%;
+      padding-left: 2rem;
+    }
   }
 `;
 
@@ -44,6 +49,10 @@ export const Aside = styled.aside<AsideProps>`
       rgba(0, 0, 0, 1) 87%,
       rgba(0, 0, 0, 1) 100%
     );
+  }
+
+  @media (max-width: 600px) {
+    display: none;
   }
 `;
 
