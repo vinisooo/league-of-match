@@ -23,19 +23,20 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
             console.error(error);
           }
         }
-        if (characters.length > 0) {
-          if (searchValue === "" || searchValue === undefined) {
-            setFilterCharacters(characters);
-          } else {
-            setFilterCharacters(
-              characters.filter((character: iCharacter) =>
-                character.name.toLowerCase().includes(searchValue.toLowerCase())
-              )
-            );
-          }
-        }
         getCharacters();
-      }, [characters, searchValue]);
+      }, []);
+
+    useEffect(() => {
+        if (searchValue === "" || searchValue === undefined) {
+            setFilterCharacters(characters);
+        } else {
+            setFilterCharacters(
+                characters.filter((character: iCharacter) =>
+                    character.name.toLowerCase().includes(searchValue.toLowerCase())
+                )
+            );
+        }
+    }, [characters, searchValue]);
 
       async function changeProfileIcon (img: string) {
         const data = {
@@ -43,21 +44,19 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
         };
         try {
           const token = localStorage.getItem("@league-of-match: token");
-          await api.patch(`/users/${user.id}`, data, {
+          const response = await api.patch(`/users/${user.id}`, data, {
             headers: {
               authorization: `Bearer ${token}`
             }
           });
-          const newUser = user;
-          newUser.profileIcon = img;
-          setUser(newUser);
+          setUser(response.data);
           getAllPlayers();
         } catch (error) {
           console.error(error);
         }
       }
 
-      async function setMain (character: iCharacter) {
+      async function changeMain (character: iCharacter) {
         const data = {
           main: character
         };
@@ -77,6 +76,72 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
         }
       }
 
+      async function changeRoute (selectValue: string) {
+        const data = {
+            route: selectValue
+        }
+        try {
+            const token = localStorage.getItem("@league-of-match: token");
+            const response = await api.patch(`/users/${user.id}`, data, {
+              headers: {
+                authorization: `Bearer ${token}`
+              }
+            });
+            setUser(response.data);
+            toast.success("Sua rota foi alterada")
+          } catch (error) {
+            console.error(error);
+          }
+      }
+
+      async function changeElo (selectValue: string) {
+        const data = {
+            elo: selectValue
+        }
+        try {
+            const token = localStorage.getItem("@league-of-match: token");
+            const response = await api.patch(`/users/${user.id}`, data, {
+              headers: {
+                authorization: `Bearer ${token}`
+              }
+            });
+            setUser(response.data);
+            toast.success("Seu elo foi alterado")
+          } catch (error) {
+            console.error(error);
+          }
+      }
+
+      async function changeUserData (inputValue: string, id: number) {
+        let data = {}
+
+        if (id === 0) {
+            data = {
+                nickname: inputValue
+            }
+        } else if (id === 1) {
+            data = {
+                bio: inputValue
+            }
+        } else if (id === 2) {
+            data = {
+                discord: inputValue
+            }
+        }
+        try {
+            const token = localStorage.getItem("@league-of-match: token");
+            const response = await api.patch(`/users/${user.id}`, data, {
+              headers: {
+                authorization: `Bearer ${token}`
+              }
+            });
+            setUser(response.data);
+            toast.success("Alteração realizada com sucesso")
+          } catch (error) {
+            console.error(error);
+          }
+      }
+
       function updateSearchValue (event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         setSearchValue(inputValue);
@@ -84,7 +149,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
 
     return (
         <ProfileContext.Provider value={{
-            changeProfileIcon, updateSearchValue, setInputValue, setMain, filterCharacters
+            changeProfileIcon, updateSearchValue, setInputValue, changeMain, changeRoute, changeElo, changeUserData, filterCharacters
         }}>
             {children}
         </ProfileContext.Provider>
