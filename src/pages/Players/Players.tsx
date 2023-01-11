@@ -63,7 +63,7 @@ export function Players () {
             </div>
           </section>
           {
-            filteredByName.length === 0 ? <h2>Nem um player foi encontrado!</h2> : <ul>
+            filteredByName.length === 0 ? <h2>Nenhum player foi encontrado!</h2> : <ul>
             {filteredByName.map((user) => (
               <PlayerCard key={user.id} user={user} />
             ))}

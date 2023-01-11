@@ -14,7 +14,7 @@ export function PlayerCard ({ user }: iPlayerCardProps) {
     const userNameAux = user.nickname.replace(" ", "+");
 
     return (
-        <StyledCard>
+        <StyledCard className= "animate__animated animate__fadeIn">
             <figure className="main_bg">
                 <img src={user.main?.splashart || "https://sirus.b-cdn.net/wp-content/uploads/2021/05/league-of-legends-01.jpg"} alt="Foto do personagem" />
             </figure>
