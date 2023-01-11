@@ -40,6 +40,8 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
         left: 0;
         
         background-image: url(${props => props.mainSplashArt});
+        background-repeat: no-repeat;
+        background-size: cover;
         opacity: 0.2;
         pointer-events: none;
     }
@@ -173,7 +175,7 @@ export const StyledPlayerModal = styled.section<iStyledPlayerModalProps>`
             }
 
             p span{
-                color: var(--color-grey-3);
+                color: var(--color-brand-1);
             }
 
             .user-route{
