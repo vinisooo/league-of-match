@@ -9,6 +9,16 @@ export const StyledMain = styled.main`
 
   margin-top: 100px;
 
+  > h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-brand-1);
+    height: 284px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   section {
     display: flex;
     gap: 0.625rem;
