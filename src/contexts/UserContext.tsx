@@ -96,15 +96,15 @@ export function UserProvider ({ children }: iContextChildrenProps) {
   }
 
   function getRouteIcon (route: string) {
-    if (route === "TopLane") {
+    if (route === "toplane") {
       return top;
-    } if (route === "MidLane") {
+    } if (route === "midlane") {
       return mid;
-    } if (route === "Adc") {
+    } if (route === "adc") {
       return adc;
-    } if (route === "Jungle") {
+    } if (route === "jungle") {
       return jungle;
-    } if (route === "Suporte") {
+    } if (route === "suport") {
       return sup;
     }
     return "";
