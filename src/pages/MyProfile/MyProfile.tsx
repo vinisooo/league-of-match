@@ -7,7 +7,10 @@ import {
   ButtonIcon,
   SectionMain,
   WrapperProfile,
-  Aside
+  Aside,
+  StyledSelect,
+  WrapperSelects,
+  ButtonEdit
 } from "./styles";
 
 import ImgEdit from "../../assets/edit.svg";
@@ -75,31 +78,37 @@ export function MyProfile () {
                   <img src={ImgEdit} />
                 </button>
 
-                <button onClick={() => { changeUserData(teste, index); setInputDisabled(true); }} type="button">
+                <ButtonEdit onClick={() => { changeUserData(teste, index); setInputDisabled(true); }} type="button">
                   Alterar
-                </button>
+                </ButtonEdit>
               </Input>
             ))}
+            
+            <WrapperSelects>
+              <StyledSelect>
+                <select defaultValue={user.elo} onChange={async (event) => { changeElo(event.target.value) }}>
+                  <option value={"ferro"}>Ferro</option>
+                  <option value={"bronze"}>Bronze</option>
+                  <option value={"prata"}>Prata</option>
+                  <option value={"ouro"}>Ouro</option>
+                  <option value={"platina"}>Platina</option>
+                  <option value={"diamante"}>Diamante</option>
+                  <option value={"mestre"}>Mestre</option>
+                  <option value={"grão-mestre"}>Grão-Mestre</option>
+                  <option value={"desafiante"}>Desafiante</option>
+                </select>
+              </StyledSelect>
 
-            <select defaultValue={user.elo} onChange={async (event) => { changeElo(event.target.value) }}>
-              <option value={"ferro"}>Ferro</option>
-              <option value={"bronze"}>Bronze</option>
-              <option value={"prata"}>Prata</option>
-              <option value={"ouro"}>Ouro</option>
-              <option value={"platina"}>Platina</option>
-              <option value={"diamante"}>Diamante</option>
-              <option value={"mestre"}>Mestre</option>
-              <option value={"grão-mestre"}>Grão-Mestre</option>
-              <option value={"desafiante"}>Desafiante</option>
-            </select>
-
-            <select defaultValue={user.route} onChange={async (event) => { changeRoute(event.target.value) }}>
-              <option value="topo">Topo</option>
-              <option value="selva">Selva</option>
-              <option value="meio">Meio</option>
-              <option value="atirador">Atirador</option>
-              <option value="suporte">Suporte</option>
-            </select>
+              <StyledSelect>
+                <select defaultValue={user.route} onChange={async (event) => { changeRoute(event.target.value) }}>
+                  <option value="topo">Topo</option>
+                  <option value="selva">Selva</option>
+                  <option value="meio">Meio</option>
+                  <option value="atirador">Atirador</option>
+                  <option value="suporte">Suporte</option>
+                </select>
+              </StyledSelect>
+            </WrapperSelects>
           </form>
           <SectionChooseIcons>
             <div>
