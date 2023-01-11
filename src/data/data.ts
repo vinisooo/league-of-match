@@ -49,8 +49,8 @@ export const developers = [
         id: 1
     },
     {
-        name: "Gabriel Galvão",
-        img: "https://ca.slack-edge.com/TQZR39SET-U03KV63F8SC-fe6773475b4f-512",
+        name: "Gabriel Pavão",
+        img: "https://media.licdn.com/dms/image/D4D03AQE2kJcayGcV-A/profile-displayphoto-shrink_200_200/0/1671020112765?e=1678924800&v=beta&t=H1y4b4ZR8DQonYmuXExZoZgNQoafVNHU_uhFXki4B3Y",
         part: "Desenvolvimento Front-end",
         github: "https://github.com/gabrielgpavao",
         linkedin: "https://www.linkedin.com/in/gabrielgpavao/",
