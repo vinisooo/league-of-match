@@ -5,7 +5,7 @@ export const LoginPage = styled.div`
     display: flex;
     flex-direction: row;
 
-    footer{
+    .form-btns{
         display: flex;
         align-items: center;
         width: 100%;

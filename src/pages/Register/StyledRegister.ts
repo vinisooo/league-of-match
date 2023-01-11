@@ -5,7 +5,6 @@ export const RegisterPage = styled.div`
   div {
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: space-between;
   }
 `;
@@ -14,6 +13,11 @@ export const DivSelect = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+
+  >div{
+    display: flex;
+    flex-direction: column;
+  }
 
   select {
     height: 49px;

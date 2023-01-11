@@ -11,7 +11,7 @@ import { iUserRegister } from "contexts/interfaces";
 import { Form } from "components/Form/Form";
 import { InputBox } from "components/InputBox/InputBox";
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
-import { FormBG } from "components/FormBG/FormBG";
+import { FormBG } from "components/FormImageBG/FormImageBG";
 
 export function Register () {
   const { registerUser } = useContext(UserContext);
@@ -49,28 +49,32 @@ export function Register () {
           register={register("nickname")}
         />
         <DivSelect>
-          <select {...register("elo")}>
-            <option >Selecione seu elo</option>
-            <option value={"ferro"}>Ferro</option>
-            <option value={"bronze"}>Bronze</option>
-            <option value={"prata"}>Prata</option>
-            <option value={"ouro"}>Ouro</option>
-            <option value={"platina"}>Platina</option>
-            <option value={"diamante"}>Diamante</option>
-            <option value={"mestre"}>Mestre</option>
-            <option value={"grão-mestre"}>Grão-Mestre</option>
-            <option value={"desafiante"}>Desafiante</option>
-          </select>
-          {errors.elo && <span>{errors.elo.message}</span>}
-          <select {...register("route")}>
-            <option>Selecione sua rota</option>
-            <option value={"toplane"}>Topo</option>
-            <option value={"jungle"}>Selva</option>
-            <option value={"midlane"}>Meio</option>
-            <option value={"adc"}>Atirador</option>
-            <option value={"suport"}>Suporte</option>
-          </select>
-          {errors.route && <span>{errors.route.message}</span>}
+          <div>
+            <select {...register("elo")}>
+              <option >Selecione seu elo</option>
+              <option value={"ferro"}>Ferro</option>
+              <option value={"bronze"}>Bronze</option>
+              <option value={"prata"}>Prata</option>
+              <option value={"ouro"}>Ouro</option>
+              <option value={"platina"}>Platina</option>
+              <option value={"diamante"}>Diamante</option>
+              <option value={"mestre"}>Mestre</option>
+              <option value={"grão-mestre"}>Grão-Mestre</option>
+              <option value={"desafiante"}>Desafiante</option>
+            </select>
+            {errors.elo && <span>{errors.elo.message}</span>}
+          </div>
+          <div>
+            <select {...register("route")}>
+              <option>Selecione sua rota</option>
+              <option value={"toplane"}>Topo</option>
+              <option value={"jungle"}>Selva</option>
+              <option value={"midlane"}>Meio</option>
+              <option value={"adc"}>Atirador</option>
+              <option value={"suport"}>Suporte</option>
+            </select>
+            {errors.route && <span>{errors.route.message}</span>}
+          </div>
         </DivSelect>
         <div>
           <DefaultLink to="/login" size="49%">

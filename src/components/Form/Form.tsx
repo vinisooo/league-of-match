@@ -15,7 +15,7 @@ interface iFormProps {
 export function Form ({ children, formTitle, left, leftImg, callback }: iFormProps) {
   const { previousPage } = useContext(UserContext)
   return (
-    <StyledForm noValidate onSubmit={callback}>
+    <StyledForm>
       <img
         className={leftImg ? "align-img-left" : ""}
         src={logo}
@@ -25,7 +25,9 @@ export function Form ({ children, formTitle, left, leftImg, callback }: iFormPro
         <header className={left ? "align-title-left" : ""}>
           <h1>{formTitle}</h1>
         </header>
-        {children}
+        <form noValidate onSubmit={callback}>
+          {children}
+        </form>
       </div>
       <Link to={previousPage} className={left ? "left-home" : ""} >← Voltar para {previousPage === "/players" ? "Players" : "Home"}</Link>
     </StyledForm>
