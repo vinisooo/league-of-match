@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
 import logo from "../../assets/logo.svg";
@@ -9,7 +9,15 @@ import { Purpose } from "components/Purpose/Purpose";
 import { Link } from "react-router-dom";
 import { OnlinePlayers } from "components/OnlinePlayersCTA/OnlinePlayers";
 
+import { UserContext } from "contexts/UserContext";
+
 export function Home () {
+  const { getAllPlayers } = useContext(UserContext);
+
+  useEffect(() => {
+   getAllPlayers();
+  }, []);
+
   return (
     <StyledDiv className="animate__animated animate__fadeIn">
       <Header />

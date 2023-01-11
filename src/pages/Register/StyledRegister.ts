@@ -14,6 +14,11 @@ export const DivSelect = styled.div`
   justify-content: space-between;
   width: 100%;
 
+  >div{
+    display: flex;
+    flex-direction: column;
+  }
+
   select {
     height: 49px;
     width: 49%;
