@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 
 import {
@@ -24,7 +24,12 @@ import { ProfileContext } from "contexts/ProfileContext";
 
 export function MyProfile () {
   const { user, loading } = useContext(UserContext);
-  const { changeProfileIcon, updateSearchValue, setInputValue, setMain, filterCharacters } = useContext(ProfileContext)
+  const { changeProfileIcon, updateSearchValue, setInputValue, changeMain, changeRoute, changeElo, changeUserData, filterCharacters } = useContext(ProfileContext)
+
+  const [inputDisabled, setInputDisabled] = useState(true)
+  const [teste, setTeste] = useState("")
+
+  const arrayInputs = [{ label: "Nickname", userData: user.nickname }, { label: "Bio", userData: user.bio }, { label: "Discord", userData: user.discord }]
 
   if (loading) {
     return null;
@@ -58,61 +63,42 @@ export function MyProfile () {
 
         <main>
           <form>
-            <Input>
-              <div>
-                <label>Nickname</label>
+            {arrayInputs.map((data, index) => (
+              <Input key={index}>
+                <div>
+                  <label>{data.label}</label>
+                  <input onChange={(event) => { setTeste(event.target.value); }} type="text" defaultValue={data.userData} disabled={inputDisabled} />
+                </div>
 
-                <input type="text" value={user?.nickname} disabled />
-              </div>
+                <button onClick={() => { setInputDisabled(false); }} type="button">
+                  <img src={ImgEdit} />
+                </button>
 
-              <button type="button">
-                <img src={ImgEdit} alt="" />
-              </button>
-            </Input>
+                <button onClick={() => { changeUserData(teste, index); setInputDisabled(true); }} type="button">
+                  Alterar
+                </button>
+              </Input>
+            ))}
 
-            <Input>
-              <div>
-                <label>Bio</label>
-                <input type="text" value={user?.bio} disabled />
-              </div>
+            <select defaultValue={user.elo} onChange={async (event) => { changeElo(event.target.value) }}>
+              <option value={"ferro"}>Ferro</option>
+              <option value={"bronze"}>Bronze</option>
+              <option value={"prata"}>Prata</option>
+              <option value={"ouro"}>Ouro</option>
+              <option value={"platina"}>Platina</option>
+              <option value={"diamante"}>Diamante</option>
+              <option value={"mestre"}>Mestre</option>
+              <option value={"grão-mestre"}>Grão-Mestre</option>
+              <option value={"desafiante"}>Desafiante</option>
+            </select>
 
-              <button type="button">
-                <img src={ImgEdit} alt="" />
-              </button>
-            </Input>
-
-            <Input>
-              <div>
-                <label>Elo</label>
-                <input type="text" value={user?.elo} disabled />
-              </div>
-
-              <button type="button">
-                <img src={ImgEdit} alt="" />
-              </button>
-            </Input>
-
-            <Input>
-              <div>
-                <label>Rota de prederência</label>
-                <input type="text" value={user?.route} disabled />
-              </div>
-
-              <button type="button">
-                <img src={ImgEdit} alt="" />
-              </button>
-            </Input>
-
-            <Input>
-              <div>
-                <label>Discord</label>
-                <input type="text" value={user?.discord} disabled />
-              </div>
-
-              <button type="button">
-                <img src={ImgEdit} alt="" />
-              </button>
-            </Input>
+            <select defaultValue={user.route} onChange={async (event) => { changeRoute(event.target.value) }}>
+              <option value="topo">Topo</option>
+              <option value="selva">Selva</option>
+              <option value="meio">Meio</option>
+              <option value="atirador">Atirador</option>
+              <option value="suporte">Suporte</option>
+            </select>
           </form>
           <SectionChooseIcons>
             <div>
@@ -163,7 +149,7 @@ export function MyProfile () {
                   <button
                     type="button"
                     onClick={async () => {
-                      await setMain(character);
+                      await changeMain(character);
                     }}
                   >
                     <img src={character.icon} alt={character.name} />
