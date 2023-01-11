@@ -1,5 +1,6 @@
 import React from "react";
 import { UserProvider } from "contexts/UserContext";
+import { ProfileProvider } from "contexts/ProfileContext";
 import { MainRoutes as Routes } from "routes/MainRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,20 +8,24 @@ import "animate.css";
 
 export function App () {
   return (
+    <>
     <UserProvider>
-      <Routes />
-      <ToastContainer
-        position="bottom-left"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
+      <ProfileProvider>
+        <Routes />
+      </ProfileProvider>
     </UserProvider>
+    <ToastContainer
+    position="bottom-left"
+    autoClose={2000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="dark"
+    />
+    </>
   );
 }
