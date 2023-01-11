@@ -3,7 +3,7 @@ import { RegisterSchema } from "contexts/schemas";
 import { UserContext } from "contexts/UserContext";
 import React, { useContext } from "react";
 import {
-  DivSelect,
+  StyledSelect,
   RegisterPage
 } from "./StyledRegister";
 import { useForm } from "react-hook-form";
@@ -48,8 +48,8 @@ export function Register () {
           label="Nome de usuário"
           register={register("nickname")}
         />
-        <DivSelect>
-          <div>
+        <StyledSelect>
+          <fieldset>
             <select {...register("elo")}>
               <option >Selecione seu elo</option>
               <option value={"ferro"}>Ferro</option>
@@ -63,8 +63,8 @@ export function Register () {
               <option value={"desafiante"}>Desafiante</option>
             </select>
             {errors.elo && <span>{errors.elo.message}</span>}
-          </div>
-          <div>
+          </fieldset>
+          <fieldset>
             <select {...register("route")}>
               <option>Selecione sua rota</option>
               <option value={"toplane"}>Topo</option>
@@ -74,8 +74,8 @@ export function Register () {
               <option value={"suport"}>Suporte</option>
             </select>
             {errors.route && <span>{errors.route.message}</span>}
-          </div>
-        </DivSelect>
+          </fieldset>
+        </StyledSelect>
         <div>
           <DefaultLink to="/login" size="49%">
             Ja tenho conta
