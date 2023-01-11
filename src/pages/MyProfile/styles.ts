@@ -6,7 +6,7 @@ interface AsideProps {
 
 export const Container = styled.div`
   width: 100%;
-  padding-top: 1.5rem;
+  height: calc(100vh - 200px);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -24,7 +24,7 @@ export const Container = styled.div`
 `;
 
 export const Aside = styled.aside<AsideProps>`
-  width: 40%;
+  width: 48%;
   height: 100vh;
   background-image: ${({ url }) => `url(${url})`};
   background-size: cover;
@@ -127,6 +127,66 @@ export const Input = styled.div`
   }
 `;
 
+export const ButtonEdit = styled.button`
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-grey-3);
+  padding: 1rem;
+
+  &:hover {
+    color: var(--color-brand-1);
+  }
+`;
+
+export const WrapperSelects = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const StyledSelect = styled.div`
+  width: 49%;
+
+  select {
+    height: 49px;
+    width: 100%;
+    background-color: transparent;
+    color: var(--color-grey-3);
+
+    border: 2px solid var(--color-grey-3);
+  }
+
+  select:hover {
+    border-color: var(--color-brand-2);
+  }
+
+  select:focus {
+    border-color: var(--color-brand-1);
+    animation: inputAnimation 2s infinite;
+  }
+
+  option {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Montserrat";
+
+    color: var(--color-grey-3);
+  }
+
+  span {
+    font-size: 12px;
+
+    color: var(--color-error);
+
+    position: absolute;
+    right: 0;
+    bottom: -16px;
+
+    text-align: right;
+  }
+`;
+
 export const SectionChooseIcons = styled.section`
   width: 100%;
   margin-top: 2rem;
@@ -158,7 +218,6 @@ export const SectionChooseIcons = styled.section`
 export const SectionMain = styled.section`
   width: 100%;
   margin-top: 2rem;
-  padding-bottom: 0.7rem;
   border-bottom: 1px solid var(--color-grey-3);
 
   div {
