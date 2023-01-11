@@ -29,6 +29,12 @@ export const DivSelect = styled.div`
     color: var(--color-grey-3);
 
     outline: none;
+
+    transition: 0.3s ease;
+  }
+
+  select:hover{
+    border: 2px solid var(--color-brand-1);
   }
 
   option {
