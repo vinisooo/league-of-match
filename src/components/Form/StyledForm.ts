@@ -51,7 +51,7 @@ export const StyledForm = styled.div`
         }
     }
 
-    header{
+    h1{
         width: 100%;
         text-align: right;
     }
@@ -60,7 +60,7 @@ export const StyledForm = styled.div`
         text-align: left;
     }
 
-    header h1{
+    h1{
         font-size: 24px;
         font-weight: 700;
         color: var(--color-brand-1);
