@@ -8,22 +8,22 @@ export const LoginSchema = yup.object().shape({
 export const RegisterSchema = yup.object().shape({
   email: yup
     .string()
-    .required("Email obrigatório para cadastro")
+    .required("Email obrigatório")
     .email("Email inválido"),
   password: yup
     .string()
-    .required("Senha obrigatória para cadastro")
+    .required("Senha obrigatória")
     .matches(/(?=.*?[A-Z])/, "Pelo menos uma letra maiúscula")
     .matches(/(?=.*?[a-z])/, "Pelo menos uma letra minúscula")
     .matches(/(?=.*?[0-9])/, "Pelo menos um dígito")
     .min(8, "Pelo menos 8 caracteres"),
   confirmPassword: yup
     .string()
-    .required("Confirmação de senha obrigatória para cadastro"),
-  nickname: yup.string().required("Nome de usuário obrigatório para cadastro"),
+    .required("Confirme sua senha"),
+  nickname: yup.string().required("Nome de usuário obrigatório"),
   elo: yup
     .string()
-    .required("Elo obrigatório para cadastro")
+    .required("Campo obrigatório")
     .oneOf(
       [
         "ferro",
@@ -36,13 +36,13 @@ export const RegisterSchema = yup.object().shape({
         "grão-mestre",
         "desafiante"
       ],
-      "Elo obrigatório para cadastro"
+      "Elo obrigatório"
     ),
   route: yup
     .string()
-    .required("Rota obrigatória para cadastro")
+    .required("Campo obrigátório")
     .oneOf(
       ["toplane", "midlane", "adc", "jungle", "suport"],
-      "Rota obrigatória para cadastro"
+      "Rota obrigatória"
     )
 });
