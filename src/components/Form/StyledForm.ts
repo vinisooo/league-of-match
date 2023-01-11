@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const StyledForm = styled.form`
+export const StyledForm = styled.div`
 
     width: 100vw;
     height: 100vh;
 
-    padding: 55px;
+    padding: 20px;
 
     background-color: var(--color-grey-1);
 
@@ -17,13 +17,11 @@ export const StyledForm = styled.form`
     
     @media (min-width: 700px) {
         width: 50%;
+        padding: 55px;
     }
     @media (min-width: 1000px) {
         width: 35%;
     }
-
-
-
 
     >img{
         width: 135px;
@@ -44,9 +42,16 @@ export const StyledForm = styled.form`
         align-items: center;
 
         gap: 27px;
+
+        >form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+        }
     }
 
-    header{
+    h1{
         width: 100%;
         text-align: right;
     }
@@ -55,7 +60,7 @@ export const StyledForm = styled.form`
         text-align: left;
     }
 
-    header h1{
+    h1{
         font-size: 24px;
         font-weight: 700;
         color: var(--color-brand-1);
@@ -71,12 +76,25 @@ export const StyledForm = styled.form`
         transition: 0.3s ease;
     }
 
+    @media (max-width:500px){
+        a{
+            bottom: 15px;
+            right: 15px;
+        }
+    }
+
     >a:hover{
         filter: brightness(1.5);
     }
 
     .left-home{
         left: 60px;
+    }
+
+    @media (max-width: 500px) {
+        .left-home{
+            left: 15px;
+        }
     }
 
 `

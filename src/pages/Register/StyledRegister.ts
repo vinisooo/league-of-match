@@ -7,7 +7,6 @@ export const RegisterPage = styled.div`
   div {
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: space-between;
   }
 `;
@@ -19,10 +18,15 @@ export const StyledSelect = styled.div`
     position: relative;
   }
 
+  >div{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+  }
+
   select {
     height: 49px;
     width: 100%;
-
     background-color: transparent;
     color: var(--color-grey-3);
 

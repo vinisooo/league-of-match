@@ -11,7 +11,7 @@ import { iUserRegister } from "contexts/interfaces";
 import { Form } from "components/Form/Form";
 import { InputBox } from "components/InputBox/InputBox";
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
-import { FormBG } from "components/FormBG/FormBG";
+import { FormBG } from "components/FormImageBG/FormImageBG";
 
 export function Register () {
   const { registerUser } = useContext(UserContext);

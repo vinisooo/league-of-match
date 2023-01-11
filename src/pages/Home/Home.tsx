@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
 import logo from "../../assets/logo.svg";
-import { DefaultBtn } from "styles/DefaultBtn";
 import { StyledContainerPlayers } from "styles/Container";
 import { StyledDiv } from "./StyledHome";
 import { AboutDev } from "components/AboutDevelopment/AboutDev";
+import { Purpose } from "components/Purpose/Purpose";
+import { Link } from "react-router-dom";
+import { OnlinePlayers } from "components/OnlinePlayersCTA/OnlinePlayers";
+
+import { UserContext } from "contexts/UserContext";
 
 export function Home () {
+  const { getAllPlayers } = useContext(UserContext);
+
+  useEffect(() => {
+   getAllPlayers();
+  }, []);
+
   return (
     <StyledDiv className="animate__animated animate__fadeIn">
       <Header />
@@ -26,10 +36,12 @@ export function Home () {
                 Cadastre-se agora e comece sua jornada rumo à vitória com o time
                 ideal ao seu lado.
               </p>
-              <DefaultBtn green>COMEÇAR</DefaultBtn>
+              <Link to="/register" className="header-btn">COMEÇAR</Link>
             </div>
           </StyledContainerPlayers>
         </section>
+        <Purpose/>
+        <OnlinePlayers/>
         <AboutDev/>
       </main>
 

@@ -1,5 +1,5 @@
 import { Form } from "components/Form/Form";
-import { FormBG } from "components/FormBG/FormBG";
+import { FormBG } from "components/FormImageBG/FormImageBG";
 import { LoginPage } from "./StyledLogin";
 import { InputBox } from "components/InputBox/InputBox";
 import { DefaultBtn, DefaultLink } from "styles/DefaultBtn";
@@ -25,10 +25,10 @@ export function Login () {
             <Form formTitle="Login" callback={handleSubmit(login)}>
                 <InputBox type="email" errors={errors.email?.message} label="email" register={register("email")} />
                 <InputBox type="password" errors={errors.password?.message} label="senha" register={register("password")}/>
-                <footer>
+                <div className="form-btns">
                     <DefaultLink to="/register" size="49%">Criar conta</DefaultLink>
                     <DefaultBtn type="submit" green size="49%">Entrar</DefaultBtn>
-                </footer>
+                </div>
             </Form>
         </LoginPage>
     )
