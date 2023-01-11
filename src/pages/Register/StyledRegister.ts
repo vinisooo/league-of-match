@@ -23,6 +23,15 @@ export const DivSelect = styled.div`
     color: var(--color-grey-3);
   }
 
+  select:hover {
+    border-color: var(--color-brand-2);
+  }
+
+  select:focus {
+    border-color: var(--color-brand-1);
+    animation: inputAnimation 2s infinite;
+  }
+
   option {
     font-size: 16px;
     font-weight: 500;
