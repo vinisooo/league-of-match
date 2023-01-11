@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import {
   iContextChildrenProps,
   iPlayers,
@@ -23,34 +23,7 @@ export function UserProvider ({ children }: iContextChildrenProps) {
 
   const [players, setPlayers] = useState<iPlayers[]>([]);
   const [user, setUser] = useState({} as iPlayers);
-  const [loading, setLoading] = useState(true);
   const [previousPage, setPreviousPage] = useState('/')
-
-  useEffect(() => {
-    async function loadUser () {
-      const token = localStorage.getItem("@league-of-match: token");
-      const id = localStorage.getItem("@league-of-match: id");
-
-      if (!token) {
-        setLoading(false);
-      } else {
-        try {
-          const { data } = await api.patch(`/users/${id}`, user, {
-            headers: {
-              authorization: `Bearer ${token}`
-            }
-          });
-          setUser(data);
-        } catch (error) {
-          console.log(error);
-        } finally {
-          setLoading(false);
-        }
-      }
-    }
-
-    loadUser();
-  }, []);
 
   async function login (data: iUserLogin) {
     try {
@@ -116,7 +89,6 @@ export function UserProvider ({ children }: iContextChildrenProps) {
         login,
         players,
         user,
-        loading,
         previousPage,
         setPreviousPage,
         getAllPlayers,

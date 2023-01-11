@@ -10,7 +10,6 @@ export interface iUserProviderValue {
   players: iPlayers[];
   user: iPlayers;
   getAllPlayers: () => void;
-  loading: boolean;
   setUser: Dispatch<SetStateAction<iPlayers>>;
   getRouteIcon: (route: string) => string | undefined;
   previousPage: string;
@@ -65,4 +64,10 @@ export interface iProfileProviderValue {
   changeElo: (selectValue: string) => Promise<void>;
   changeUserData: (inputValue: string, id: number) => Promise<void>;
   filterCharacters: iCharacter[];
+}
+
+export interface iAuthProviderValue {
+  loading: boolean;
+  authenticateUserToken: () => void;
+  isAuthenticated: boolean;
 }

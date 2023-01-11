@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
 
 import {
   Container,
@@ -21,9 +20,11 @@ import { UserContext } from "contexts/UserContext";
 
 import { iCharacter } from "contexts/interfaces";
 import { ProfileContext } from "contexts/ProfileContext";
+import { AuthContext } from "contexts/AuthContext";
 
 export function MyProfile () {
-  const { user, loading } = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const { loading } = useContext(AuthContext);
   const { changeProfileIcon, updateSearchValue, setInputValue, changeMain, changeRoute, changeElo, changeUserData, filterCharacters } = useContext(ProfileContext)
 
   const [inputDisabled, setInputDisabled] = useState(true)
@@ -35,7 +36,7 @@ export function MyProfile () {
     return null;
   }
 
-  return user.hasOwnProperty("id") ? (
+  return (
     <>
       <Header isMyProfile={true} />
       <Container className="animate__animated animate__fadeIn">
@@ -162,7 +163,5 @@ export function MyProfile () {
         </main>
       </Container>
     </>
-  ) : (
-    <Navigate to="/login" />
-  );
+  )
 }
