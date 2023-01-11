@@ -11,6 +11,8 @@ import { Outlet } from "react-router-dom";
 export function Players () {
   const { players, getAllPlayers } = useContext(UserContext);
   const [inputValue, setInputValue] = useState("");
+  const [selectValueLane, setSelectValueLane] = useState("");
+  const [selectValueElo, setSelectValueElo] = useState("");
 
   const filteredPlayersByMain = players.filter(player => player.main)
   const filteredByName = filteredPlayersByMain.filter(({ nickname }) =>
