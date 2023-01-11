@@ -11,11 +11,16 @@ import { Outlet } from "react-router-dom";
 export function Players () {
   const { players, getAllPlayers } = useContext(UserContext);
   const [inputValue, setInputValue] = useState("");
+  const [selectValueLane, setSelectValueLane] = useState("");
+  const [selectValueElo, setSelectValueElo] = useState("");
 
   const filteredPlayersByMain = players.filter(player => player.main)
-  const filteredByName = filteredPlayersByMain.filter(({ nickname }) =>
-    nickname.toLowerCase().includes(inputValue.toLowerCase())
-  )
+  const filteredByName = filteredPlayersByMain.filter(({ nickname, elo, route }) => {
+    const byNickName = nickname.toLowerCase().includes(inputValue.toLowerCase())
+    const byRoute = route.includes(selectValueLane)
+    const byElo = elo.includes(selectValueElo)
+    return byNickName && byRoute && byElo
+  })
   const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
@@ -35,7 +40,7 @@ export function Players () {
           <section>
             <InputBox value={inputValue} onChange={(e) => { changeValue(e); }} type="text" label="Pesquisar usuário" />
             <div>
-              <select>
+              <select value={selectValueLane} onChange={(e) => { setSelectValueLane(e.target.value); }}>
                 <option value="">Rota</option>
                 <option value={"toplane"}>Topo</option>
                 <option value={"jungle"}>Selva</option>
@@ -43,7 +48,7 @@ export function Players () {
                 <option value={"adc"}>Atirador</option>
                 <option value={"suport"}>Suporte</option>
               </select>
-              <select>
+              <select value={selectValueElo} onChange={(e) => { setSelectValueElo(e.target.value); }}>
                 <option value="">Elo</option>
                 <option value={"ferro"}>Ferro</option>
                 <option value={"bronze"}>Bronze</option>
@@ -57,12 +62,13 @@ export function Players () {
               </select>
             </div>
           </section>
-
-          <ul>
+          {
+            filteredByName.length === 0 ? <h2>Nem um player foi encontrado!</h2> : <ul>
             {filteredByName.map((user) => (
               <PlayerCard key={user.id} user={user} />
             ))}
           </ul>
+          }
         </StyledMain>
       </StyledContainerPlayers>
 
