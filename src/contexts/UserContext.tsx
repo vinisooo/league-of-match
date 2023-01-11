@@ -35,7 +35,11 @@ export function UserProvider ({ children }: iContextChildrenProps) {
         setLoading(false);
       } else {
         try {
-          const { data } = await api.patch(`/users/${id}`, user);
+          const { data } = await api.patch(`/users/${id}`, user, {
+            headers: {
+              authorization: `Bearer ${token}`
+            }
+          });
           setUser(data);
         } catch (error) {
           console.log(error);
