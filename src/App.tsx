@@ -1,6 +1,5 @@
 import React from "react";
 import { UserProvider } from "contexts/UserContext";
-import { ProfileProvider } from "contexts/ProfileContext";
 import { MainRoutes as Routes } from "routes/MainRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,9 +9,7 @@ export function App () {
   return (
     <>
     <UserProvider>
-      <ProfileProvider>
         <Routes />
-      </ProfileProvider>
     </UserProvider>
     <ToastContainer
     position="bottom-left"
