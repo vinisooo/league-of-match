@@ -5,6 +5,7 @@ export const StyledPurpose = styled.section`
     height: 80vh;
     background-color: var(--color-black-1);
 
+
     >div{
         display: flex;
         align-items: flex-start;

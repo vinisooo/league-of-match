@@ -5,6 +5,10 @@ export const SeeMore = styled.div`
     background-color: var(--color-grey-1);
     width: 100vw;
 
+    max-width: 100%;
+
+    overflow-x: hidden;
+
     display: flex;
     justify-content: center;
     
@@ -30,7 +34,7 @@ export const SeeMore = styled.div`
 
 export const StyledAboutDev = styled.section`
     background-color: var(--color-black-2);
-    width: 100vw;
+    width: 100%;
 
     position: relative;
     display: flex;
@@ -144,16 +148,20 @@ export const StyledAboutDev = styled.section`
     aside{
         display: none;
 
-        position: sticky;
         top: 0;
+        right: 0;
+
         width: 350px;
         height: 100vh;
-        right: 0;
+        
         overflow: hidden;
-
+        position: sticky;
 
         img{
             height: 100%;
+            width: 100%;
+            object-fit: cover;
+
             opacity: 0.7;
             transition: 0.5s ease;
         }

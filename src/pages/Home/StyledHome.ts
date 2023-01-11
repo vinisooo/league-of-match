@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledDiv = styled.div`
 
-  overflow-x: hidden;
+  box-sizing: border-box;
 
   main {
     margin-top: 80px;

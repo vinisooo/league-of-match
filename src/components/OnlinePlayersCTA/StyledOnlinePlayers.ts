@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const StyledOnlinePlayers = styled.section`
 
-    width: 100vw;
+    width: 100%;
 
     padding: 40px;
+
+    overflow-x: hidden;
 
     >div{
         display: flex;
