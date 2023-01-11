@@ -208,7 +208,12 @@ export function MyProfile () {
             <ul>
               {icons.map((icon, index) => (
                 <ButtonIcon key={index}>
-                  <button onClick={async () => { await changeProfileIcon(icon) }} type="button">
+                  <button
+                    onClick={async () => {
+                      await changeProfileIcon(icon);
+                    }}
+                    type="button"
+                  >
                     <img src={icon} alt="" />
                   </button>
                 </ButtonIcon>
@@ -220,9 +225,15 @@ export function MyProfile () {
             <div>
               <p>Main</p>
 
-              <form onSubmit={(event) => { updateSearchValue(event) }}>
+              <form
+                onSubmit={(event) => {
+                  updateSearchValue(event);
+                }}
+              >
                 <input
-                  onChange={(event) => { setInputValue(event.target.value) }}
+                  onChange={(event) => {
+                    setInputValue(event.target.value);
+                  }}
                   type="text"
                   placeholder="Pesquisar campeão"
                 />
@@ -235,7 +246,12 @@ export function MyProfile () {
             <ul>
               {filterCharacters.map((character: iCharacter, index) => (
                 <ButtonIcon key={index}>
-                  <button type="button" onClick={async () => { await setMain(character) }}>
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      await setMain(character);
+                    }}
+                  >
                     <img src={character.icon} alt={character.name} />
                     <span>{character.name}</span>
                   </button>
