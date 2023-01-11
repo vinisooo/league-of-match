@@ -76,12 +76,25 @@ export const StyledForm = styled.div`
         transition: 0.3s ease;
     }
 
+    @media (max-width:500px){
+        a{
+            bottom: 15px;
+            right: 15px;
+        }
+    }
+
     >a:hover{
         filter: brightness(1.5);
     }
 
     .left-home{
         left: 60px;
+    }
+
+    @media (max-width: 500px) {
+        .left-home{
+            left: 15px;
+        }
     }
 
 `
