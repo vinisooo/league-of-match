@@ -60,6 +60,7 @@ export interface iProfileProviderValue {
   changeProfileIcon: (img: string) => Promise<void>;
   updateSearchValue: (event: FormEvent<HTMLFormElement>) => void;
   setInputValue: Dispatch<SetStateAction<string>>;
-  setMain: (character: iCharacter) => Promise<void>;
+  changeMain: (character: iCharacter) => Promise<void>;
+  changeRoute: (selectValue: string) => Promise<void>;
   filterCharacters: iCharacter[];
 }

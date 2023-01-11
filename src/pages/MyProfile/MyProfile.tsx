@@ -24,11 +24,15 @@ import { ProfileContext } from "contexts/ProfileContext";
 
 export function MyProfile () {
   const { user, loading } = useContext(UserContext);
-  const { changeProfileIcon, updateSearchValue, setInputValue, setMain, filterCharacters } = useContext(ProfileContext)
+  const { changeProfileIcon, updateSearchValue, setInputValue, changeMain, changeRoute, filterCharacters } = useContext(ProfileContext)
+
+  // const arrayInputs = [user.nickname, user.bio, user.elo, user.discord]
 
   if (loading) {
     return null;
   }
+
+  console.log(user)
 
   return user.hasOwnProperty("id") ? (
     <>
@@ -94,17 +98,6 @@ export function MyProfile () {
 
             <Input>
               <div>
-                <label>Rota de prederência</label>
-                <input type="text" value={user?.route} disabled />
-              </div>
-
-              <button type="button">
-                <img src={ImgEdit} alt="" />
-              </button>
-            </Input>
-
-            <Input>
-              <div>
                 <label>Discord</label>
                 <input type="text" value={user?.discord} disabled />
               </div>
@@ -113,6 +106,14 @@ export function MyProfile () {
                 <img src={ImgEdit} alt="" />
               </button>
             </Input>
+
+            <select defaultValue={user.route} onChange={async (event) => { changeRoute(event.target.value) }}>
+              <option value="topo">Topo</option>
+              <option value="selva">Selva</option>
+              <option value="meio">Meio</option>
+              <option value="atirador">Atirador</option>
+              <option value="suporte">Suporte</option>
+            </select>
           </form>
           <SectionChooseIcons>
             <div>
@@ -163,7 +164,7 @@ export function MyProfile () {
                   <button
                     type="button"
                     onClick={async () => {
-                      await setMain(character);
+                      await changeMain(character);
                     }}
                   >
                     <img src={character.icon} alt={character.name} />
