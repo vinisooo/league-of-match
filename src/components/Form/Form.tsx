@@ -22,9 +22,7 @@ export function Form ({ children, formTitle, left, leftImg, callback }: iFormPro
         alt="league of match"
       />
       <div>
-        <header className={left ? "align-title-left" : ""}>
-          <h1>{formTitle}</h1>
-        </header>
+        <h1 className={left ? "align-title-left" : ""}>{formTitle}</h1>
         <form noValidate onSubmit={callback}>
           {children}
         </form>
