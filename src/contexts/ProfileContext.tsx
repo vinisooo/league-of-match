@@ -13,7 +13,6 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
     const [filterCharacters, setFilterCharacters] = useState([]);
     const [searchValue, setSearchValue] = useState("");
     const [inputValue, setInputValue] = useState("");
-    const [userInputValue, setUserInputValue] = useState({})
 
     useEffect(() => {
         async function getCharacters () {
@@ -114,26 +113,24 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
       }
 
       async function changeUserData (inputValue: string, id: number) {
-        if (id === 1) {
-            const data = {
+        let data = {}
+
+        if (id === 0) {
+            data = {
                 nickname: inputValue
             }
-            setUserInputValue(data)
-        } else if (id === 2) {
-            const data = {
+        } else if (id === 1) {
+            data = {
                 bio: inputValue
             }
-            setUserInputValue(data)
-        } else if (id === 3) {
-            const data = {
+        } else if (id === 2) {
+            data = {
                 discord: inputValue
             }
-            setUserInputValue(data)
         }
-
         try {
             const token = localStorage.getItem("@league-of-match: token");
-            const response = await api.patch(`/users/${user.id}`, userInputValue, {
+            const response = await api.patch(`/users/${user.id}`, data, {
               headers: {
                 authorization: `Bearer ${token}`
               }

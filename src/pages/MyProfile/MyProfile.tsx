@@ -27,6 +27,7 @@ export function MyProfile () {
   const { changeProfileIcon, updateSearchValue, setInputValue, changeMain, changeRoute, changeElo, changeUserData, filterCharacters } = useContext(ProfileContext)
 
   const [inputDisabled, setInputDisabled] = useState(true)
+  const [teste, setTeste] = useState("")
 
   const arrayInputs = [{ label: "Nickname", userData: user.nickname }, { label: "Bio", userData: user.bio }, { label: "Discord", userData: user.discord }]
 
@@ -66,14 +67,14 @@ export function MyProfile () {
               <Input key={index}>
                 <div>
                   <label>{data.label}</label>
-                  <input type="text" defaultValue={data.userData} disabled={inputDisabled} />
+                  <input onChange={(event) => { setTeste(event.target.value); }} type="text" defaultValue={data.userData} disabled={inputDisabled} />
                 </div>
 
                 <button onClick={() => { setInputDisabled(false); }} type="button">
                   <img src={ImgEdit} />
                 </button>
 
-                <button onClick={() => { changeUserData(index); setInputDisabled(true); }} type="button">
+                <button onClick={() => { changeUserData(teste, index); setInputDisabled(true); }} type="button">
                   Alterar
                 </button>
               </Input>
