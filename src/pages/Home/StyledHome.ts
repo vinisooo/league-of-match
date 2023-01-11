@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
+
+  overflow-x: hidden;
+
   main {
     margin-top: 80px;
 
@@ -8,7 +11,7 @@ export const StyledDiv = styled.div`
   }
 
   .home_bg {
-    height: 500px;
+    height: 550px;
 
     background-image: url("https://i.ibb.co/R9D5f4G/X9E3vE9.jpg");
     background-position: top center;
@@ -16,7 +19,7 @@ export const StyledDiv = styled.div`
   }
 
   .home_info {
-    height: 500px;
+    height: 550px;
     width: 100%;
 
     position: absolute;
@@ -48,11 +51,10 @@ export const StyledDiv = styled.div`
   .home_info h1 {
     font-weight: 700;
     font-size: 1.875rem;
-    line-height: 2.25rem;
+    line-height: 150%;
   }
 
   .home_info h1 > span {
-    font-size: 2.4rem;
 
     color: var(--color-brand-1);
   }
@@ -61,7 +63,25 @@ export const StyledDiv = styled.div`
     font-weight: 400;
     font-size: 0.875rem;
 
+    line-height: 150%;
+
     color: var(--color-white);
+  }
+
+  .header-btn{
+    background-color: transparent;
+    text-align: center;
+    padding: 15px;
+    width: 275px;
+    color: var(--color-brand-1);
+    border: 2px solid var(--color-brand-1);
+    
+    transition: 0.3s ease;
+  }
+
+  .header-btn:hover{
+    background-color: var(--color-brand-1);
+    color: var(--color-black-1);
   }
 
   footer {

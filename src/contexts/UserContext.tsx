@@ -31,6 +31,7 @@ export function UserProvider ({ children }: iContextChildrenProps) {
       const token = localStorage.getItem("@league-of-match: token");
       const id = localStorage.getItem("@league-of-match: id");
 
+      getAllPlayers();
       if (!token) {
         setLoading(false);
       } else {
@@ -46,7 +47,7 @@ export function UserProvider ({ children }: iContextChildrenProps) {
     }
 
     loadUser();
-  }, []);
+  });
 
   async function login (data: iUserLogin) {
     try {
