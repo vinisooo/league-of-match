@@ -83,29 +83,29 @@ export function MyProfile () {
                 </ButtonEdit>
               </Input>
             ))}
-            
+
             <WrapperSelects>
               <StyledSelect>
                 <select defaultValue={user.elo} onChange={async (event) => { changeElo(event.target.value) }}>
-                  <option value={"ferro"}>Ferro</option>
-                  <option value={"bronze"}>Bronze</option>
-                  <option value={"prata"}>Prata</option>
-                  <option value={"ouro"}>Ouro</option>
-                  <option value={"platina"}>Platina</option>
-                  <option value={"diamante"}>Diamante</option>
-                  <option value={"mestre"}>Mestre</option>
-                  <option value={"grão-mestre"}>Grão-Mestre</option>
-                  <option value={"desafiante"}>Desafiante</option>
+                  <option value={"Derro"}>Ferro</option>
+                  <option value={"Bronze"}>Bronze</option>
+                  <option value={"Prata"}>Prata</option>
+                  <option value={"Ouro"}>Ouro</option>
+                  <option value={"Platina"}>Platina</option>
+                  <option value={"Diamante"}>Diamante</option>
+                  <option value={"Mestre"}>Mestre</option>
+                  <option value={"Grão-mestre"}>Grão-Mestre</option>
+                  <option value={"Desafiante"}>Desafiante</option>
                 </select>
               </StyledSelect>
 
               <StyledSelect>
                 <select defaultValue={user.route} onChange={async (event) => { changeRoute(event.target.value) }}>
-                  <option value="topo">Topo</option>
-                  <option value="selva">Selva</option>
-                  <option value="meio">Meio</option>
-                  <option value="atirador">Atirador</option>
-                  <option value="suporte">Suporte</option>
+                  <option value="toplane">Topo</option>
+                  <option value="jungle">Selva</option>
+                  <option value="midlane">Meio</option>
+                  <option value="adc">Atirador</option>
+                  <option value="suport">Suporte</option>
                 </select>
               </StyledSelect>
             </WrapperSelects>

@@ -52,15 +52,15 @@ export function Register () {
           <fieldset>
             <select {...register("elo")}>
               <option >Selecione seu elo</option>
-              <option value={"ferro"}>Ferro</option>
-              <option value={"bronze"}>Bronze</option>
-              <option value={"prata"}>Prata</option>
-              <option value={"ouro"}>Ouro</option>
-              <option value={"platina"}>Platina</option>
-              <option value={"diamante"}>Diamante</option>
-              <option value={"mestre"}>Mestre</option>
-              <option value={"grão-mestre"}>Grão-Mestre</option>
-              <option value={"desafiante"}>Desafiante</option>
+              <option value={"Ferro"}>Ferro</option>
+              <option value={"Bronze"}>Bronze</option>
+              <option value={"Prata"}>Prata</option>
+              <option value={"Ouro"}>Ouro</option>
+              <option value={"Platina"}>Platina</option>
+              <option value={"Diamante"}>Diamante</option>
+              <option value={"Mestre"}>Mestre</option>
+              <option value={"Grão-mestre"}>Grão-Mestre</option>
+              <option value={"Desafiante"}>Desafiante</option>
             </select>
             {errors.elo && <span>{errors.elo.message}</span>}
           </fieldset>
