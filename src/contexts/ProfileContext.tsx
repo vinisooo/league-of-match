@@ -13,6 +13,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
     const [filterCharacters, setFilterCharacters] = useState([]);
     const [searchValue, setSearchValue] = useState("");
     const [inputValue, setInputValue] = useState("");
+    const [userInputValue, setUserInputValue] = useState({})
 
     useEffect(() => {
         async function getCharacters () {
@@ -94,6 +95,56 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
           }
       }
 
+      async function changeElo (selectValue: string) {
+        const data = {
+            elo: selectValue
+        }
+        try {
+            const token = localStorage.getItem("@league-of-match: token");
+            const response = await api.patch(`/users/${user.id}`, data, {
+              headers: {
+                authorization: `Bearer ${token}`
+              }
+            });
+            setUser(response.data);
+            toast.success("Seu elo foi alterado")
+          } catch (error) {
+            console.error(error);
+          }
+      }
+
+      async function changeUserData (inputValue: string, id: number) {
+        if (id === 1) {
+            const data = {
+                nickname: inputValue
+            }
+            setUserInputValue(data)
+        } else if (id === 2) {
+            const data = {
+                bio: inputValue
+            }
+            setUserInputValue(data)
+        } else if (id === 3) {
+            const data = {
+                discord: inputValue
+            }
+            setUserInputValue(data)
+        }
+
+        try {
+            const token = localStorage.getItem("@league-of-match: token");
+            const response = await api.patch(`/users/${user.id}`, userInputValue, {
+              headers: {
+                authorization: `Bearer ${token}`
+              }
+            });
+            setUser(response.data);
+            toast.success("Alteração realizada com sucesso")
+          } catch (error) {
+            console.error(error);
+          }
+      }
+
       function updateSearchValue (event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         setSearchValue(inputValue);
@@ -101,7 +152,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
 
     return (
         <ProfileContext.Provider value={{
-            changeProfileIcon, updateSearchValue, setInputValue, changeMain, changeRoute, filterCharacters
+            changeProfileIcon, updateSearchValue, setInputValue, changeMain, changeRoute, changeElo, changeUserData, filterCharacters
         }}>
             {children}
         </ProfileContext.Provider>

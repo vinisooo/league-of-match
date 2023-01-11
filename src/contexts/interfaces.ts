@@ -62,5 +62,7 @@ export interface iProfileProviderValue {
   setInputValue: Dispatch<SetStateAction<string>>;
   changeMain: (character: iCharacter) => Promise<void>;
   changeRoute: (selectValue: string) => Promise<void>;
+  changeElo: (selectValue: string) => Promise<void>;
+  changeUserData: (inputValue: string, id: number) => Promise<void>;
   filterCharacters: iCharacter[];
 }
