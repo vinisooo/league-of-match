@@ -27,12 +27,10 @@ export function UserProvider ({ children }: iContextChildrenProps) {
 
   async function login (data: iUserLogin) {
     try {
-      const request = await api.post("/login/", data);
+      const request = await api.post("/users/login/", data);
 
-      localStorage.setItem("@league-of-match: token", request.data.accessToken);
-      localStorage.setItem("@league-of-match: id", request.data.user.id);
+      localStorage.setItem("@league-of-match: token", request.data.access);
 
-      setUser(request.data.user);
 
       toast.success("Logado com sucesso");
 
@@ -46,7 +44,11 @@ export function UserProvider ({ children }: iContextChildrenProps) {
   async function registerUser (data: iUserRegister) {
     console.log(data);
     try {
-      const request = await api.post("/register/", data);
+      const request = await api.post("/register/", data, {
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
 
       console.log(request);
       toast.success("Usuário registrado com sucesso");

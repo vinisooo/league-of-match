@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: 'https://league-of-match-api.onrender.com/api',
     timeout: 5000
 })
