@@ -15,6 +15,7 @@ import mid from "../assets/routeIcons/mid.svg";
 import adc from "../assets/routeIcons/adc.svg";
 import jungle from "../assets/routeIcons/jungle.svg";
 import sup from "../assets/routeIcons/sup.svg";
+import jwtDecode from "jwt-decode";
 
 export const UserContext = createContext({} as iUserProviderValue);
 
@@ -31,6 +32,11 @@ export function UserProvider ({ children }: iContextChildrenProps) {
 
       localStorage.setItem("@league-of-match: token", request.data.access);
 
+      const decodedJwt = jwtDecode(request.data.access) as { user_id: string };
+
+      localStorage.setItem("@league-of-match: id", decodedJwt.user_id);
+
+      setUser(request.data.user);
 
       toast.success("Logado com sucesso");
 
