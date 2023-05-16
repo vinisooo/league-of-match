@@ -159,7 +159,7 @@ export function MyProfile () {
                   <button
                     type="button"
                     onClick={async () => {
-                      await changeMain(character, character.id);
+                      await changeMain(character.id);
                     }}
                   >
                     <img src={character.icon} alt={character.name} />

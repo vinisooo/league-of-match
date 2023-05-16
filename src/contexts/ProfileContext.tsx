@@ -56,9 +56,9 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
         }
       }
 
-      async function changeMain (character: iCharacter, characterId: number) {
+      async function changeMain (characterId: number) {
         try {
-          const response = await api.patch(`/users/${userId}/main/${characterId}`, {
+          const response = await api.patch(`/users/${userId}/main/${characterId}/`, {},{
             headers: {
               authorization: `Bearer ${token}`
             }
@@ -70,6 +70,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
           console.log(err);
         }
       }
+
 
       async function changeRoute (selectValue: string) {
         const data = {
@@ -94,17 +95,17 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
             elo: selectValue
         }
         try {
-            const token = localStorage.getItem("@league-of-match: token");
-            const response = await api.patch(`/users/${userId}/`, data, {
-              headers: {
-                authorization: `Bearer ${token}`
-              }
-            });
-            setUser(response.data);
-            toast.success("Seu elo foi alterado")
-          } catch (error) {
+          const token = localStorage.getItem("@league-of-match: token");
+          const response = await api.patch(`/users/${userId}/`, data, {
+            headers: {
+              authorization: `Bearer ${token}`
+            }
+          });
+          setUser(response.data);
+          toast.success("Seu elo foi alterado")
+        } catch (error) {
             console.error(error);
-          }
+        }
       }
 
       async function changeUserData (inputValue: string, id: number) {

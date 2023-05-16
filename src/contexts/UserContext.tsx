@@ -48,15 +48,13 @@ export function UserProvider ({ children }: iContextChildrenProps) {
   }
 
   async function registerUser (data: iUserRegister) {
-    console.log(data);
     try {
-      const request = await api.post("/register/", data, {
+      const request = await api.post("/users/register/", data, {
         headers: {
           "Content-Type": "application/json"
         },
       });
 
-      console.log(request);
       toast.success("Usuário registrado com sucesso");
       navigate("/login");
     } catch (error) {

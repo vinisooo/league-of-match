@@ -64,7 +64,7 @@ export interface iProfileProviderValue {
   changeProfileIcon: (img: string) => Promise<void>;
   updateSearchValue: (event: FormEvent<HTMLFormElement>) => void;
   setInputValue: Dispatch<SetStateAction<string>>;
-  changeMain: (character: iCharacter, characterId: number) => Promise<void>;
+  changeMain: (characterId: number) => Promise<void>;
   changeRoute: (selectValue: string) => Promise<void>;
   changeElo: (selectValue: string) => Promise<void>;
   changeUserData: (inputValue: string, id: number) => Promise<void>;
