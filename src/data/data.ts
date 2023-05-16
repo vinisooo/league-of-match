@@ -84,7 +84,7 @@ export const developers = [
     },
     {
         name: "Vinícius Lira",
-        img: "https://ca.slack-edge.com/TQZR39SET-U03MXPXPMLZ-669fc4aaa83e-512",
+        img: "https://github.com/vinisooo.png",
         part: "Desenvolvimento Front-end e UI",
         github: "https://github.com/vinisooo",
         linkedin: "https://www.linkedin.com/in/vin%C3%ADcius-lira-a6294b244/",
