@@ -15,7 +15,7 @@ export function AuthProvider ({ children }: iContextChildrenProps) {
         const userId = localStorage.getItem("@league-of-match: id");
 
         try {
-            const { data } = await api.patch(`/users/${userId}`, {}, {
+            const { data } = await api.get(`/users/${userId}/`, {
                 headers: {
                   authorization: `Bearer ${token}`
                 }
