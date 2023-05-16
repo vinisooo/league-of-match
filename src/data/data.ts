@@ -28,6 +28,16 @@ export const technologies = [
         name: "Git",
         id: 5,
         img: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+    },
+    {
+        name: "Python",
+        id: 6,
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
+    },
+    {
+        name: "Django",
+        id: 7,
+        img: "https://www.svgrepo.com/show/353657/django-icon.svg"
     }
 ];
 
