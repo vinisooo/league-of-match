@@ -60,7 +60,7 @@ export const developers = [
     },
     {
         name: "Gabriel Pavão",
-        img: "https://media.licdn.com/dms/image/D4D03AQE2kJcayGcV-A/profile-displayphoto-shrink_200_200/0/1671020112765?e=1678924800&v=beta&t=H1y4b4ZR8DQonYmuXExZoZgNQoafVNHU_uhFXki4B3Y",
+        img: "https://github.com/gabrielgpavao.png",
         part: "Desenvolvimento Front-end",
         github: "https://github.com/gabrielgpavao",
         linkedin: "https://www.linkedin.com/in/gabrielgpavao/",
