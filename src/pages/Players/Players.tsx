@@ -15,11 +15,11 @@ export function Players () {
   const [selectValueElo, setSelectValueElo] = useState("");
 
   const filteredPlayersByMain = players.filter(player => player.main)
-  const filteredByName = filteredPlayersByMain.filter(({ nickname, elo, route }) => {
-    const byNickName = nickname.toLowerCase().includes(inputValue.toLowerCase())
+  const filteredByName = filteredPlayersByMain.filter(({ username, elo, route }) => {
+    const byUserName = username.toLowerCase().includes(inputValue.toLowerCase())
     const byRoute = route.includes(selectValueLane)
     const byElo = elo.includes(selectValueElo)
-    return byNickName && byRoute && byElo
+    return byUserName && byRoute && byElo
   })
   const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
@@ -42,11 +42,11 @@ export function Players () {
             <div>
               <select value={selectValueLane} onChange={(e) => { setSelectValueLane(e.target.value); }}>
                 <option value="">Rota</option>
-                <option value={"toplane"}>Topo</option>
-                <option value={"jungle"}>Selva</option>
-                <option value={"midlane"}>Meio</option>
-                <option value={"adc"}>Atirador</option>
-                <option value={"suport"}>Suporte</option>
+                <option value={"Toplane"}>Topo</option>
+                <option value={"Jungle"}>Selva</option>
+                <option value={"Midlane"}>Meio</option>
+                <option value={"Adc"}>Atirador</option>
+                <option value={"Support"}>Suporte</option>
               </select>
               <select value={selectValueElo} onChange={(e) => { setSelectValueElo(e.target.value); }}>
                 <option value="">Elo</option>
@@ -57,7 +57,7 @@ export function Players () {
                 <option value={"Platina"}>Platina</option>
                 <option value={"Diamante"}>Diamante</option>
                 <option value={"Mestre"}>Mestre</option>
-                <option value={"Grão-mestre"}>Grão-Mestre</option>
+                <option value={"Grão-Mestre"}>Grão-Mestre</option>
                 <option value={"Desafiante"}>Desafiante</option>
               </select>
             </div>

@@ -22,10 +22,13 @@ export function Register () {
   } = useForm<iUserRegister>({
     resolver: yupResolver(RegisterSchema)
   });
-  const onSubmit = handleSubmit(registerUser);
+
+
+  const onSubmit = (data:iUserRegister) => registerUser(data);
+
   return (
     <RegisterPage className="animate__animated animate__fadeIn">
-      <Form formTitle="Cadastrar" left callback={onSubmit}>
+      <Form formTitle="Cadastrar" left callback={handleSubmit(onSubmit)}>
         <InputBox
           errors={errors.email?.message}
           label="Email"
@@ -44,9 +47,9 @@ export function Register () {
           register={register("confirmPassword")}
         />
         <InputBox
-          errors={errors.nickname?.message}
+          errors={errors.username?.message}
           label="Nome de usuário"
-          register={register("nickname")}
+          register={register("username")}
         />
         <StyledSelect>
           <fieldset>
@@ -59,7 +62,7 @@ export function Register () {
               <option value={"Platina"}>Platina</option>
               <option value={"Diamante"}>Diamante</option>
               <option value={"Mestre"}>Mestre</option>
-              <option value={"Grão-mestre"}>Grão-Mestre</option>
+              <option value={"Grão-Mestre"}>Grão-Mestre</option>
               <option value={"Desafiante"}>Desafiante</option>
             </select>
             {errors.elo && <span>{errors.elo.message}</span>}
@@ -67,11 +70,11 @@ export function Register () {
           <fieldset>
             <select {...register("route")}>
               <option>Selecione sua rota</option>
-              <option value={"toplane"}>Topo</option>
-              <option value={"jungle"}>Selva</option>
-              <option value={"midlane"}>Meio</option>
-              <option value={"adc"}>Atirador</option>
-              <option value={"suport"}>Suporte</option>
+              <option value={"Toplane"}>Topo</option>
+              <option value={"Jungle"}>Selva</option>
+              <option value={"Midlane"}>Meio</option>
+              <option value={"Adc"}>Atirador</option>
+              <option value={"Support"}>Suporte</option>
             </select>
             {errors.route && <span>{errors.route.message}</span>}
           </fieldset>

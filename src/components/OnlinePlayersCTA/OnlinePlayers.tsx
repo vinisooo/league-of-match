@@ -22,9 +22,9 @@ export function OnlinePlayers () {
                                     <li key={player.id}>
                                         <Link to={`/players/${player.id}`}>
                                             <figure className={`user-${index}`}>
-                                                <img src={player.profileIcon || "https://i.ibb.co/FX7YqmQ/5UOr55q.png"} alt={player.nickname} />
+                                                <img src={player.profile_icon || "https://i.ibb.co/FX7YqmQ/5UOr55q.png"} alt={player.username} />
                                             </figure>
-                                            <span>{player.nickname}</span>
+                                            <span>{player.username}</span>
                                         </Link>
                                     </li>
                                 )

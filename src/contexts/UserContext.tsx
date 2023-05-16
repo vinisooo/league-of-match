@@ -27,7 +27,7 @@ export function UserProvider ({ children }: iContextChildrenProps) {
 
   async function login (data: iUserLogin) {
     try {
-      const request = await api.post("/login", data);
+      const request = await api.post("/login/", data);
 
       localStorage.setItem("@league-of-match: token", request.data.accessToken);
       localStorage.setItem("@league-of-match: id", request.data.user.id);
@@ -38,21 +38,19 @@ export function UserProvider ({ children }: iContextChildrenProps) {
 
       navigate("/players");
     } catch (err) {
-      toast.error("Email ou senha incorretos");
+      toast.error("Nome de usuário ou senha incorretos");
       console.log(err);
     }
   }
 
   async function registerUser (data: iUserRegister) {
+    console.log(data);
     try {
-       const request = await api.post("/register", data);
+      const request = await api.post("/register/", data);
 
-      localStorage.setItem("@league-of-match: token", request.data.accessToken);
-      localStorage.setItem("@league-of-match: id", request.data.user.id);
-
-      setUser(request.data.user);
+      console.log(request);
       toast.success("Usuário registrado com sucesso");
-      navigate("/players");
+      navigate("/login");
     } catch (error) {
       toast.error("Registro não efetuado");
       console.log(error);
@@ -61,7 +59,7 @@ export function UserProvider ({ children }: iContextChildrenProps) {
 
   async function getAllPlayers () {
     try {
-      const response = await api.get("/users");
+      const response = await api.get("/users/");
       setPlayers(response.data);
     } catch (error) {
       console.log(error);
@@ -69,15 +67,15 @@ export function UserProvider ({ children }: iContextChildrenProps) {
   }
 
   function getRouteIcon (route: string) {
-    if (route === "toplane") {
+    if (route === "Toplane") {
       return top;
-    } if (route === "midlane") {
+    } if (route === "Midlane") {
       return mid;
-    } if (route === "adc") {
+    } if (route === "Adc") {
       return adc;
-    } if (route === "jungle") {
+    } if (route === "Jungle") {
       return jungle;
-    } if (route === "suport") {
+    } if (route === "Support") {
       return sup;
     }
     return "";

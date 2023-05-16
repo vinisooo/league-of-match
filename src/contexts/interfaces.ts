@@ -17,13 +17,13 @@ export interface iUserProviderValue {
 }
 
 export interface iUserLogin {
-  email: string;
+  username: string;
   password: string;
 }
 
 export interface iPlayers {
   email: string;
-  nickname: string;
+  username: string;
   elo: string;
   route: string;
   id: number | string;
@@ -37,7 +37,7 @@ export interface iPlayers {
     skin_card: string;
   };
   bio?: string;
-  profileIcon?: string;
+  profile_icon?: string;
   discord?: string;
 }
 
@@ -45,21 +45,26 @@ export interface iUserRegister {
   email: string;
   password: string;
   confirmPassword: string;
-  nickname: string;
+  username: string;
   elo: string;
   route: string;
 }
 
 export interface iCharacter {
-  icon: "string";
-  name: "string";
+  id: number;
+  name: string;
+  icon: string;
+  splashart: string;
+  skin_splashart: string;
+  card: string;
+  skin_card: string;
 }
 
 export interface iProfileProviderValue {
   changeProfileIcon: (img: string) => Promise<void>;
   updateSearchValue: (event: FormEvent<HTMLFormElement>) => void;
   setInputValue: Dispatch<SetStateAction<string>>;
-  changeMain: (character: iCharacter) => Promise<void>;
+  changeMain: (character: iCharacter, characterId: number) => Promise<void>;
   changeRoute: (selectValue: string) => Promise<void>;
   changeElo: (selectValue: string) => Promise<void>;
   changeUserData: (inputValue: string, id: number) => Promise<void>;

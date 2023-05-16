@@ -25,6 +25,7 @@ export function Form ({ children, formTitle, left, leftImg, callback }: iFormPro
         <h1 className={left ? "align-title-left" : ""}>{formTitle}</h1>
         <form noValidate onSubmit={callback}>
           {children}
+          <button type="submit" onClick={callback}></button>
         </form>
       </div>
       <Link to={previousPage} className={left ? "left-home" : ""} >← Voltar para {previousPage === "/players" ? "Players" : "Home"}</Link>

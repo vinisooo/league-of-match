@@ -118,7 +118,7 @@ export const StyledOnlinePlayers = styled.section`
 
             display: none;
 
-            animation: displayNickName 0.3s ease;
+            animation: displayUserName 0.3s ease;
         }
 
         .user-1{
@@ -145,7 +145,7 @@ export const StyledOnlinePlayers = styled.section`
         }
     }
 
-    @keyframes displayNickName {
+    @keyframes displayUserName {
         0%{
             opacity: 0;
         }100%{

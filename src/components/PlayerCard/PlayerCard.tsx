@@ -11,7 +11,7 @@ interface iPlayerCardProps {
 export function PlayerCard ({ user }: iPlayerCardProps) {
     const { getRouteIcon } = useContext(UserContext);
 
-    const userNameAux = user.nickname.replace(" ", "+");
+    const userNameAux = user.username.replace(" ", "+");
 
     return (
         <StyledCard className= "animate__animated animate__fadeIn">
@@ -20,12 +20,12 @@ export function PlayerCard ({ user }: iPlayerCardProps) {
             </figure>
             <div className="main_bgshadow" ></div>
             <figure className="user_icon">
-                <img src={user.profileIcon || "https://i.ibb.co/FX7YqmQ/5UOr55q.png"} alt="Icone do usuário" />
+                <img src={user.profile_icon || "https://i.ibb.co/FX7YqmQ/5UOr55q.png"} alt="Icone do usuário" />
             </figure>
             <div className="user_info">
                 <div className="info_persona">
                     <div>
-                        <h2>{user.nickname}</h2>
+                        <h2>{user.username}</h2>
                         <img src={getRouteIcon(user.route) || ""}></img>
                     </div>
                     <span>{user.elo} {user.main && `| Main ${user.main.name}`}</span>

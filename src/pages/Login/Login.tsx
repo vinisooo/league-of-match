@@ -23,7 +23,7 @@ export function Login () {
         <LoginPage className="animate__animated animate__fadeIn">
             <FormBG imageBG="login"/>
             <Form formTitle="Login" callback={handleSubmit(login)}>
-                <InputBox type="email" errors={errors.email?.message} label="email" register={register("email")} />
+                <InputBox type="text" errors={errors.username?.message} label="username" register={register("username")} />
                 <InputBox type="password" errors={errors.password?.message} label="senha" register={register("password")}/>
                 <div className="form-btns">
                     <DefaultLink to="/register" size="49%">Criar conta</DefaultLink>

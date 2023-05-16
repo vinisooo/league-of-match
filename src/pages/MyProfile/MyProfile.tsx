@@ -33,7 +33,7 @@ export function MyProfile () {
   const [inputDisabled, setInputDisabled] = useState(true)
   const [teste, setTeste] = useState("")
 
-  const arrayInputs = [{ label: "Nickname", userData: user.nickname }, { label: "Bio", userData: user.bio }, { label: "Discord", userData: user.discord }]
+  const arrayInputs = [{ label: "Username", userData: user.username }, { label: "Bio", userData: user.bio }, { label: "Discord", userData: user.discord }]
 
   if (loading) {
     return null;
@@ -50,9 +50,9 @@ export function MyProfile () {
           }
         >
           <WrapperProfile>
-            {user?.profileIcon ? (
+            {user?.profile_icon ? (
               <div>
-                <img src={user?.profileIcon} alt="" />
+                <img src={user?.profile_icon} alt="" />
               </div>
             ) : (
               <div>
@@ -60,7 +60,7 @@ export function MyProfile () {
               </div>
             )}
 
-            <p>{user && user.nickname}</p>
+            <p>{user && user.username}</p>
           </WrapperProfile>
           <span className="fade"></span>
         </Aside>
@@ -94,18 +94,18 @@ export function MyProfile () {
                   <option value={"Platina"}>Platina</option>
                   <option value={"Diamante"}>Diamante</option>
                   <option value={"Mestre"}>Mestre</option>
-                  <option value={"Grão-mestre"}>Grão-Mestre</option>
+                  <option value={"Grão-Mestre"}>Grão-Mestre</option>
                   <option value={"Desafiante"}>Desafiante</option>
                 </select>
               </StyledSelect>
 
               <StyledSelect>
                 <select defaultValue={user.route} onChange={async (event) => { changeRoute(event.target.value) }}>
-                  <option value="toplane">Topo</option>
-                  <option value="jungle">Selva</option>
-                  <option value="midlane">Meio</option>
-                  <option value="adc">Atirador</option>
-                  <option value="suport">Suporte</option>
+                  <option value="Toplane">Topo</option>
+                  <option value="Jungle">Selva</option>
+                  <option value="Midlane">Meio</option>
+                  <option value="Adc">Atirador</option>
+                  <option value="Support">Suporte</option>
                 </select>
               </StyledSelect>
             </WrapperSelects>
@@ -159,7 +159,7 @@ export function MyProfile () {
                   <button
                     type="button"
                     onClick={async () => {
-                      await changeMain(character);
+                      await changeMain(character, character.id);
                     }}
                   >
                     <img src={character.icon} alt={character.name} />

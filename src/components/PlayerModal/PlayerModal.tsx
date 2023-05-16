@@ -31,9 +31,9 @@ export function PlayerModal () {
                 <div className="modal-container">
                     <header>
                         <figure>
-                            <img src={modalPlayer.profileIcon || "https://i.imgur.com/5UOr55q.png"} alt={modalPlayer.nickname} />
+                            <img src={modalPlayer.profile_icon || "https://i.imgur.com/5UOr55q.png"} alt={modalPlayer.username} />
                         </figure>
-                        <h2>{modalPlayer.nickname}</h2>
+                        <h2>{modalPlayer.username}</h2>
 
                         <Link to="/players">
                             <img src={closeModalIcon}/>
@@ -61,7 +61,7 @@ export function PlayerModal () {
                             </p>
                         }
                     </div>
-                    <a className="bottom-btn" target="_blank" href={`https://www.leagueofgraphs.com/pt/summoner/br/${modalPlayer.nickname?.replace(" ", "+")}`}>
+                    <a className="bottom-btn" target="_blank" href={`https://www.leagueofgraphs.com/pt/summoner/br/${modalPlayer.username?.replace(" ", "+")}`}>
                         Ver histórico de partidas
                     </a>
                 </div>

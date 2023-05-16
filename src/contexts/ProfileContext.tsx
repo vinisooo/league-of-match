@@ -18,7 +18,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
     useEffect(() => {
         async function getCharacters () {
           try {
-            const { data } = await api.get("/characters");
+            const { data } = await api.get("/characters/");
             setCharacters(data);
           } catch (error) {
             console.error(error);
@@ -41,10 +41,10 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
 
       async function changeProfileIcon (img: string) {
         const data = {
-          profileIcon: img
+          "profile_icon": img
         };
         try {
-          const response = await api.patch(`/users/${userId}`, data, {
+          const response = await api.patch(`/users/${userId}/`, data, {
             headers: {
               authorization: `Bearer ${token}`
             }
@@ -56,12 +56,9 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
         }
       }
 
-      async function changeMain (character: iCharacter) {
-        const data = {
-          main: character
-        };
+      async function changeMain (character: iCharacter, characterId: number) {
         try {
-          const response = await api.patch(`/users/${userId}`, data, {
+          const response = await api.patch(`/users/${userId}/main/${characterId}`, {
             headers: {
               authorization: `Bearer ${token}`
             }
@@ -80,7 +77,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
         }
         try {
             const token = localStorage.getItem("@league-of-match: token");
-            const response = await api.patch(`/users/${userId}`, data, {
+            const response = await api.patch(`/users/${userId}/`, data, {
               headers: {
                 authorization: `Bearer ${token}`
               }
@@ -98,7 +95,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
         }
         try {
             const token = localStorage.getItem("@league-of-match: token");
-            const response = await api.patch(`/users/${userId}`, data, {
+            const response = await api.patch(`/users/${userId}/`, data, {
               headers: {
                 authorization: `Bearer ${token}`
               }
@@ -115,7 +112,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
 
         if (id === 0) {
             data = {
-                nickname: inputValue
+                usernme: inputValue
             }
         } else if (id === 1) {
             data = {
@@ -127,7 +124,7 @@ export function ProfileProvider ({ children }: iContextChildrenProps) {
             }
         }
         try {
-            const response = await api.patch(`/users/${userId}`, data, {
+            const response = await api.patch(`/users/${userId}/`, data, {
               headers: {
                 authorization: `Bearer ${token}`
               }
