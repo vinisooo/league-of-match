@@ -20,6 +20,7 @@ export function Register () {
     handleSubmit,
     formState: { errors }
   } = useForm<iUserRegister>({
+    mode: "onBlur",
     resolver: yupResolver(RegisterSchema)
   });
 
