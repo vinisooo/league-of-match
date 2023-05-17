@@ -85,7 +85,7 @@ export const developers = [
     {
         name: "Vinícius Lira",
         img: "https://github.com/vinisooo.png",
-        part: "Desenvolvimento Front-end e UI",
+        part: "Desenvolvimento Front-end, Back-end e UI",
         github: "https://github.com/vinisooo",
         linkedin: "https://www.linkedin.com/in/vin%C3%ADcius-lira-a6294b244/",
         id: 5
